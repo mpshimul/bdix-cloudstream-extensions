@@ -16,24 +16,9 @@ class ExampleProvider : MainAPI() {
     private val apiEndpoint = "$mainUrl/api/movies"
     private val mapper = jacksonObjectMapper()
 
-    // Store movie data temporarily during the session
     companion object {
-        val movieStore = mutableMapOf<String, MovieData>()
+        val movieCache = mutableMapOf<String, Map<String, Any>>()
     }
-
-    data class MovieData(
-        val id: String,
-        val title: String,
-        val streamUrl: String,
-        val poster: String,
-        val backdrop: String,
-        val plot: String,
-        val year: Int?,
-        val rating: Double?,
-        val duration: Int?,
-        val director: String,
-        val genres: List<String>
-    )
 
     private val headers = mapOf(
         "User-Agent" to "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
@@ -71,20 +56,9 @@ class ExampleProvider : MainAPI() {
             val title = movie["title"] as? String ?: return@mapNotNull null
             val poster = movie["poster_url"] as? String ?: ""
             val year = (movie["year"] as? String)?.toIntOrNull()
-            val streamUrl = movie["stream_url"] as? String ?: ""
-            val backdrop = movie["backdrop_url"] as? String ?: ""
-            val plot = movie["overview"] as? String ?: ""
-            val rating = (movie["rating"] as? String)?.toDoubleOrNull()
-            val duration = (movie["runtime"] as? String)?.toIntOrNull()
-            val director = movie["director"] as? String ?: ""
-            val genresStr = movie["genres"] as? String ?: ""
-            val genres = genresStr.split(",").map { it.trim() }.filter { it.isNotEmpty() }
 
-            // Store movie data
-            movieStore[id] = MovieData(
-                id, title, streamUrl, poster, backdrop, plot,
-                year, rating, duration, director, genres
-            )
+            // Cache the full movie data
+            movieCache[id] = movie
 
             newMovieSearchResponse(title, id, TvType.Movie, false) {
                 this.posterUrl = poster
@@ -94,29 +68,32 @@ class ExampleProvider : MainAPI() {
     }
 
     override suspend fun load(url: String): LoadResponse {
-        // url is the movie ID
-        val movie = movieStore[url] ?: throw Error("Movie not found")
+        // url is the movie ID (e.g., "36531")
+        val movie = movieCache[url] ?: throw Error("Movie not found. ID: $url")
 
-        return newMovieLoadResponse(movie.title, movie.streamUrl, TvType.Movie, movie.streamUrl) {
-            this.plot = movie.plot
-            this.year = movie.year
-            this.posterUrl = movie.poster
-            this.backgroundPosterUrl = movie.backdrop
-            this.duration = movie.duration
+        val title = movie["title"] as? String ?: "Unknown"
+        val plot = movie["overview"] as? String ?: ""
+        val year = (movie["year"] as? String)?.toIntOrNull()
+        val poster = movie["poster_url"] as? String ?: ""
+        val backdrop = movie["backdrop_url"] as? String ?: ""
+        val rating = (movie["rating"] as? String)?.toDoubleOrNull()
+        val duration = (movie["runtime"] as? String)?.toIntOrNull()
+        val director = movie["director"] as? String ?: ""
+        val genresStr = movie["genres"] as? String ?: ""
+        val genres = genresStr.split(",").map { it.trim() }.filter { it.isNotEmpty() }
+        val streamUrl = movie["stream_url"] as? String ?: ""
 
-            val tagsList = mutableListOf<String>()
-            if (movie.director.isNotBlank()) {
-                tagsList.add("Director: ${movie.director}")
-            }
-            tagsList.addAll(movie.genres)
-            if (tagsList.isNotEmpty()) {
-                this.tags = tagsList
-            }
+        return newMovieLoadResponse(title, streamUrl, TvType.Movie, streamUrl) {
+            this.plot = plot
+            this.year = year
+            this.posterUrl = poster
+            this.backgroundPosterUrl = backdrop
+            this.duration = duration
 
-            if (movie.rating != null) {
-                // Don't set score if it causes errors
-                // this.score = movie.rating
-            }
+            val tags = mutableListOf<String>()
+            if (director.isNotBlank()) tags.add("Director: $director")
+            tags.addAll(genres)
+            if (tags.isNotEmpty()) this.tags = tags
         }
     }
 
@@ -127,7 +104,6 @@ class ExampleProvider : MainAPI() {
         callback: (ExtractorLink) -> Unit
     ): Boolean {
         val streamUrl = data
-
         val quality = when {
             streamUrl.contains("1080") -> 1080
             streamUrl.contains("720") -> 720
@@ -159,20 +135,8 @@ class ExampleProvider : MainAPI() {
             val title = movie["title"] as? String ?: return@mapNotNull null
             val poster = movie["poster_url"] as? String ?: ""
             val year = (movie["year"] as? String)?.toIntOrNull()
-            val streamUrl = movie["stream_url"] as? String ?: ""
-            val backdrop = movie["backdrop_url"] as? String ?: ""
-            val plot = movie["overview"] as? String ?: ""
-            val rating = (movie["rating"] as? String)?.toDoubleOrNull()
-            val duration = (movie["runtime"] as? String)?.toIntOrNull()
-            val director = movie["director"] as? String ?: ""
-            val genresStr = movie["genres"] as? String ?: ""
-            val genres = genresStr.split(",").map { it.trim() }.filter { it.isNotEmpty() }
 
-            // Store in the same companion object
-            movieStore[id] = MovieData(
-                id, title, streamUrl, poster, backdrop, plot,
-                year, rating, duration, director, genres
-            )
+            movieCache[id] = movie
 
             newMovieSearchResponse(title, id, TvType.Movie, false) {
                 this.posterUrl = poster
