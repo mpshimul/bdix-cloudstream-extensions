@@ -9,16 +9,30 @@ import com.fasterxml.jackson.module.kotlin.readValue
 class ExampleProvider : MainAPI() {
     override var name = "DhakaMovie BDIX"
     override var lang = "bn"
-    override var mainUrl = "http://dhakamovie.com:8080"
+    override var mainUrl = "http://dhakamovie.com"  // No port for movie pages
     override val hasMainPage = true
     override val hasQuickSearch = true
 
-    private val apiEndpoint = "$mainUrl/api/movies"
+    private val apiBaseUrl = "http://dhakamovie.com:8080/api/movies"  // Port 8080 for API
     private val mapper = jacksonObjectMapper()
 
     companion object {
-        val movieCache = mutableMapOf<String, Map<String, Any>>()
+        val movieStore = mutableMapOf<String, MovieData>()
     }
+
+    data class MovieData(
+        val slug: String,
+        val title: String,
+        val streamUrl: String,
+        val poster: String,
+        val backdrop: String,
+        val plot: String,
+        val year: Int?,
+        val rating: Double?,
+        val duration: Int?,
+        val director: String,
+        val genres: List<String>
+    )
 
     private val headers = mapOf(
         "User-Agent" to "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
@@ -31,7 +45,7 @@ class ExampleProvider : MainAPI() {
 
         for (page in 1..2) {
             try {
-                val url = "$apiEndpoint?page=$page"
+                val url = "$apiBaseUrl?page=$page"
                 val response = app.get(url, headers = headers).text
                 val json = mapper.readValue<Map<String, Any>>(response)
                 val movies = json["data"] as? List<Map<String, Any>> ?: break
@@ -52,15 +66,28 @@ class ExampleProvider : MainAPI() {
         }
 
         return filtered.mapNotNull { movie ->
-            val id = movie["id"]?.toString() ?: return@mapNotNull null
+            val slug = movie["slug"] as? String ?: return@mapNotNull null
             val title = movie["title"] as? String ?: return@mapNotNull null
             val poster = movie["poster_url"] as? String ?: ""
             val year = (movie["year"] as? String)?.toIntOrNull()
+            val streamUrl = movie["stream_url"] as? String ?: ""
+            val backdrop = movie["backdrop_url"] as? String ?: ""
+            val plot = movie["overview"] as? String ?: ""
+            val rating = (movie["rating"] as? String)?.toDoubleOrNull()
+            val duration = (movie["runtime"] as? String)?.toIntOrNull()
+            val director = movie["director"] as? String ?: ""
+            val genresStr = movie["genres"] as? String ?: ""
+            val genres = genresStr.split(",").map { it.trim() }.filter { it.isNotEmpty() }
 
-            // Cache the full movie data
-            movieCache[id] = movie
+            // Movie page URL (no port)
+            val movieUrl = "$mainUrl/movies/$slug"
 
-            newMovieSearchResponse(title, id, TvType.Movie, false) {
+            movieStore[movieUrl] = MovieData(
+                slug, title, streamUrl, poster, backdrop, plot,
+                year, rating, duration, director, genres
+            )
+
+            newMovieSearchResponse(title, movieUrl, TvType.Movie, false) {
                 this.posterUrl = poster
                 this.year = year
             }
@@ -68,32 +95,23 @@ class ExampleProvider : MainAPI() {
     }
 
     override suspend fun load(url: String): LoadResponse {
-        // url is the movie ID (e.g., "36531")
-        val movie = movieCache[url] ?: throw Error("Movie not found. ID: $url")
+        val movie = movieStore[url] ?: throw Error("Movie not found for URL: $url")
 
-        val title = movie["title"] as? String ?: "Unknown"
-        val plot = movie["overview"] as? String ?: ""
-        val year = (movie["year"] as? String)?.toIntOrNull()
-        val poster = movie["poster_url"] as? String ?: ""
-        val backdrop = movie["backdrop_url"] as? String ?: ""
-        val rating = (movie["rating"] as? String)?.toDoubleOrNull()
-        val duration = (movie["runtime"] as? String)?.toIntOrNull()
-        val director = movie["director"] as? String ?: ""
-        val genresStr = movie["genres"] as? String ?: ""
-        val genres = genresStr.split(",").map { it.trim() }.filter { it.isNotEmpty() }
-        val streamUrl = movie["stream_url"] as? String ?: ""
+        return newMovieLoadResponse(movie.title, movie.streamUrl, TvType.Movie, movie.streamUrl) {
+            this.plot = movie.plot
+            this.year = movie.year
+            this.posterUrl = movie.poster
+            this.backgroundPosterUrl = movie.backdrop
+            this.duration = movie.duration
 
-        return newMovieLoadResponse(title, streamUrl, TvType.Movie, streamUrl) {
-            this.plot = plot
-            this.year = year
-            this.posterUrl = poster
-            this.backgroundPosterUrl = backdrop
-            this.duration = duration
-
-            val tags = mutableListOf<String>()
-            if (director.isNotBlank()) tags.add("Director: $director")
-            tags.addAll(genres)
-            if (tags.isNotEmpty()) this.tags = tags
+            val tagsList = mutableListOf<String>()
+            if (movie.director.isNotBlank()) {
+                tagsList.add("Director: ${movie.director}")
+            }
+            tagsList.addAll(movie.genres)
+            if (tagsList.isNotEmpty()) {
+                this.tags = tagsList
+            }
         }
     }
 
@@ -104,6 +122,7 @@ class ExampleProvider : MainAPI() {
         callback: (ExtractorLink) -> Unit
     ): Boolean {
         val streamUrl = data
+
         val quality = when {
             streamUrl.contains("1080") -> 1080
             streamUrl.contains("720") -> 720
@@ -125,20 +144,33 @@ class ExampleProvider : MainAPI() {
     }
 
     override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
-        val url = "$apiEndpoint?page=$page"
+        val url = "$apiBaseUrl?page=$page"
         val response = app.get(url, headers = headers).text
         val json = mapper.readValue<Map<String, Any>>(response)
         val movies = json["data"] as? List<Map<String, Any>> ?: return newHomePageResponse(listOf())
 
         val list = movies.mapNotNull { movie ->
-            val id = movie["id"]?.toString() ?: return@mapNotNull null
+            val slug = movie["slug"] as? String ?: return@mapNotNull null
             val title = movie["title"] as? String ?: return@mapNotNull null
             val poster = movie["poster_url"] as? String ?: ""
             val year = (movie["year"] as? String)?.toIntOrNull()
+            val streamUrl = movie["stream_url"] as? String ?: ""
+            val backdrop = movie["backdrop_url"] as? String ?: ""
+            val plot = movie["overview"] as? String ?: ""
+            val rating = (movie["rating"] as? String)?.toDoubleOrNull()
+            val duration = (movie["runtime"] as? String)?.toIntOrNull()
+            val director = movie["director"] as? String ?: ""
+            val genresStr = movie["genres"] as? String ?: ""
+            val genres = genresStr.split(",").map { it.trim() }.filter { it.isNotEmpty() }
 
-            movieCache[id] = movie
+            val movieUrl = "$mainUrl/movies/$slug"
 
-            newMovieSearchResponse(title, id, TvType.Movie, false) {
+            movieStore[movieUrl] = MovieData(
+                slug, title, streamUrl, poster, backdrop, plot,
+                year, rating, duration, director, genres
+            )
+
+            newMovieSearchResponse(title, movieUrl, TvType.Movie, false) {
                 this.posterUrl = poster
                 this.year = year
             }
