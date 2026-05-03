@@ -1,11 +1,11 @@
 [
     {
-        "fileHash": "sha256-711a4f9a941925a3c4f4f01037ac905ed10c74fc35fa4e359e3235a716b78800",
+        "fileHash": "sha256-790af24bdc7c0a9d4d5a8059f5163cd6741e4a1fa22eea854ffb6b2edb986699",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/mpshimul/TestPlugins",
-        "fileSize": 11287,
+        "fileSize": 11973,
         "status": 1,
-        "language": "bn",
+        "language": "en",
         "authors": [
             "mpshimul"
         ],

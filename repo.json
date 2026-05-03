@@ -1,8 +1,0 @@
-{
-  "name": "BDIX Repo",
-  "description": "Personal BDIX provider for DhakaMovie",
-  "manifestVersion": 1,
-  "pluginLists": [
-    "https://raw.githubusercontent.com/mpshimul/TestPlugins/builds/plugins.json"
-  ]
-}
