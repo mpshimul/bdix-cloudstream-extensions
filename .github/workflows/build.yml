@@ -14,19 +14,31 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@master
+      - name: Checkout source code
+        uses: actions/checkout@v4
         with:
           path: "src"
+          fetch-depth: 0
 
-      - name: Checkout builds
-        uses: actions/checkout@master
-        with:
-          ref: "builds"
-          path: "builds"
-      
-      - name: Clean old builds
-        run: rm $GITHUB_WORKSPACE/builds/*.cs3 || true
+      - name: Create builds branch if it doesn't exist
+        run: |
+          cd $GITHUB_WORKSPACE/src
+          git ls-remote --heads origin builds || git checkout --orphan builds
+          git push origin builds --force || true
+
+      - name: Checkout builds branch (or create empty worktree)
+        run: |
+          cd $GITHUB_WORKSPACE
+          git clone --branch builds https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} builds || \
+          git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} builds
+          cd builds
+          git checkout builds 2>/dev/null || git checkout --orphan builds
+
+      - name: Wipe builds branch clean
+        run: |
+          cd $GITHUB_WORKSPACE/builds
+          git rm -rf . || true
+          git clean -fdx
 
       - name: Setup JDK 17
         uses: actions/setup-java@v1
@@ -41,14 +53,14 @@ jobs:
           cd $GITHUB_WORKSPACE/src
           chmod +x gradlew
           ./gradlew make makePluginsJson
-          cp **/build/*.cs3 $GITHUB_WORKSPACE/builds
+          cp **/build/*.cs3 $GITHUB_WORKSPACE/builds 2>/dev/null || true
           cp build/plugins.json $GITHUB_WORKSPACE/builds
 
-      - name: Push builds
+      - name: Push cleaned builds branch
         run: |
           cd $GITHUB_WORKSPACE/builds
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
           git add .
-          git commit --amend -m "Build $GITHUB_SHA" || exit 0
-          git push --force
+          git commit -m "Build ${{ github.sha }}"
+          git push --force --set-upstream https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} builds
