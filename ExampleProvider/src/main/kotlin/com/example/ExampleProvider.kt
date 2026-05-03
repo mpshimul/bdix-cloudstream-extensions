@@ -9,11 +9,11 @@ import com.fasterxml.jackson.module.kotlin.readValue
 class ExampleProvider : MainAPI() {
     override var name = "DhakaMovie BDIX"
     override var lang = "bn"
-    override var mainUrl = "http://dhakamovie.com"  // No port for movie pages
+    override var mainUrl = "http://dhakamovie.com"
     override val hasMainPage = true
     override val hasQuickSearch = true
 
-    private val apiBaseUrl = "http://dhakamovie.com:8080/api/movies"  // Port 8080 for API
+    private val apiBaseUrl = "http://dhakamovie.com:8080/api/movies"
     private val mapper = jacksonObjectMapper()
 
     companion object {
@@ -40,6 +40,83 @@ class ExampleProvider : MainAPI() {
         "Referer" to mainUrl
     )
 
+    // ---------------- Home Page Categories ----------------
+    override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
+        val homePageLists = mutableListOf<HomePageList>()
+
+        // 1. Latest Movies
+        val latestMovies = fetchMovieList("$apiBaseUrl/latest")
+        if (latestMovies.isNotEmpty()) {
+            homePageLists.add(HomePageList("Latest Movies", latestMovies))
+        }
+
+        // 2. New Releases
+        val newReleases = fetchMovieList("$apiBaseUrl/new-releases")
+        if (newReleases.isNotEmpty()) {
+            homePageLists.add(HomePageList("New Releases", newReleases))
+        }
+
+        // 3. South Indian Movies (Advanced Search)
+        val southIndianUrl = "$apiBaseUrl/advanced-search?query=&type=movies&page=1&per_page=28&category=South+Indian&order_by=Latest"
+        val southIndian = fetchMovieList(southIndianUrl)
+        if (southIndian.isNotEmpty()) {
+            homePageLists.add(HomePageList("South Indian", southIndian))
+        }
+
+        // 4. Trending
+        val trending = fetchMovieList("$apiBaseUrl/trending")
+        if (trending.isNotEmpty()) {
+            homePageLists.add(HomePageList("Trending", trending))
+        }
+
+        // 5. Top 10
+        val top10 = fetchMovieList("$apiBaseUrl/top-10")
+        if (top10.isNotEmpty()) {
+            homePageLists.add(HomePageList("Top 10", top10))
+        }
+
+        return newHomePageResponse(homePageLists)
+    }
+
+    // Helper function to fetch and convert movie list
+    private suspend fun fetchMovieList(url: String): List<SearchResponse> {
+        return try {
+            val response = app.get(url, headers = headers).text
+            val json = mapper.readValue<Map<String, Any>>(response)
+            val movies = json["data"] as? List<Map<String, Any>> ?: return emptyList()
+
+            movies.mapNotNull { movie ->
+                val slug = movie["slug"] as? String ?: return@mapNotNull null
+                val title = movie["title"] as? String ?: return@mapNotNull null
+                val poster = movie["poster_url"] as? String ?: ""
+                val year = (movie["year"] as? String)?.toIntOrNull()
+                val streamUrl = movie["stream_url"] as? String ?: ""
+                val backdrop = movie["backdrop_url"] as? String ?: ""
+                val plot = movie["overview"] as? String ?: ""
+                val rating = (movie["rating"] as? String)?.toDoubleOrNull()
+                val duration = (movie["runtime"] as? String)?.toIntOrNull()
+                val director = movie["director"] as? String ?: ""
+                val genresStr = movie["genres"] as? String ?: ""
+                val genres = genresStr.split(",").map { it.trim() }.filter { it.isNotEmpty() }
+
+                val movieUrl = "$mainUrl/movies/$slug"
+
+                movieStore[movieUrl] = MovieData(
+                    slug, title, streamUrl, poster, backdrop, plot,
+                    year, rating, duration, director, genres
+                )
+
+                newMovieSearchResponse(title, movieUrl, TvType.Movie, false) {
+                    this.posterUrl = poster
+                    this.year = year
+                }
+            }
+        } catch (e: Exception) {
+            emptyList()
+        }
+    }
+
+    // ---------------- Search ----------------
     override suspend fun search(query: String): List<SearchResponse> {
         val allMovies = mutableListOf<Map<String, Any>>()
 
@@ -79,7 +156,6 @@ class ExampleProvider : MainAPI() {
             val genresStr = movie["genres"] as? String ?: ""
             val genres = genresStr.split(",").map { it.trim() }.filter { it.isNotEmpty() }
 
-            // Movie page URL (no port)
             val movieUrl = "$mainUrl/movies/$slug"
 
             movieStore[movieUrl] = MovieData(
@@ -94,6 +170,7 @@ class ExampleProvider : MainAPI() {
         }
     }
 
+    // ---------------- Load Movie Details ----------------
     override suspend fun load(url: String): LoadResponse {
         val movie = movieStore[url] ?: throw Error("Movie not found for URL: $url")
 
@@ -115,6 +192,7 @@ class ExampleProvider : MainAPI() {
         }
     }
 
+    // ---------------- Extract Video Link ----------------
     override suspend fun loadLinks(
         data: String,
         isCasting: Boolean,
@@ -141,41 +219,5 @@ class ExampleProvider : MainAPI() {
             }
         )
         return true
-    }
-
-    override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
-        val url = "$apiBaseUrl?page=$page"
-        val response = app.get(url, headers = headers).text
-        val json = mapper.readValue<Map<String, Any>>(response)
-        val movies = json["data"] as? List<Map<String, Any>> ?: return newHomePageResponse(listOf())
-
-        val list = movies.mapNotNull { movie ->
-            val slug = movie["slug"] as? String ?: return@mapNotNull null
-            val title = movie["title"] as? String ?: return@mapNotNull null
-            val poster = movie["poster_url"] as? String ?: ""
-            val year = (movie["year"] as? String)?.toIntOrNull()
-            val streamUrl = movie["stream_url"] as? String ?: ""
-            val backdrop = movie["backdrop_url"] as? String ?: ""
-            val plot = movie["overview"] as? String ?: ""
-            val rating = (movie["rating"] as? String)?.toDoubleOrNull()
-            val duration = (movie["runtime"] as? String)?.toIntOrNull()
-            val director = movie["director"] as? String ?: ""
-            val genresStr = movie["genres"] as? String ?: ""
-            val genres = genresStr.split(",").map { it.trim() }.filter { it.isNotEmpty() }
-
-            val movieUrl = "$mainUrl/movies/$slug"
-
-            movieStore[movieUrl] = MovieData(
-                slug, title, streamUrl, poster, backdrop, plot,
-                year, rating, duration, director, genres
-            )
-
-            newMovieSearchResponse(title, movieUrl, TvType.Movie, false) {
-                this.posterUrl = poster
-                this.year = year
-            }
-        }
-
-        return newHomePageResponse(listOf(HomePageList("Latest Movies", list)))
     }
 }
