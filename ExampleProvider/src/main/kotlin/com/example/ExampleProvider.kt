@@ -259,16 +259,15 @@ class ExampleProvider : MainAPI() {
         } else if (seriesStore.containsKey(url)) {
             val series = seriesStore[url]!!
             val episodes = mutableListOf<Episode>()
-            for (season in series.seasons) {
-                for (ep in season.episodes) {
-                    val episodeUrl = "episode://${series.slug}/${season.seasonNumber}/${ep.episodeNumber}"
+            for (seasonData in series.seasons) {
+                for (ep in seasonData.episodes) {
+                    val episodeUrl = "episode://${series.slug}/${seasonData.seasonNumber}/${ep.episodeNumber}"
                     episodes.add(
                         newEpisode(episodeUrl) {
                             this.name = ep.title
-                            this.season = season.seasonNumber
+                            this.season = seasonData.seasonNumber
                             this.episode = ep.episodeNumber
                             this.posterUrl = ep.poster
-                            this.description = null
                             this.runTime = ep.runtime
                         }
                     )
@@ -279,7 +278,10 @@ class ExampleProvider : MainAPI() {
                 this.year = series.year
                 this.posterUrl = series.poster
                 this.backgroundPosterUrl = series.backdrop
-                // Omit score to avoid type error (or use Score.from if available)
+                // If Score.from is available, use it; otherwise omit
+                if (series.rating != null) {
+                    // this.score = Score.from(series.rating, 10)
+                }
                 if (series.genres.isNotEmpty()) this.tags = series.genres
             }
         } else {
@@ -293,6 +295,7 @@ class ExampleProvider : MainAPI() {
         subtitleCallback: (SubtitleFile) -> Unit,
         callback: (ExtractorLink) -> Unit
     ): Boolean {
+        // Episode pattern: episode://slug/season/episode
         val episodePattern = Regex("episode://(.+)/(\\d+)/(\\d+)")
         val match = episodePattern.find(data)
         if (match != null) {
@@ -303,10 +306,24 @@ class ExampleProvider : MainAPI() {
             val series = seriesStore[seriesUrl] ?: return false
             val season = series.seasons.find { it.seasonNumber == seasonNum } ?: return false
             val episode = season.episodes.find { it.episodeNumber == episodeNum } ?: return false
+
+            // Construct the full stream URL
             val streamUrl = "http://server1.dhakamovie.com/${episode.fileUrl}"
-            val quality = if (streamUrl.contains("1080")) 1080 else if (streamUrl.contains("720")) 720 else 0
+            val encodedUrl = streamUrl.replace(" ", "%20")
+
+            val quality = when {
+                encodedUrl.contains("1080") -> 1080
+                encodedUrl.contains("720") -> 720
+                encodedUrl.contains("480") -> 480
+                else -> 0
+            }
+
             callback.invoke(
-                newExtractorLink(source = name, name = "Episode", url = streamUrl) {
+                newExtractorLink(
+                    source = name,
+                    name = "Episode ${episodeNum}",
+                    url = encodedUrl
+                ) {
                     this.referer = mainUrl
                     this.quality = quality
                 }
@@ -314,6 +331,7 @@ class ExampleProvider : MainAPI() {
             return true
         }
 
+        // For movies (direct stream URL)
         val streamUrl = data
         val quality = when {
             streamUrl.contains("1080") -> 1080
@@ -322,7 +340,11 @@ class ExampleProvider : MainAPI() {
             else -> 0
         }
         callback.invoke(
-            newExtractorLink(source = name, name = "Direct", url = streamUrl) {
+            newExtractorLink(
+                source = name,
+                name = "Direct",
+                url = streamUrl
+            ) {
                 this.referer = mainUrl
                 this.quality = quality
             }
