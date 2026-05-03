@@ -8,7 +8,7 @@ cloudstream {
     authors = listOf("mpshimul")
     status = 1
     tvTypes = listOf("Movie", "TvSeries")
-    language = "bn"
+    language = "en"
     requiresResources = false
 }
 
