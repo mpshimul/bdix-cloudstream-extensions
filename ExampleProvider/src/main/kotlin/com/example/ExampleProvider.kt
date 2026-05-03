@@ -331,6 +331,7 @@ class ExampleProvider : MainAPI() {
             return true
         }
 
+
         // For movies (direct stream URL)
         val streamUrl = data
         val quality = when {
