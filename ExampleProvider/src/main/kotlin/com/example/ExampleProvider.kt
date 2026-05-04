@@ -69,38 +69,37 @@ class ExampleProvider : MainAPI() {
         "Referer" to mainUrl
     )
 
-    // ------------------------------------------------------------
-    // Main Page (static categories – no pagination, but fully functional)
-    // ------------------------------------------------------------
     override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
         val lists = mutableListOf<HomePageList>()
 
-        // All Movies
-        val allMovies = fetchMovieList(apiMoviesBase, 1)
-        if (allMovies.isNotEmpty()) lists.add(HomePageList("All Movies", allMovies))
+        // 1. All Movies (advanced search, 1000 items)
+        val allMoviesUrl = "$advancedSearchBase?query=&type=movies&page=1&per_page=1000&order_by=Latest"
+        val allMovies = fetchMovieList(allMoviesUrl, 1)
+        if (allMovies.isNotEmpty()) lists.add(HomePageList("All Movies (1000+)", allMovies))
 
-        // Latest Movies
+        // 2. Latest Movies (static, from /latest endpoint)
         val latest = fetchMovieList("$apiMoviesBase/latest", 1)
         if (latest.isNotEmpty()) lists.add(HomePageList("Latest Movies", latest))
 
-        // New Releases
+        // 3. New Releases (static)
         val newReleases = fetchMovieList("$apiMoviesBase/new-releases", 1)
         if (newReleases.isNotEmpty()) lists.add(HomePageList("New Releases", newReleases))
 
-        // TV Series
-        val tvSeries = fetchSeriesList(apiTvBase, 1)
-        if (tvSeries.isNotEmpty()) lists.add(HomePageList("TV Series", tvSeries))
+        // 4. TV Series (advanced search, 1000 items)
+        val tvSeriesUrl = "$advancedSearchBase?query=&type=tv_series&page=1&per_page=1000&order_by=Latest"
+        val tvSeries = fetchSeriesList(tvSeriesUrl, 1)
+        if (tvSeries.isNotEmpty()) lists.add(HomePageList("TV Series (1000+)", tvSeries))
 
-        // South Indian (advanced search)
-        val southIndianBase = "$advancedSearchBase?query=&type=movies&per_page=28&category=South%20Indian&order_by=Latest"
-        val southIndian = fetchMovieList(southIndianBase, 1)
-        if (southIndian.isNotEmpty()) lists.add(HomePageList("South Indian", southIndian))
+        // 5. South Indian (advanced search, 1000 items)
+        val southIndianUrl = "$advancedSearchBase?query=&type=movies&page=1&per_page=1000&category=South%20Indian&order_by=Latest"
+        val southIndian = fetchMovieList(southIndianUrl, 1)
+        if (southIndian.isNotEmpty()) lists.add(HomePageList("South Indian (1000+)", southIndian))
 
-        // Trending
+        // 6. Trending (static)
         val trending = fetchMovieList("$apiMoviesBase/trending", 1)
         if (trending.isNotEmpty()) lists.add(HomePageList("Trending", trending))
 
-        // Top 10
+        // 7. Top 10 (static)
         val top10 = fetchMovieList("$apiMoviesBase/top-10", 1)
         if (top10.isNotEmpty()) lists.add(HomePageList("Top 10", top10))
 
@@ -108,19 +107,13 @@ class ExampleProvider : MainAPI() {
     }
 
     // ------------------------------------------------------------
-    // Fetch movies (supports page parameter)
+    // Fetch movies (supports advanced search with per_page)
     // ------------------------------------------------------------
     private suspend fun fetchMovieList(baseUrl: String, page: Int = 1): List<SearchResponse> {
-        val url = if (baseUrl.contains("?")) {
-            val withoutPage = baseUrl.replace(Regex("[?&]page=\\d+"), "")
-            val separator = if (withoutPage.contains("?")) "&" else "?"
-            "$withoutPage${separator}page=$page"
-        } else {
-            "$baseUrl?page=$page"
-        }
-
+        // The URL already contains page and per_page parameters; we ignore the 'page' argument
+        // because we use the URL as is (with page=1 and per_page=1000).
         return try {
-            val response = app.get(url, headers = headers).text
+            val response = app.get(baseUrl, headers = headers).text
             val json = mapper.readValue<Map<String, Any>>(response)
 
             val movies = if (json.containsKey("results")) {
@@ -162,14 +155,21 @@ class ExampleProvider : MainAPI() {
     }
 
     // ------------------------------------------------------------
-    // Fetch TV series
+    // Fetch TV series (supports advanced search with per_page)
     // ------------------------------------------------------------
     private suspend fun fetchSeriesList(baseUrl: String, page: Int = 1): List<SearchResponse> {
-        val url = "$baseUrl?page=$page"
         return try {
-            val response = app.get(url, headers = headers).text
+            val response = app.get(baseUrl, headers = headers).text
             val json = mapper.readValue<Map<String, Any>>(response)
-            val seriesList = json["data"] as? List<Map<String, Any>> ?: return emptyList()
+
+            // Advanced search for tv_series returns results in the same structure
+            val seriesList = if (json.containsKey("results")) {
+                val results = json["results"] as? Map<String, Any>
+                val seriesObj = results?.get("tv_series") as? Map<String, Any>
+                seriesObj?.get("data") as? List<Map<String, Any>> ?: emptyList()
+            } else {
+                json["data"] as? List<Map<String, Any>> ?: emptyList()
+            }
 
             seriesList.mapNotNull { series ->
                 val id = series["id"] as? Int ?: return@mapNotNull null
@@ -226,9 +226,10 @@ class ExampleProvider : MainAPI() {
     }
 
     // ------------------------------------------------------------
-    // Search
+    // Search (Movies only, can also use advanced search if needed)
     // ------------------------------------------------------------
     override suspend fun search(query: String): List<SearchResponse> {
+        // Use advanced search for better results? But keep simple for now.
         val allMovies = mutableListOf<Map<String, Any>>()
         for (page in 1..2) {
             try {
@@ -277,7 +278,7 @@ class ExampleProvider : MainAPI() {
     }
 
     // ------------------------------------------------------------
-    // Load details
+    // Load details (movie or series)
     // ------------------------------------------------------------
     override suspend fun load(url: String): LoadResponse {
         if (movieStore.containsKey(url)) {
@@ -323,7 +324,7 @@ class ExampleProvider : MainAPI() {
     }
 
     // ------------------------------------------------------------
-    // Load links
+    // Extract video links (movie or episode)
     // ------------------------------------------------------------
     override suspend fun loadLinks(
         data: String,
