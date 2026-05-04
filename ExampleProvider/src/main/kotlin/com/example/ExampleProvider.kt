@@ -41,7 +41,7 @@ class ExampleProvider : MainAPI() {
     data class EpisodeData(
         val title: String,
         val episodeNumber: Int,
-        val filePath: String,  // full relative path from property.file_path
+        val filePath: String,  // relative path from property.file_path (may start with server1/)
         val runtime: Int?,
         val poster: String
     )
@@ -73,34 +73,34 @@ class ExampleProvider : MainAPI() {
     override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
         val lists = mutableListOf<HomePageList>()
 
-        // All Movies (advanced search, up to 1000)
+        // 1. All Movies (advanced search, up to 1000)
         val allMoviesUrl = "$advancedSearchBase?query=&type=movies&page=1&per_page=1000&order_by=Latest"
         val allMovies = fetchMovieList(allMoviesUrl)
         if (allMovies.isNotEmpty()) lists.add(HomePageList("All Movies (1000+)", allMovies))
 
-        // Latest Movies
+        // 2. Latest Movies (static)
         val latest = fetchMovieList("$apiMoviesBase/latest")
         if (latest.isNotEmpty()) lists.add(HomePageList("Latest Movies", latest))
 
-        // New Releases
+        // 3. New Releases (static)
         val newReleases = fetchMovieList("$apiMoviesBase/new-releases")
         if (newReleases.isNotEmpty()) lists.add(HomePageList("New Releases", newReleases))
 
-        // TV Series (advanced search, up to 1000, basic info)
+        // 4. TV Series (advanced search, up to 1000, basic info)
         val tvSeriesUrl = "$advancedSearchBase?query=&type=tv_series&page=1&per_page=1000&order_by=Latest"
         val tvSeriesBasic = fetchSeriesBasicList(tvSeriesUrl)
         if (tvSeriesBasic.isNotEmpty()) lists.add(HomePageList("TV Series (1000+)", tvSeriesBasic))
 
-        // South Indian
+        // 5. South Indian (advanced search, up to 1000)
         val southIndianUrl = "$advancedSearchBase?query=&type=movies&page=1&per_page=1000&category=South%20Indian&order_by=Latest"
         val southIndian = fetchMovieList(southIndianUrl)
         if (southIndian.isNotEmpty()) lists.add(HomePageList("South Indian (1000+)", southIndian))
 
-        // Trending
+        // 6. Trending (static)
         val trending = fetchMovieList("$apiMoviesBase/trending")
         if (trending.isNotEmpty()) lists.add(HomePageList("Trending", trending))
 
-        // Top 10
+        // 7. Top 10 (static)
         val top10 = fetchMovieList("$apiMoviesBase/top-10")
         if (top10.isNotEmpty()) lists.add(HomePageList("Top 10", top10))
 
@@ -169,7 +169,7 @@ class ExampleProvider : MainAPI() {
                 val year = (series["year"] as? String)?.toIntOrNull()
 
                 // Detail URL uses the API endpoint with port 8080
-                val detailUrl = "$mainUrl:8080/api/tv-series/$slug"
+                val detailUrl = "$apiTvSeriesBase/$slug"
                 newTvSeriesSearchResponse(title, detailUrl, TvType.TvSeries) {
                     this.posterUrl = fullPoster
                     this.year = year
@@ -182,7 +182,7 @@ class ExampleProvider : MainAPI() {
 
     // ---------- Fetch full TV series details (using API with port 8080) ----------
     private suspend fun fetchFullSeries(slug: String): SeriesData? {
-        val url = "$mainUrl:8080/api/tv-series/$slug"
+        val url = "$apiTvSeriesBase/$slug"
         return try {
             val response = app.get(url, headers = headers).text
             val series = mapper.readValue<Map<String, Any>>(response)
@@ -211,15 +211,15 @@ class ExampleProvider : MainAPI() {
                 val episodes = episodesRaw.mapNotNull { ep ->
                     val epNum = ep["episode_number"] as? Int ?: return@mapNotNull null
                     val epTitle = ep["title"] as? String ?: "Episode $epNum"
-                    // Get the full relative path from property.file_path
                     val property = ep["property"] as? Map<String, Any>
-                    val filePath = property?.get("file_path") as? String
-                    if (filePath.isNullOrEmpty()) return@mapNotNull null
-                    // filePath already starts with "server1/..." so we keep as is
+                    val rawPath = property?.get("file_path") as? String
+                    if (rawPath.isNullOrEmpty()) return@mapNotNull null
+                    // Remove the leading "server1/" to avoid double prefix
+                    val cleanedPath = rawPath.removePrefix("server1/")
                     val runtime = property?.get("runtime") as? Int
                     val epPoster = ep["poster_url"] as? String ?: ""
                     val fullEpPoster = if (epPoster.startsWith("/")) "$mainUrl:8080$epPoster" else epPoster
-                    EpisodeData(epTitle, epNum, filePath, runtime, fullEpPoster)
+                    EpisodeData(epTitle, epNum, cleanedPath, runtime, fullEpPoster)
                 }
                 if (episodes.isNotEmpty()) {
                     seasonsList.add(SeasonData(seasonNumber, episodes))
@@ -285,8 +285,8 @@ class ExampleProvider : MainAPI() {
     // ---------- Load details (distinguish between movie and series) ----------
     override suspend fun load(url: String): LoadResponse {
         // TV series detail page (URL: http://dhakamovie.com:8080/api/tv-series/{slug})
-        if (url.startsWith("$mainUrl:8080/api/tv-series/")) {
-            val slug = url.removePrefix("$mainUrl:8080/api/tv-series/")
+        if (url.startsWith(apiTvSeriesBase)) {
+            val slug = url.removePrefix(apiTvSeriesBase).removePrefix("/")
             val series = fetchFullSeries(slug) ?: throw Error("Could not fetch series details")
             val seriesUrl = "$mainUrl/tv/${series.slug}" // not used further, but stored
             seriesStore[seriesUrl] = series
@@ -346,7 +346,7 @@ class ExampleProvider : MainAPI() {
         // TV episode
         if (data.startsWith("episode://")) {
             val filePath = episodeStore[data] ?: return false
-            // filePath already starts with "server1/..." so construct full URL
+            // filePath no longer contains "server1/" prefix
             val streamUrl = "http://server1.dhakamovie.com/$filePath"
             val encodedUrl = streamUrl.replace(" ", "%20")
             val quality = when {
