@@ -78,6 +78,16 @@ class ExampleProvider : MainAPI() {
         val allMovies = fetchMovieList(allMoviesUrl)
         if (allMovies.isNotEmpty()) lists.add(HomePageList("All Movies (1000+)", allMovies))
 
+        // TV Series (advanced search, 1000 items – basic info only)
+        val tvSeriesUrl = "$advancedSearchBase?query=&type=tv_series&page=1&per_page=1000&order_by=Latest"
+        val tvSeriesBasic = fetchSeriesBasicList(tvSeriesUrl)
+        if (tvSeriesBasic.isNotEmpty()) lists.add(HomePageList("TV Series (1000+)", tvSeriesBasic))
+
+        // TV Series (advanced search, 1000 items – basic info only)
+        val tvSeriesUrlKor = "$advancedSearchBase?query=&type=tv_series&page=1&per_page=1000&category=Korean&order_by=Latest"
+        val tvSeriesKorBasic = fetchSeriesBasicList(tvSeriesUrlKor)
+        if (tvSeriesKorBasic.isNotEmpty()) lists.add(HomePageList("Korean TV Series", tvSeriesKorBasic))
+
         // Latest Movies (static)
         val latest = fetchMovieList("$apiMoviesBase/latest")
         if (latest.isNotEmpty()) lists.add(HomePageList("Latest Movies", latest))
@@ -85,11 +95,6 @@ class ExampleProvider : MainAPI() {
         // New Releases (static)
         val newReleases = fetchMovieList("$apiMoviesBase/new-releases")
         if (newReleases.isNotEmpty()) lists.add(HomePageList("New Releases", newReleases))
-
-        // TV Series (advanced search, 1000 items – basic info only)
-        val tvSeriesUrl = "$advancedSearchBase?query=&type=tv_series&page=1&per_page=1000&order_by=Latest"
-        val tvSeriesBasic = fetchSeriesBasicList(tvSeriesUrl)
-        if (tvSeriesBasic.isNotEmpty()) lists.add(HomePageList("TV Series (1000+)", tvSeriesBasic))
 
         // South Indian (advanced search, 1000 items)
         val southIndianUrl = "$advancedSearchBase?query=&type=movies&page=1&per_page=1000&category=South%20Indian&order_by=Latest"
