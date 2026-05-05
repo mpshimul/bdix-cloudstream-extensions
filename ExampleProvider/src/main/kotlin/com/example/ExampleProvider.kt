@@ -58,7 +58,7 @@ class ExampleProvider : MainAPI() {
         if (featured.isNotEmpty()) lists.add(HomePageList("Featured", featured))
 
         val movieRows = listOf(
-            "Latest Movies" to "$advancedSearchBase?query=&type=movies&page=1&per_page=28&order_by=Latest",
+            "Latest Movies" to "$advancedSearchBase?query=&type=movies&page=1&per_page=700&order_by=Latest",
             "New Releases" to "$apiMoviesBase/new-releases",
             "Trending" to "$apiMoviesBase/trending",
             "Top 10" to "$apiMoviesBase/top-10",
