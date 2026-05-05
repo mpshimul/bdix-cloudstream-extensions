@@ -10,7 +10,7 @@ CloudStream extension for **DhakaMovie** – a BDIX movie and TV series streamin
   - South Indian, Netflix, Prime, Hindi, Hollywood, Indian Bangla
 - ✅ **TV Series** – 1000+ series with full seasons and episodes
 - ✅ **Direct playback** – No external player required
-- ✅ **Fake detail URLs** – Opens info page before playing (no accidental playback)
+- ✅ **Fake detail URLs** – Opens info page before playing (no accidental playback) 
 
 ## 📦 Installation
 
