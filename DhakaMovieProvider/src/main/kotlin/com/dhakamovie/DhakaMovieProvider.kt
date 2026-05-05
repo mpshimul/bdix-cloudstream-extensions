@@ -54,13 +54,12 @@ class DhakaMovieProvider : MainAPI() {
         val lists = mutableListOf<HomePageList>()
 
         // Featured Hero Carousel
-        val featured = fetchMovies("$advancedSearchBase?query=&type=movies&page=1&per_page=20&order_by=Latest")
+        val featured = fetchMovies("$apiMoviesBase/trending")
         if (featured.isNotEmpty()) lists.add(HomePageList("Featured", featured))
 
         val movieRows = listOf(
             "Latest Movies" to "$advancedSearchBase?query=&type=movies&page=1&per_page=700&order_by=Latest",
             "New Releases" to "$apiMoviesBase/new-releases",
-            "Trending" to "$apiMoviesBase/trending",
             "Top 10" to "$apiMoviesBase/top-10",
             "South Indian Movies" to "$advancedSearchBase?query=&type=movies&page=1&per_page=700&category=South%20Indian&order_by=Latest",
             "NetFlix Movies" to "$advancedSearchBase?query=&type=movies&page=1&per_page=700&category=Netflix&order_by=Latest",
@@ -72,6 +71,8 @@ class DhakaMovieProvider : MainAPI() {
 
         val seriesRows = listOf(
             "TV Series (Latest)" to "$advancedSearchBase?query=&type=tv_series&page=1&per_page=700&order_by=Latest",
+            "Most Popular TV Series" to "$advancedSearchBase?query=&type=tv_series&page=1&per_page=700&category=Most+Popular&order_by=Latest",
+            "Trending TV Series" to "$advancedSearchBase?query=&type=tv_series&page=1&per_page=700&category=Trending&order_by=Latest",
             "Korean TV Series" to "$advancedSearchBase?query=&type=tv_series&page=1&per_page=700&category=Korean&order_by=Latest",
             "NetFlix TV Series" to "$advancedSearchBase?query=&type=tv_series&page=1&per_page=700&category=Netflix&order_by=Latest",
             "Prime TV Series" to "$advancedSearchBase?query=&type=tv_series&page=1&per_page=700&category=Prime&order_by=Latest",
@@ -223,17 +224,36 @@ class DhakaMovieProvider : MainAPI() {
             val seasonsRaw = series["seasons"] as? List<Map<String, Any>> ?: emptyList()
             val seasons = seasonsRaw.map { s ->
                 val epRaw = s["episodes"] as? List<Map<String, Any>> ?: emptyList()
-                SeasonData(s["season_number"] as? Int ?: 1, epRaw.mapNotNull { e ->
-                    val prop = e["property"] as? Map<String, Any>
-                    val fPath = (prop?.get("file_path") as? String)?.removePrefix("server1/") ?: return@mapNotNull null
-                    EpisodeData(
-                        title = e["title"] as? String ?: "Episode ${e["episode_number"]}",
-                        episodeNumber = e["episode_number"] as? Int ?: 1,
-                        filePath = fPath,
-                        runtime = prop["runtime"] as? Int,
-                        poster = e["poster_url"] as? String ?: (series["poster_url"] as? String ?: "")
-                    )
-                })
+                SeasonData(
+                    seasonNumber = s["season_number"] as? Int ?: 1,
+                    episodes = epRaw.mapNotNull { e ->
+                        val property = e["property"] as? Map<String, Any>
+                        val rawPath = property?.get("file_path") as? String
+                        if (rawPath.isNullOrEmpty()) return@mapNotNull null
+                        val cleanedPath = rawPath.removePrefix("server1/")
+
+                        // Extract episode poster (full URL)
+                        val epPoster = e["poster_url"] as? String
+                        val fullEpPoster = if (!epPoster.isNullOrEmpty() && epPoster.startsWith("/")) {
+                            "$mainUrl:8080$epPoster"
+                        } else epPoster ?: ""
+
+                        // Extract runtime (minutes) from property
+                        val runtime = property["runtime"] as? Int
+
+                        // Optionally, you can extract overview and file size (not used in Episode UI)
+                        // val overview = e["overview"] as? String
+                        // val fileSize = property["formatted_file_size"] as? String
+
+                        EpisodeData(
+                            title = e["title"] as? String ?: "Episode ${e["episode_number"]}",
+                            episodeNumber = e["episode_number"] as? Int ?: 1,
+                            filePath = cleanedPath,
+                            runtime = runtime,
+                            poster = fullEpPoster
+                        )
+                    }
+                )
             }
             SeriesData(
                 title = series["title"] as? String ?: "Unknown",

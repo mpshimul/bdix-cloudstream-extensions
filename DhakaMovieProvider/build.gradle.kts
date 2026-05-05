@@ -1,6 +1,6 @@
 // This file: ExampleProvider/build.gradle.kts
 
-version = 7
+version = 8
 
 cloudstream {
     // name is set in the Kotlin class, not here
