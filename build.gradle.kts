@@ -39,7 +39,7 @@ subprojects {
     }
 
     android {
-        namespace = "com.example"
+        namespace = "com.dhakamovie"
 
         defaultConfig {
             minSdk = 21

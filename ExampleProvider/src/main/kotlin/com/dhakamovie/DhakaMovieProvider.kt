@@ -1,4 +1,4 @@
-package com.example
+package com.dhakamovie
 
 import com.lagradost.cloudstream3.*
 import com.lagradost.cloudstream3.utils.*
@@ -7,7 +7,7 @@ import com.fasterxml.jackson.module.kotlin.readValue
 import java.net.URLEncoder
 
 @Suppress("UNCHECKED_CAST")
-class ExampleProvider : MainAPI() {
+class DhakaMovieProvider : MainAPI() {
     override var name = "DhakaMovie BDIX"
     override var lang = "bn"
     override var mainUrl = "http://dhakamovie.com"
