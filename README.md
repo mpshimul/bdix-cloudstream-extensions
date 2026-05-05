@@ -16,7 +16,10 @@ CloudStream extension for **DhakaMovie** – a BDIX movie and TV series streamin
 
 1. **Add repository to CloudStream**  
    Open CloudStream → **Settings** → **Extensions** → **Add Repository**  
-   Enter the URL: https://raw.githubusercontent.com/mpshimul/bdix-cloudstream-extensions/master/repo.json
+   Enter the URL: 
+```
+https://raw.githubusercontent.com/mpshimul/bdix-cloudstream-extensions/master/repo.json
+```
    Give it a name (e.g., "BDIX Repo").
 
 2. **Install extension**  
@@ -39,9 +42,9 @@ This extension does **not** host any copyrighted content. It only fetches public
 Clone the repository and open in Android Studio. Build with:
 ```bash
 ./gradlew :DhakaMovieProvider:make
-
+```
 Plugin entry point: DhakaMoviePlugin.kt
 Provider logic: DhakaMovieProvider.kt
 
-📝 License
+## 📝 License
 MIT – Free to use and modify.
