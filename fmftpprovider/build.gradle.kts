@@ -16,7 +16,12 @@ cloudstream {
 }
 
 android {
-    namespace = "com.fmftp"
+    namespace = "com.fmftp"               // Required for AGP 8.0+
+    compileSdk = 35
+    defaultConfig {
+        minSdk = 21
+        targetSdk = 35
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
