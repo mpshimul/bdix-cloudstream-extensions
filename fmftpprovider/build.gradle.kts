@@ -3,7 +3,7 @@ plugins {
     id("kotlin-android")
 }
 
-version = 1
+version = 2
 
 cloudstream {
     //name = "Fmftp BDIX"

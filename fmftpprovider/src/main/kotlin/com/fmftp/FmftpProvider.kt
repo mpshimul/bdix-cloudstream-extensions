@@ -24,6 +24,7 @@ class FmftpProvider : MainAPI() {
         val title: String,
         val streamUrl: String,
         val poster: String,
+        val backdrop: String,
         val plot: String,
         val year: Int?,
         val rating: Double?,
@@ -39,7 +40,6 @@ class FmftpProvider : MainAPI() {
     override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
         val all = fetchMovies()
         if (all.isEmpty()) return newHomePageResponse(emptyList())
-
         val latest = all.values.take(30)
         return newHomePageResponse(listOf(HomePageList("Latest Movies", latest)))
     }
@@ -62,11 +62,14 @@ class FmftpProvider : MainAPI() {
                 val castList = castsStr.split(",").map { it.trim() }.filter { it.isNotEmpty() }
                 val relativeUrl = movie["url"] as? String ?: ""
                 val streamUrl = "$mainUrl$relativeUrl"
-                val poster = ""
+
+                // ---------- IMAGES DIRECTLY FROM JSON ----------
+                val poster = movie["poster_url"] as? String ?: ""      // e.g. "https://fmftp.net/content-images/movies/posters/8gGtvGzwyQIZeHECopX9OeLPjYH.jpg"
+                val backdrop = movie["backdrop_url"] as? String ?: ""  // e.g. "https://fmftp.net/content-images/movies/backdrops/cgjhUMqLziFU750HybRoFkEGTfV.jpg"
 
                 val detailUrl = "http://fmftp.local/$id"
                 movieStore[detailUrl] = MovieData(
-                    title, streamUrl, poster, plot, year, rating, genres, castList
+                    title, streamUrl, poster, backdrop, plot, year, rating, genres, castList
                 )
 
                 val searchResp = newMovieSearchResponse(title, detailUrl, TvType.Movie, false) {
@@ -91,12 +94,14 @@ class FmftpProvider : MainAPI() {
             this.plot = movie.plot
             this.year = movie.year
             this.posterUrl = movie.poster
+            this.backgroundPosterUrl = movie.backdrop
             val tagsList = mutableListOf<String>()
             tagsList.addAll(movie.genres)
             if (movie.cast.isNotEmpty()) {
                 tagsList.add("Cast: ${movie.cast.joinToString(", ")}")
             }
             if (tagsList.isNotEmpty()) this.tags = tagsList
+            // Score removed to avoid type mismatch
         }
     }
 
