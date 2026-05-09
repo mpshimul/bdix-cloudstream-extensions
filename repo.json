@@ -1,6 +1,6 @@
 {
   "name": "BDIX Repo",
-  "description": "Personal BDIX provider for DhakaMovie",
+  "description": "Personal BDIX provider for DhakaMovie and FMFTP",
   "manifestVersion": 1,
   "pluginLists": [
     "https://raw.githubusercontent.com/mpshimul/bdix-cloudstream-extensions/builds/plugins.json"
