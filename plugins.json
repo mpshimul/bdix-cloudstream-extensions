@@ -33,9 +33,9 @@
             "Movie"
         ],
         "version": 4,
-        "internalName": "FMFTP BDIX",
+        "internalName": "fmftpprovider",
         "description": "Movies from fmftp \u2013 Hollywood, Bollywood, Hindi Dubbed, Indian Bangla",
         "url": "https://raw.githubusercontent.com/mpshimul/bdix-cloudstream-extensions/builds/fmftpprovider.cs3",
-        "name": "FMFTP BDIX"
+        "name": "fmftpprovider"
     }
 ]
