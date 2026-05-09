@@ -20,10 +20,10 @@
         "name": "DhakaMovieProvider"
     },
     {
-        "fileHash": "sha256-9ffbd228324e02008c470cc63374734bb3641944b26c059bee46d9a2d7cd624c",
+        "fileHash": "sha256-4fb51fbcf43d068a54a99cdb0dcba8c3e2ca52a75ec45c2b46bcbb1402c297ba",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/mpshimul/bdix-cloudstream-extensions",
-        "fileSize": 14592,
+        "fileSize": 14457,
         "status": 1,
         "language": "bn",
         "authors": [
@@ -32,7 +32,7 @@
         "tvTypes": [
             "Movie"
         ],
-        "version": 3,
+        "version": 4,
         "internalName": "fmftpprovider",
         "description": "Movies from fmftp.net \u2013 Hollywood, Bollywood, Hindi Dubbed, Indian Bangla",
         "url": "https://raw.githubusercontent.com/mpshimul/bdix-cloudstream-extensions/builds/fmftpprovider.cs3",
