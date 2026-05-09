@@ -7,7 +7,7 @@ version = 4
 
 cloudstream {
     //name = "Fmftp BDIX"
-    description = "Movies from fmftp.net – Hollywood, Bollywood, Hindi Dubbed, Indian Bangla"
+    description = "Movies from fmftp – Hollywood, Bollywood, Hindi Dubbed, Indian Bangla"
     authors = listOf("mpshimul")
     status = 1
     tvTypes = listOf("Movie")
