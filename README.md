@@ -13,7 +13,10 @@ CloudStream extension for **DhakaMovie** – a BDIX movie and TV series streamin
 - ✅ **Fake detail URLs** – Opens info page before playing (no accidental playback) 
 
 ## 📦 Installation
+**Download the CloudStream App**
+[![Download](https://img.shields.io/badge/Download-CloudStream-orange?style=flat-square&logo=android)](https://github.com/recloudstream/cloudstream/releases/download/v4.7.0/4.7.0.apk)
 
+**Install the repository**
 [![Install](https://img.shields.io/badge/Install-Directly_into_CloudStream-1f425f.svg)](https://mpshimul.github.io/bdix-cloudstream-extensions/install.html)
 
 1. **Add repository to CloudStream**  
