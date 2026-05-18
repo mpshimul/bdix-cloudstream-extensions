@@ -3,35 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive JB Enterprise Documents</title>
+    <title>JB Enterprise Documents - Fixed Borders</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-        /* Print Settings Optimization */
+        /* FORCE BORDERS AND VISIBILITY DURING PRINT/SAVE AS PDF */
         @media print {
-            body {
-                background: none;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-                padding: 0;
-            }
-            .page {
-                box-shadow: none !important;
+            html, body {
+                background: #ffffff !important;
                 margin: 0 !important;
-                page-break-after: always;
+                padding: 0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
             }
             .no-print {
                 display: none !important;
             }
-            /* Hide the visual indicator borders during print */
+            .page {
+                margin: 0 !important;
+                box-shadow: none !important;
+                page-break-after: always;
+                page-break-inside: avoid;
+            }
+            /* Explicitly force dark visible borders on print */
+            .header {
+                border-bottom: 4px double #000000 !important;
+            }
+            .doc-title {
+                border: 2px solid #000000 !important;
+                background-color: #f7fafc !important;
+            }
+            .meta-val, .customer-value {
+                border-bottom: 1px dotted #000000 !important;
+            }
+            .content-table {
+                border-collapse: collapse !important;
+            }
+            .content-table th, .content-table td {
+                border: 1px solid #000000 !important; /* Thick solid black lines for PDF render engine */
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .signature-line {
+                border-top: 1px dashed #000000 !important;
+            }
             [contenteditable="true"] {
-                border-color: transparent !important;
                 outline: none !important;
                 background: transparent !important;
             }
         }
 
-        /* General Styling */
+        /* Page Setup for A4 Dimensions */
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        /* Screen Styling */
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #f0f2f5;
@@ -40,7 +68,6 @@
             color: #333;
         }
 
-        /* Top Action Bar */
         .no-print {
             text-align: center;
             margin-bottom: 20px;
@@ -55,46 +82,35 @@
             border-radius: 6px;
             cursor: pointer;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: background 0.2s;
-        }
-        .print-btn:hover {
-            background-color: #2b4c7e;
         }
 
         .page {
             background: #ffffff;
             width: 210mm;
-            min-height: 297mm;
+            height: 297mm;
             margin: 0 auto 40px auto;
-            padding: 25mm 20mm 20mm 20mm;
+            padding: 20mm 20mm 20mm 20mm;
             box-sizing: border-box;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             position: relative;
             display: flex;
             flex-direction: column;
+            overflow: hidden;
         }
 
-        /* Highlight editable zones mildly for UI clarity */
         [contenteditable="true"] {
-            transition: all 0.2s ease;
-            border-bottom: 1px dashed rgba(26, 54, 93, 0.2);
             padding: 2px;
-        }
-        [contenteditable="true"]:hover {
-            background-color: #f7fafc;
-            border-bottom: 1px dashed #1a365d;
         }
         [contenteditable="true"]:focus {
             outline: none;
             background-color: #edf2f7;
-            border-bottom: 1px solid #1a365d;
         }
 
-        /* Header / Pad Styles */
+        /* Structure Elements */
         .header {
             border-bottom: 3px double #1a365d;
             padding-bottom: 15px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             text-align: center;
         }
 
@@ -122,11 +138,10 @@
             margin: 0;
         }
 
-        /* Meta References (Ref, Date, License) */
         .meta-row {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
             font-size: 14px;
         }
 
@@ -140,12 +155,12 @@
             flex-grow: 1;
             margin-left: 8px;
             min-width: 100px;
+            border-bottom: 1px dotted #cbd5e0;
         }
 
-        /* Document Title Section */
         .doc-title-container {
             text-align: center;
-            margin: 20px 0 30px 0;
+            margin: 15px 0 25px 0;
         }
 
         .doc-title {
@@ -159,9 +174,8 @@
             background-color: #f7fafc;
         }
 
-        /* Challan Customer Info */
         .customer-info {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             font-size: 14px;
             line-height: 2;
         }
@@ -178,9 +192,10 @@
 
         .customer-value {
             flex-grow: 1;
+            border-bottom: 1px dotted #cbd5e0;
         }
 
-        /* Table Grid */
+        /* Screen Fallback Borders */
         .content-table {
             width: 100%;
             border-collapse: collapse;
@@ -205,11 +220,10 @@
         .th-qty { width: 12%; text-align: center; }
         .th-remarks { width: 18%; }
 
-        /* Footer & Signatures */
         .footer-signatures {
             display: flex;
             justify-content: space-between;
-            margin-top: 60px;
+            margin-top: 40px;
             padding-top: 20px;
         }
 
@@ -235,7 +249,6 @@
             margin-top: 4px;
         }
 
-        /* Letter Body Area Layout */
         .letter-body-area {
             flex-grow: 1;
             padding: 10px 5px;
@@ -249,7 +262,7 @@
 
     <div class="no-print">
         <button class="print-btn" onclick="window.print()">Print / Save as PDF</button>
-        <p style="color: #718096; font-size: 13px; margin-top: 8px;">Click directly on any text line or table row to edit details.</p>
+        <p style="color: #718096; font-size: 13px; margin-top: 8px;">Borders are locked into the printing engine. Fill in your data and click save.</p>
     </div>
 
     <div class="page">
@@ -258,22 +271,19 @@
             <p class="tagline" contenteditable="true">First Class Contractor, Importer, Exporter & Supplier</p>
             <p class="company-info" contenteditable="true">
                 Office: 635, Medipath Vaban, Level 6(B), Great Wall City, Chandona Chowrasta, Gazipur-1700, Dhaka <br>
-                <strong>Trade License No:</strong> 163668
+                <strong>Trade License No:</strong> 163668,
+                <strong> Phone: </strong>+88 019 78 903789
+
             </p>
         </div>
 
         <div class="meta-row">
-            <div class="meta-field">Ref No: <div class="meta-val" contenteditable="true">JBE/2026/01</div></div>
-            <div class="meta-field">Date: <div class="meta-val" contenteditable="true">18-05-2026</div></div>
+            <div class="meta-field">Ref No: <div class="meta-val" contenteditable="true"></div></div>
+            <div class="meta-field">Date: <div class="meta-val" contenteditable="true"></div></div>
         </div>
 
         <div class="letter-body-area" contenteditable="true">
-            <p><strong>To,</strong><br>The Manager,<br>[Recipient Company Name]<br>Dhaka, Bangladesh.</p>
-            <p><strong>Subject: Official correspondence letter title goes here.</strong></p>
-            <p>Dear Sir,</p>
-            <p>Type your official application body, structural proposal details, or business communications here. The container expands naturally downwards if your letter requires additional content space.</p>
-            <p>Thank you for your continuous support.</p>
-            <p>Sincerely yours,</p>
+            
         </div>
 
         <div class="footer-signatures" style="justify-content: flex-end;">
@@ -285,19 +295,21 @@
         </div>
     </div>
 
-
     <div class="page">
         <div class="header">
             <h1 class="company-name" contenteditable="true">JB ENTERPRISE</h1>
             <p class="tagline" contenteditable="true">First Class Contractor, Importer, Exporter & Supplier</p>
             <p class="company-info" contenteditable="true">
-                Office: 635, Medipath Vaban, Level 6(B), Great Wall City, Chandona Chowrasta, Gazipur-1700, Dhaka
+                Office: 635, Medipath Vaban, Level 6(B), Great Wall City, Chandona Chowrasta, Gazipur-1700, Dhaka <br>
+                <strong>Trade License No:</strong> 163668,
+                <strong> Phone: </strong>+88 019 78 903789
+
             </p>
         </div>
 
-        <div class="meta-row" style="margin-bottom: 20px;">
-            <div class="meta-field">Challan No: <div class="meta-val" contenteditable="true">CH-4502</div></div>
-            <div class="meta-field">Date: <div class="meta-val" contenteditable="true">18-05-2026</div></div>
+        <div class="meta-row" style="margin-bottom: 15px;">
+            <div class="meta-field">Challan No: <div class="meta-val" contenteditable="true"></div></div>
+            <div class="meta-field">Date: <div class="meta-val" contenteditable="true"></div></div>
         </div>
 
         <div class="doc-title-container">
@@ -307,11 +319,11 @@
         <div class="customer-info">
             <div class="customer-row">
                 <div class="customer-label">M/S:</div>
-                <div class="customer-value" contenteditable="true">ABC Trading Corporation Ltd.</div>
+                <div class="customer-value" contenteditable="true"></div>
             </div>
             <div class="customer-row">
                 <div class="customer-label">Address:</div>
-                <div class="customer-value" contenteditable="true">Plot 12, Sector 3, Uttara, Dhaka</div>
+                <div class="customer-value" contenteditable="true"></div>
             </div>
         </div>
 
@@ -326,37 +338,55 @@
             </thead>
             <tbody>
                 <tr>
-                    <td style="text-align: center;" contenteditable="true">1</td>
-                    <td contenteditable="true">Premium Quality Optical Fiber Cable (Core-4)</td>
-                    <td style="text-align: center;" contenteditable="true">5 Drums</td>
-                    <td contenteditable="true">Fresh Stock</td>
-                </tr>
-                <tr>
-                    <td style="text-align: center;" contenteditable="true">2</td>
-                    <td contenteditable="true">XPON ONU Devices Dual Band</td>
-                    <td style="text-align: center;" contenteditable="true">50 Pcs</td>
-                    <td contenteditable="true">Tested</td>
-                </tr>
-                <tr>
-                    <td style="text-align: center;" contenteditable="true">3</td>
+                    <td style="text-align: center;" contenteditable="true"></td>
                     <td contenteditable="true"></td>
                     <td style="text-align: center;" contenteditable="true"></td>
                     <td contenteditable="true"></td>
                 </tr>
                 <tr>
-                    <td style="text-align: center;" contenteditable="true">4</td>
+                    <td style="text-align: center;" contenteditable="true"></td>
                     <td contenteditable="true"></td>
                     <td style="text-align: center;" contenteditable="true"></td>
                     <td contenteditable="true"></td>
                 </tr>
                 <tr>
-                    <td style="text-align: center;" contenteditable="true">5</td>
+                    <td style="text-align: center;" contenteditable="true"></td>
                     <td contenteditable="true"></td>
                     <td style="text-align: center;" contenteditable="true"></td>
                     <td contenteditable="true"></td>
                 </tr>
                 <tr>
-                    <td style="text-align: center;" contenteditable="true">6</td>
+                    <td style="text-align: center;" contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td style="text-align: center;" contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;" contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td style="text-align: center;" contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;" contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td style="text-align: center;" contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                </tr>
+				<tr>
+                    <td style="text-align: center;" contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td style="text-align: center;" contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                </tr>
+				<tr>
+                    <td style="text-align: center;" contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td style="text-align: center;" contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                </tr>
+				<tr>
+                    <td style="text-align: center;" contenteditable="true"></td>
                     <td contenteditable="true"></td>
                     <td style="text-align: center;" contenteditable="true"></td>
                     <td contenteditable="true"></td>
