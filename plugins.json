@@ -37,26 +37,5 @@
         "description": "Movies from fmftp \u2013 Hollywood, Bollywood, Hindi Dubbed, Bangla",
         "url": "https://raw.githubusercontent.com/mpshimul/bdix-cloudstream-extensions/builds/fmftpprovider.cs3",
         "name": "fmftpprovider"
-    },
-     {
-        "url": "https://raw.githubusercontent.com/phisher98/cloudstream-extensions-phisher/builds/MovieBoxProvider.cs3",
-        "status": 1,
-        "version": 18,
-        "name": "MovieBoxProvider",
-        "internalName": "MovieBoxProvider",
-        "authors": [
-            "NivinCNC,Phisher98"
-        ],
-        "description": "Multi Language Movies and Series Provider",
-        "fileSize": 68756,
-        "repositoryUrl": "https://github.com/phisher98/cloudstream-extensions-phisher",
-        "language": "hi",
-        "tvTypes": [
-            "Movie",
-            "TvSeries"
-        ],
-        "iconUrl": "https://github.com/NivinCNC/CNCVerse-Cloud-Stream-Extension/raw/refs/heads/master/MovieBoxProvider/icon.png",
-        "apiVersion": 1,
-        "fileHash": "sha256-e438ca1daafc24bc11ebcca57a6507d2a31cd5aa4be14d00214c9d1aba1dfa8f"
     }
 ]
