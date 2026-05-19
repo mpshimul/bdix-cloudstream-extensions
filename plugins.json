@@ -20,10 +20,10 @@
         "name": "DhakaMovieProvider"
     },
     {
-        "fileHash": "sha256-3924d2d784eae5fc8245c515212993908cfe154f465b6fb1e9b397da88752ab8",
+        "fileHash": "sha256-1aed2312ced80a74d9d4669c6cd337bc2fa1761494b780e40536921434954b4c",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/mpshimul/bdix-cloudstream-extensions",
-        "fileSize": 14316,
+        "fileSize": 14324,
         "status": 1,
         "language": "en",
         "authors": [
