@@ -46,12 +46,13 @@
             .content-table {
                 border-collapse: collapse !important;
             }
-            .content-table th {
-                background-color: #f8fafc !important;
+            .content-table th, .content-table td {
                 border: 1px solid #000000 !important;
             }
-            .content-table td {
-                border: 1px solid #000000 !important;
+            .content-table th, .total-row td {
+                background-color: #f8fafc !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
             }
             .signature-line {
                 border-top: 1px dashed #000000 !important;
@@ -221,7 +222,7 @@
             display: flex;
             align-items: flex-end;
             font-size: 14px;
-            flex: 1; /* Ensures equal width allocation per side */
+            flex: 1;
         }
 
         .info-label {
@@ -246,7 +247,7 @@
         .content-table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: auto; /* Pushes signature block perfectly to page floor */
+            margin-bottom: auto;
         }
 
         .content-table th, .content-table td {
@@ -267,6 +268,13 @@
         .col-qty { width: 20%; text-align: center; }
         .col-rate { width: 15%; text-align: center; }
         .col-amount { width: 20%; text-align: center; }
+
+        /* Total Row Design */
+        .total-row td {
+            background-color: #f8fafc;
+            font-weight: 700;
+            color: #1e3a8a;
+        }
 
         /* Footnote */
         .received-text {
@@ -309,7 +317,7 @@
 
     <div class="no-print">
         <button class="print-btn" onclick="window.print()">Print / Save as PDF</button>
-        <p style="color: #6b7280; font-size: 13px; margin-top: 8px;">প্রাপকের নাম, ঠিকানা, মালের বিবরণ এবং গন্তব্য স্থান পাশাপাশি সিঙ্গেল লাইনে সাজানো হয়েছে।</p>
+        <p style="color: #6b7280; font-size: 13px; margin-top: 8px;">ইংরেজি কীবোর্ড দিয়ে লিখলেও টেবিলে স্বয়ংক্রিয়ভাবে বাংলা সংখ্যা (০-৯) টাইপ হবে এবং হিসাব ও সর্বমোট বাংলাতেই বের হবে।</p>
     </div>
 
     <div class="page">
@@ -320,7 +328,7 @@
                 <div class="company-name" contenteditable="true">মেসার্স মাস্টার এন্টারপ্রাইজ</div>
                 <div class="subtitle" contenteditable="true">(সাধারণ ঠিকাদার প্রতিষ্ঠান)</div>
                 <div class="proprietor" contenteditable="true">প্রোপাইটর: মোঃ রাসেল রানা</div>
-                <div class="tagline" contenteditable="true">এখানে সকল প্রকার উন্নত মানের নির্মাণ সামগ্রী সরবরাহ করা হয়।</div>
+                <div class="tagline" contenteditable="true">এখানে সকল প্রকার উন্নত মানের নির্মাণ সামগ্রী সরবরাহ করা হয়।</div>
                 <div class="address" contenteditable="true">
                     ঠিকানা: রাজেন্দ্রপুর ক্যান্টনমেন্ট, গাজীপুর সদর, গাজীপুর। &nbsp;|&nbsp; <strong>যোগাযোগ:</strong> ০১৮০৫০০২০৮৯
                 </div>
@@ -346,10 +354,18 @@
                         <div class="info-label">প্রাপকের নাম :</div>
                         <span contenteditable="true"></span>
                     </div>
+                    <div class="info-line">
+                        <div class="info-label">গন্তব্য স্থান :</div>
+                        <span contenteditable="true"></span>
+                    </div>
                 </div>
                 <div class="info-row">
                     <div class="info-line">
                         <div class="info-label">ঠিকানা :</div>
+                        <span contenteditable="true"></span>
+                    </div>
+                    <div class="info-line">
+                        <div class="info-label">ট্রাক নং :</div>
                         <span contenteditable="true"></span>
                     </div>
                 </div>
@@ -358,31 +374,21 @@
                         <div class="info-label">মালের বিবরণ :</div>
                         <span contenteditable="true"></span>
                     </div>
-                </div>
-                <div class="info-row">
-					<div class="info-line">
-                        <div class="info-label">গন্তব্য স্থান :</div>
-                        <span contenteditable="true"></span>
-                    </div>
-					<div class="info-line">
-                        <div class="info-label">ট্রাক নং :</div>
-                        <span contenteditable="true"></span>
-                    </div>
-                </div>
-				<div class="info-row">
-					
                     <div class="info-line">
                         <div class="info-label">গাড়ী ছাড়ার সময়</div>
                         <span contenteditable="true"></span>
                     </div>
-					<div class="info-line">
-                        <div class="info-label">চালকের নাম :</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-line" style="max-width: calc(50% - 10px);">
+                        <div class="info-label">चालকের নাম :</div>
                         <span contenteditable="true"></span>
                     </div>
+                    <div class="info-line" style="visibility: hidden;"></div>
                 </div>
             </div>
 
-            <table class="content-table">
+            <table class="content-table" id="challanTable">
                 <thead>
                     <tr>
                         <th class="col-desc">মেজারমেন্ট (দৈর্ঘ্য × প্রস্থ × উচ্চতা)</th>
@@ -392,48 +398,54 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr class="data-row">
                         <td contenteditable="true"></td>
-                        <td style="text-align: center;" contenteditable="true"></td>
-                        <td style="text-align: center;" contenteditable="true"></td>
-                        <td style="text-align: right;" contenteditable="true"></td>
+                        <td style="text-align: center;" class="qty-cell" contenteditable="true"></td>
+                        <td style="text-align: center;" class="rate-cell" contenteditable="true"></td>
+                        <td style="text-align: right;" class="amount-cell" contenteditable="false"></td>
                     </tr>
-                    <tr>
+                    <tr class="data-row">
                         <td contenteditable="true"></td>
-                        <td style="text-align: center;" contenteditable="true"></td>
-                        <td style="text-align: center;" contenteditable="true"></td>
-                        <td style="text-align: right;" contenteditable="true"></td>
+                        <td style="text-align: center;" class="qty-cell" contenteditable="true"></td>
+                        <td style="text-align: center;" class="rate-cell" contenteditable="true"></td>
+                        <td style="text-align: right;" class="amount-cell" contenteditable="false"></td>
                     </tr>
-                    <tr>
+                    <tr class="data-row">
                         <td contenteditable="true"></td>
-                        <td style="text-align: center;" contenteditable="true"></td>
-                        <td style="text-align: center;" contenteditable="true"></td>
-                        <td style="text-align: right;" contenteditable="true"></td>
+                        <td style="text-align: center;" class="qty-cell" contenteditable="true"></td>
+                        <td style="text-align: center;" class="rate-cell" contenteditable="true"></td>
+                        <td style="text-align: right;" class="amount-cell" contenteditable="false"></td>
                     </tr>
-                    <tr>
+                    <tr class="data-row">
                         <td contenteditable="true"></td>
-                        <td style="text-align: center;" contenteditable="true"></td>
-                        <td style="text-align: center;" contenteditable="true"></td>
-                        <td style="text-align: right;" contenteditable="true"></td>
+                        <td style="text-align: center;" class="qty-cell" contenteditable="true"></td>
+                        <td style="text-align: center;" class="rate-cell" contenteditable="true"></td>
+                        <td style="text-align: right;" class="amount-cell" contenteditable="false"></td>
                     </tr>
-                    <tr>
+                    <tr class="data-row">
                         <td contenteditable="true"></td>
-                        <td style="text-align: center;" contenteditable="true"></td>
-                        <td style="text-align: center;" contenteditable="true"></td>
-                        <td style="text-align: right;" contenteditable="true"></td>
+                        <td style="text-align: center;" class="qty-cell" contenteditable="true"></td>
+                        <td style="text-align: center;" class="rate-cell" contenteditable="true"></td>
+                        <td style="text-align: right;" class="amount-cell" contenteditable="false"></td>
                     </tr>
-                    <tr>
+                    <tr class="data-row">
                         <td contenteditable="true"></td>
-                        <td style="text-align: center;" contenteditable="true"></td>
-                        <td style="text-align: center;" contenteditable="true"></td>
-                        <td style="text-align: right;" contenteditable="true"></td>
+                        <td style="text-align: center;" class="qty-cell" contenteditable="true"></td>
+                        <td style="text-align: center;" class="rate-cell" contenteditable="true"></td>
+                        <td style="text-align: right;" class="amount-cell" contenteditable="false"></td>
+                    </tr>
+                    <tr class="total-row">
+                        <td style="text-align: right; padding-right: 15px;">সর্বমোট (Total):</td>
+                        <td style="text-align: center;" id="totalQty">০</td>
+                        <td></td>
+                        <td style="text-align: right;" id="totalAmount">০.০০</td>
                     </tr>
                 </tbody>
             </table>
 
             <div>
                 <div class="received-text" contenteditable="true">
-                    আমি নিম্ন স্বাক্ষরকারী উপরোক্ত মাল বুঝিয়া পাইলাম।
+                    আমি নিম্ন স্বাক্ষরকারী উপরোক্ত মাল বুঝিয়া পাইলাম।
                 </div>
             </div>
 
@@ -451,6 +463,84 @@
 
         </div>
     </div>
+
+    <script>
+        const enToBnMap = {'0':'০','1':'১','2':'২','3':'৩','4':'৪','5':'৫','6':'৬','7':'৭','8':'৮','9':'৯','.':'.'};
+        const bnToEnMap = {'০':'0','১':'1','২':'2','৩':'3','৪':'4','৫':'5','৬':'6','৭':'7','৮':'8','৯':'9','.':'.'};
+
+        // Helper function to convert any text containing English digits to Bangla digits
+        function convertToBanglaNumberString(str) {
+            return str.replace(/[0-9.]/g, function(s) {
+                return enToBnMap[s] || s;
+            });
+        }
+
+        // Helper function to convert Bangla number string to English float for math calculation
+        function parseBanglaToFloat(text) {
+            if (!text) return NaN;
+            let cleanText = text.trim().replace(/[০-৯.]/g, function(s) { 
+                return bnToEnMap[s] || s; 
+            });
+            return parseFloat(cleanText);
+        }
+
+        // Real-time input handling
+        document.getElementById('challanTable').addEventListener('input', function (e) {
+            if (e.target.classList.contains('qty-cell') || e.target.classList.contains('rate-cell')) {
+                
+                // Get current cursor selection position safely before text replacement
+                let selection = window.getSelection();
+                let offset = selection.focusOffset;
+                
+                // Live replacement of entered English numerals to Bangla
+                let originalText = e.target.innerText;
+                let convertedText = convertToBanglaNumberString(originalText);
+                
+                if (originalText !== convertedText) {
+                    e.target.innerText = convertedText;
+                    
+                    // Restore cursor focus smoothly at the correct index position
+                    let range = document.createRange();
+                    range.setStart(e.target.firstChild || e.target, Math.min(offset, convertedText.length));
+                    range.collapse(true);
+                    selection.removeAllRanges();
+                    selection.addRange(range);
+                }
+
+                calculateRowAndTotals();
+            }
+        });
+
+        function calculateRowAndTotals() {
+            let rows = document.querySelectorAll('.data-row');
+            let totalQty = 0;
+            let totalAmount = 0;
+
+            rows.forEach(row => {
+                let qtyCell = row.querySelector('.qty-cell');
+                let rateCell = row.querySelector('.rate-cell');
+                let amountCell = row.querySelector('.amount-cell');
+
+                let qty = parseBanglaToFloat(qtyCell.innerText);
+                let rate = parseBanglaToFloat(rateCell.innerText);
+                
+                let amount = 0;
+                if (!isNaN(qty) && !isNaN(rate) && qty > 0 && rate > 0) {
+                    amount = qty * rate;
+                    amountCell.innerText = convertToBanglaNumberString(amount.toFixed(2));
+                } else {
+                    amountCell.innerText = "";
+                }
+
+                if (!isNaN(qty)) totalQty += qty;
+                if (amount > 0) totalAmount += amount;
+            });
+
+            // Update Grand Totals dynamically in pure Bengali digits
+            document.getElementById('totalQty').innerText = totalQty > 0 ? convertToBanglaNumberString(totalQty.toString()) : "০";
+            document.getElementById('totalAmount').innerText = totalAmount > 0 ? convertToBanglaNumberString(totalAmount.toFixed(2)) : "০.০০";
+        }
+    </script>
 
 </body>
 </html>
