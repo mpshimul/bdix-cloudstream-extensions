@@ -13,7 +13,7 @@ class FmftpProvider : MainAPI() {
     override val hasMainPage = true
     override val hasQuickSearch = true
 
-    private val apiUrl = "$mainUrl/api/movies?limit=20000&sort=release_date"
+    private val apiUrl = "$mainUrl/api/movies?limit=2000&sort=release_date"
     private val mapper = jacksonObjectMapper()
 
     companion object {
