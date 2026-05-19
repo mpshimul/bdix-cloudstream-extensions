@@ -1,0 +1,62 @@
+[
+    {
+        "fileHash": "sha256-59c31f8cf36f72512ce019a98a5ab5a7eff326de80ff8c28e244e7adacfa73cc",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/mpshimul/bdix-cloudstream-extensions",
+        "fileSize": 21961,
+        "status": 1,
+        "language": "en",
+        "authors": [
+            "mpshimul"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 9,
+        "internalName": "DhakaMovieProvider",
+        "description": "Stream movies from DhakaMovie BDIX",
+        "url": "https://raw.githubusercontent.com/mpshimul/bdix-cloudstream-extensions/builds/DhakaMovieProvider.cs3",
+        "name": "DhakaMovieProvider"
+    },
+    {
+        "fileHash": "sha256-3924d2d784eae5fc8245c515212993908cfe154f465b6fb1e9b397da88752ab8",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/mpshimul/bdix-cloudstream-extensions",
+        "fileSize": 14316,
+        "status": 1,
+        "language": "en",
+        "authors": [
+            "mpshimul"
+        ],
+        "tvTypes": [
+            "Movie"
+        ],
+        "version": 4,
+        "internalName": "fmftpprovider",
+        "description": "Movies from fmftp \u2013 Hollywood, Bollywood, Hindi Dubbed, Bangla",
+        "url": "https://raw.githubusercontent.com/mpshimul/bdix-cloudstream-extensions/builds/fmftpprovider.cs3",
+        "name": "fmftpprovider"
+    },
+     {
+        "url": "https://raw.githubusercontent.com/phisher98/cloudstream-extensions-phisher/builds/MovieBoxProvider.cs3",
+        "status": 1,
+        "version": 18,
+        "name": "MovieBoxProvider",
+        "internalName": "MovieBoxProvider",
+        "authors": [
+            "NivinCNC,Phisher98"
+        ],
+        "description": "Multi Language Movies and Series Provider",
+        "fileSize": 68756,
+        "repositoryUrl": "https://github.com/phisher98/cloudstream-extensions-phisher",
+        "language": "hi",
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "iconUrl": "https://github.com/NivinCNC/CNCVerse-Cloud-Stream-Extension/raw/refs/heads/master/MovieBoxProvider/icon.png",
+        "apiVersion": 1,
+        "fileHash": "sha256-e438ca1daafc24bc11ebcca57a6507d2a31cd5aa4be14d00214c9d1aba1dfa8f"
+    }
+]
