@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JB Enterprise - Business Pad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+        .pad-container {
+            background-color: white;
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 40px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            position: relative;
+            box-sizing: border-box;
+        }
+        @media print {
+            body { background-color: white !important; padding: 0 !important; }
+            .pad-container { box-shadow: none !important; margin: 0 !important; border: none !important; }
+            .no-print, .no-print * { display: none !important; }
+            input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { display: none !important; }
+            input { border: none !important; outline: none !important; background: transparent !important; color: black !important; }
+            input::placeholder { color: transparent !important; }
+        }
+        .border-double-bottom {
+            border-bottom: 4px double #1e3a8a;
+        }
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 80px;
+            color: rgba(30, 58, 138, 0.04);
+            font-weight: bold;
+            white-space: nowrap;
+            pointer-events: none;
+            z-index: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            z-index: 10;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 12px 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f8fafc;
+            color: #1e3a8a;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            text-align: center;
+            border: 1px solid transparent;
+            padding: 4px;
+        }
+        input:focus {
+            border: 1px solid #3b82f6;
+            outline: none;
+            background-color: #f0f9ff;
+        }
+        .text-left-input {
+            text-align: left;
+        }
+        .tagline {
+            background-color: #f1f5f9;
+            border-left: 4px solid #1e3a8a;
+            padding: 5px 25px;
+            font-style: italic;
+            color: #1e3a8a;
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+        /* CSS to extract seal cleanly and mask background color to dark rich blue ink */
+        .seal-img {
+            max-width: 150px;
+            max-height: 85px;
+            margin: 0 auto -10px auto;
+            mix-blend-mode: multiply;
+            filter: contrast(180%) brightness(95%) hue-rotate(10deg);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="no-print text-center mb-5 flex justify-center gap-4">
+        <button onclick="window.print()" class="bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 transition font-bold">Print / Save as PDF</button>
+        <button onclick="saveFile()" class="bg-green-600 text-white px-6 py-2 rounded shadow hover:bg-green-700 transition font-bold">Download File</button>
+        <button onclick="if(confirm('All data will be cleared. Are you sure?')) window.location.reload()" class="bg-gray-500 text-white px-6 py-2 rounded shadow hover:bg-gray-600 transition font-bold">Reset</button>
+    </div>
+
+    <div class="pad-container" id="printable-area">
+        <div class="watermark">JB ENTERPRISE</div>
+
+        <div class="text-center border-double-bottom pb-5 mb-6 relative z-10">
+            <h1 class="text-5xl font-bold text-blue-900 mb-1 tracking-wide">JB ENTERPRISE</h1>
+            <p class="text-xl text-gray-700 font-semibold mb-1">(First Class Contractor, Importer, Exporter & Supplier)</p>
+            <p class="text-sm text-gray-600 max-w-2xl mx-auto mb-1">
+                Office: 635, Medipath Vaban, Level 6(B), Great Wall City, Chandona Chowrasta, Gazipur-1700, Dhaka
+            </p>
+            <p class="text-xs text-gray-800 font-bold tracking-wide mb-2 bg-slate-100 py-1 px-4 inline-block rounded">
+                Trade License No: 163668 &nbsp;|&nbsp; Phone: +88 019 78 903789
+            </p>
+            <br>
+            <div class="tagline mx-auto">Proprietor: Fahim Reza | Commercial Supplier & Contractor</div>
+        </div>
+
+        <div class="flex justify-between mb-6 relative z-10 font-semibold text-sm">
+            <div class="flex gap-2 w-1/3">Ref No: <input type="text" class="border-b border-gray-300 flex-grow text-left-input"></div>
+            <div class="flex gap-2 w-1/3 justify-end">Date: <input type="text" id="date-field" class="border-b border-gray-300 flex-grow text-left-input"></div>
+        </div>
+
+        <div class="relative z-10">
+            <table class="w-full mb-6">
+                <thead>
+                    <tr>
+                        <th class="w-12">SL No.</th>
+                        <th>Description of Goods</th>
+                        <th class="w-28">Quantity</th>
+                        <th class="w-28">Rate</th>
+                        <th class="w-36">Amount (Taka)</th>
+                    </tr>
+                </thead>
+                <tbody id="bill-body">
+                    <tr>
+                        <td>1.</td>
+                        <td><input type="text" class="text-left-input"></td>
+                        <td><input type="text" placeholder="0"></td>
+                        <td><input type="text" placeholder="0.00"></td>
+                        <td><input type="text" placeholder="0.00"></td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td><input type="text" class="text-left-input"></td>
+                        <td><input type="text" placeholder="0"></td>
+                        <td><input type="text" placeholder="0.00"></td>
+                        <td><input type="text" placeholder="0.00"></td>
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td><input type="text" class="text-left-input"></td>
+                        <td><input type="text" placeholder="0"></td>
+                        <td><input type="text" placeholder="0.00"></td>
+                        <td><input type="text" placeholder="0.00"></td>
+                    </tr>
+                    <tr>
+                        <td>4.</td>
+                        <td><input type="text" class="text-left-input"></td>
+                        <td><input type="text" placeholder="0"></td>
+                        <td><input type="text" placeholder="0.00"></td>
+                        <td><input type="text" placeholder="0.00"></td>
+                    </tr>
+                    <tr>
+                        <td>5.</td>
+                        <td><input type="text" class="text-left-input"></td>
+                        <td><input type="text" placeholder="0"></td>
+                        <td><input type="text" placeholder="0.00"></td>
+                        <td><input type="text" placeholder="0.00"></td>
+                    </tr>
+                </tbody>
+                <tfoot class="bg-gray-50">
+                    <tr>
+                        <td colspan="4" class="text-right font-bold py-3 px-4 uppercase text-sm">Total Amount -</td>
+                        <td><input type="text" placeholder="0.00" class="font-bold text-blue-900"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="text-right font-bold py-3 px-4 uppercase text-sm text-amber-600">Advanced -</td>
+                        <td><input type="text" placeholder="0.00" class="font-bold text-amber-600"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="text-right font-bold py-3 px-4 uppercase text-sm">Paid / Cash Received -</td>
+                        <td><input type="text" placeholder="0.00"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="text-right font-bold py-3 px-4 uppercase text-sm text-red-600">Due Amount -</td>
+                        <td><input type="text" placeholder="0.00" class="font-bold text-red-600"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="mb-20 relative z-10 flex gap-2">
+            <span class="whitespace-nowrap font-bold">In Words:</span>
+            <input type="text" class="border-b border-dashed border-gray-400 flex-grow text-left-input" placeholder="Type amount in words...">
+        </div>
+
+        <div class="absolute bottom-16 left-15 right-15 flex justify-between items-end relative z-10 mt-24">
+            <div class="text-center">
+                <div class="border-t border-gray-400 w-48 mb-1"></div>
+                <p class="text-sm font-semibold">Recipient's Signature</p>
+            </div>
+            <div class="text-center flex flex-col items-center">
+                <img src="https://drive.usercontent.google.com/download?id=1WfaIstLaH2SBn_rLHBq_zEgHYWcIQQD2&export=download" alt="JB Enterprise Seal" class="seal-img">
+                <div class="border-t border-gray-400 w-48 mb-1"></div>
+                <p class="text-sm font-semibold">For JB ENTERPRISE</p>
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        // Set Default Date dynamically on load (DD/MM/YYYY)
+        const today = new Date();
+        const formattedDate = today.getDate().toString().padStart(2, '0') + '/' + (today.getMonth()+1).toString().padStart(2, '0') + '/' + today.getFullYear();
+        document.getElementById('date-field').value = formattedDate;
+
+        function saveFile() {
+            const htmlContent = document.documentElement.outerHTML;
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'JB_Enterprise_With_Seal.html';
+            a.click();
+        }
+    </script>
+
+</body>
+</html>
