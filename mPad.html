@@ -1,0 +1,262 @@
+<html lang="bn"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>মেসার্স মাস্টার এন্টারপ্রাইজ - বিজনেস প্যাড</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;700&amp;display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans Bengali', sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+        .pad-container {
+            background-color: white;
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 40px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            position: relative;
+            box-sizing: border-box;
+        }
+        @media print {
+            body { background-color: white !important; padding: 0 !important; }
+            .pad-container { box-shadow: none !important; margin: 0 !important; border: none !important; }
+            .no-print, .no-print * { display: none !important; }
+            input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { display: none !important; }
+            input { border: none !important; outline: none !important; background: transparent !important; color: black !important; }
+            input::placeholder { color: transparent !important; }
+        }
+        .border-double-bottom {
+            border-bottom: 4px double #1e40af;
+        }
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 80px;
+            color: rgba(30, 64, 175, 0.05);
+            font-weight: bold;
+            white-space: nowrap;
+            pointer-events: none;
+            z-index: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            z-index: 10;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 12px 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f8fafc;
+            color: #1e3a8a;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            text-align: center;
+            border: 1px solid transparent;
+            padding: 4px;
+        }
+        input:focus {
+            border: 1px solid #3b82f6;
+            outline: none;
+            background-color: #f0f9ff;
+        }
+        .text-left-input {
+            text-align: left;
+        }
+        .tagline {
+            background-color: #f1f5f9;
+            border-left: 4px solid #1e40af;
+            padding: 5px 15px;
+            font-style: italic;
+            color: #1e3a8a;
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .signature-img {
+            max-width: 240px;
+            max-height: 100px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="no-print text-center mb-5 flex justify-center gap-4">
+        <button onclick="window.print()" class="bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 transition font-bold">প্রিন্ট / PDF সেভ</button>
+        <button onclick="saveFile()" class="bg-green-600 text-white px-6 py-2 rounded shadow hover:bg-green-700 transition font-bold">ডাউনলোড করুন</button>
+        <button onclick="if(confirm('সব ডাটা মুছে যাবে। আপনি কি নিশ্চিত?')) window.location.reload()" class="bg-gray-500 text-white px-6 py-2 rounded shadow hover:bg-gray-600 transition font-bold">রিসেট</button>
+    </div>
+
+    <div class="pad-container" id="printable-area">
+        <div class="watermark">M MASTER ENTERPRISE</div>
+
+        <div class="flex justify-between items-start border-double-bottom pb-4 mb-6 relative z-10">
+            <div>
+                <h1 class="text-4xl font-bold text-blue-900 mb-1">মেসার্স মাস্টার এন্টারপ্রাইজ</h1>
+                <p class="text-lg text-gray-700 font-semibold">(সাধারণ ঠিকাদার প্রতিষ্ঠান)</p>
+                <p class="text-md text-gray-600">রাজেন্দ্রপুর ক্যান্টনমেন্ট, গাজীপুর সদর, গাজীপুর।</p>
+                <div class="tagline">এখানে সকল প্রকার উন্নত মানের নির্মাণ সামগ্রী সরবরাহ করা হয়।</div>
+            </div>
+            <div class="text-right">
+                <div class="bg-blue-900 text-white px-3 py-1 rounded mb-2 inline-block">
+                    <span class="font-bold">যোগাযোগ:</span> ০১৮০৫০০২০৮৯
+                </div>
+                <p class="font-bold text-gray-800">প্রোপ্রাইটর: মোঃ রাসেল রানা</p>
+            </div>
+        </div>
+
+        <div class="flex justify-between mb-6 relative z-10 font-semibold">
+            <div class="flex gap-2">সূত্র নং: <input type="text" class="border-b border-gray-300 w-40 text-left-input"></div>
+            <div class="flex gap-2">তারিখ: <input type="text" id="date-field" class="border-b border-gray-300 w-40 text-left-input"></div>
+        </div>
+
+        <div class="relative z-10">
+            <table class="w-full mb-6">
+                <thead>
+                    <tr>
+                        <th class="w-12">ক্রঃ নং</th>
+                        <th>বিবরণ</th>
+                        <th class="w-28">পরিমাণ</th>
+                        <th class="w-28">দর</th>
+                        <th class="w-36">টাকা</th>
+                    </tr>
+                </thead>
+                <tbody id="bill-body">
+                    </tbody>
+                <tfoot class="bg-gray-50">
+                    <tr>
+                        <td colspan="4" class="text-right font-bold py-3 px-4 uppercase text-sm">মোট টাকা -</td>
+                        <td class="font-bold text-blue-900"><input type="text" id="grand-total-display" readonly="" class="font-bold text-blue-900"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="text-right font-bold py-3 px-4 uppercase text-sm text-amber-600">অগ্রিম -</td>
+                        <td><input type="text" id="advanced-paid" oninput="calculateTotal()" placeholder="০" class="font-bold text-amber-600"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="text-right font-bold py-3 px-4 uppercase text-sm">জমা -</td>
+                        <td><input type="text" id="cash-paid" oninput="calculateTotal()" placeholder="০"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="text-right font-bold py-3 px-4 uppercase text-sm text-red-600">বাকি -</td>
+                        <td><input type="text" id="due-amount-display" readonly="" class="font-bold text-red-600"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="mb-20 relative z-10 flex gap-2">
+            <span class="whitespace-nowrap font-bold">কথায়:</span>
+            <input type="text" class="border-b border-dashed border-gray-400 flex-grow text-left-input" placeholder="কথায় লিখুন...">
+        </div>
+
+        <div class="absolute bottom-16 left-15 right-15 flex justify-between items-end relative z-10 mt-24">
+            <div class="text-center">
+                <div class="border-t border-gray-400 w-48 mb-1"></div>
+                <p class="text-sm font-semibold">ক্রেতার স্বাক্ষর</p>
+            </div>
+            <div class="text-center">
+                <img src="https://i.imgur.com/kPfpAah.png" alt="Company Signature" class="signature-img mb-1">
+                <p class="text-sm font-semibold">মেসার্স মাস্টার এন্টারপ্রাইজ এর পক্ষে</p>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-5 left-0 right-0 text-center text-xs text-gray-400 italic">
+            সততাই আমাদের মূলধন | ধন্যবাদ আবার আসবেন।
+        </div>
+    </div>
+
+    <script>
+        const banglaDigits = {'0':'০','1':'১','2':'২','3':'৩','4':'৪','5':'৫','6':'৬','7':'৭','8':'৮','9':'৯'};
+        const englishDigits = {'০':'0','১':'1','২':'2','৩':'3','৪':'4','৫':'5','৬':'6','৭':'7','৮':'8','৯':'9'};
+
+        function toBangla(number) {
+            if (number === undefined || number === null || number === "") return "";
+            return number.toString().replace(/\d/g, d => banglaDigits[d]);
+        }
+
+        function toEnglish(number) {
+            return number.toString().replace(/[০-৯]/g, d => englishDigits[d]);
+        }
+
+        // Set Default Date in Bangla
+        const today = new Date();
+        const formattedDate = today.getDate().toString().padStart(2, '0') + '/' + (today.getMonth()+1).toString().padStart(2, '0') + '/' + today.getFullYear();
+        document.getElementById('date-field').value = toBangla(formattedDate);
+
+        const tbody = document.getElementById('bill-body');
+        // Create 7 rows dynamically
+        for (let i = 1; i <= 7; i++) {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${toBangla(i)}.</td>
+                <td><input type="text" class="text-left-input"></td>
+                <td><input type="text" class="qty" oninput="calculateTotal()" placeholder="০"></td>
+                <td><input type="text" class="rate" oninput="calculateTotal()" placeholder="০.০০"></td>
+                <td><input type="text" class="line-total-display" readonly></td>
+            `;
+            tbody.appendChild(row);
+        }
+
+        function calculateTotal() {
+            const qtys = document.querySelectorAll('.qty');
+            const rates = document.querySelectorAll('.rate');
+            const totalDisplays = document.querySelectorAll('.line-total-display');
+            let grandTotal = 0;
+
+            qtys.forEach((qtyInput, index) => {
+                const qVal = toEnglish(qtyInput.value);
+                const rVal = toEnglish(rates[index].value);
+                
+                qtyInput.value = toBangla(qVal);
+                rates[index].value = toBangla(rVal);
+
+                const q = parseFloat(qVal) || 0;
+                const r = parseFloat(rVal) || 0;
+                const lineTotal = q * r;
+                
+                totalDisplays[index].value = lineTotal > 0 ? toBangla(lineTotal.toFixed(2)) : "";
+                grandTotal += lineTotal;
+            });
+
+            document.getElementById('grand-total-display').value = toBangla(grandTotal.toFixed(2));
+            
+            // Handle Advanced Input calculation
+            const advancedInput = document.getElementById('advanced-paid');
+            const advancedVal = toEnglish(advancedInput.value);
+            advancedInput.value = toBangla(advancedVal);
+            const adv = parseFloat(advancedVal) || 0;
+
+            // Handle Cash Paid Input calculation
+            const cashInput = document.getElementById('cash-paid');
+            const cashVal = toEnglish(cashInput.value);
+            cashInput.value = toBangla(cashVal);
+            const paid = parseFloat(cashVal) || 0;
+            
+            // Total deduction includes both Advanced and Cash Paid
+            const due = grandTotal - adv - paid;
+            document.getElementById('due-amount-display').value = toBangla(due.toFixed(2));
+        }
+
+        function saveFile() {
+            const htmlContent = document.documentElement.outerHTML;
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'M_Master_Enterprise_Advanced_Added.html';
+            a.click();
+        }
+    </script>
+
+</body>
+</html>
