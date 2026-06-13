@@ -1,0 +1,171 @@
+name: Merge Unite8 Sports into FIFA26 Playlist
+
+on:
+  schedule:
+    # Runs every 6 hours (adjust as needed)
+    - cron: '0 */6 * * *'
+  workflow_dispatch:  # Allows manual run from GitHub Actions tab
+
+jobs:
+  merge-playlist:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+        
+    - name: Download and merge playlists
+      run: |
+        # Create the Python script
+        cat > merge_playlists.py << 'EOF'
+        import urllib.request
+        import os
+        import re
+        import sys
+        
+        # ===== CONFIGURATION =====
+        # The source file (content to be added)
+        source_url = "https://raw.githubusercontent.com/srhady/Hady/main/unite8_sports.m3u"
+        # The target file (which will be updated)
+        target_file = "fifa26.m3u"
+        # =========================
+        
+        def fix_m3u_content(raw_content):
+            """
+            Clean up raw M3U content:
+            1. Remove stray "URL:" lines left by some raw file fetches.
+            2. Ensure each #EXTINF line is properly on its own line.
+            """
+            lines = raw_content.split('\n')
+            cleaned_lines = []
+            for line in lines:
+                # Remove lines that start with "URL:"
+                if line.strip().startswith("URL:"):
+                    continue
+                # Fix cases where #EXTINF is appended to another line (e.g., "#EXTM3U #EXTINF...")
+                if "#EXTM3U" in line and "#EXTINF" in line:
+                    parts = re.split(r'(#EXTINF)', line)
+                    for part in parts:
+                        if part.strip():
+                            cleaned_lines.append(part.strip())
+                else:
+                    cleaned_lines.append(line)
+            # Rebuild content and remove any resulting empty lines
+            content = '\n'.join(cleaned_lines)
+            # Remove duplicate empty lines
+            content = re.sub(r'\n\s*\n', '\n', content)
+            return content.strip()
+        
+        def ensure_extm3u_header(content):
+            """Ensure the playlist has an '#EXTM3U' header at the very top."""
+            lines = content.split('\n')
+            if not lines or not lines[0].strip().startswith('#EXTM3U'):
+                return "#EXTM3U\n" + content
+            return content
+        
+        def append_unique_entries(target_content, source_content):
+            """
+            Append source entries to target if they're not already present.
+            Compares based on the URL line following each #EXTINF.
+            """
+            target_entries = []
+            target_urls = set()
+            i = 0
+            target_lines = target_content.split('\n')
+            while i < len(target_lines):
+                line = target_lines[i]
+                if line.strip().startswith('#EXTINF'):
+                    # Store the EXTINF line and the next line (URL)
+                    extinf = line
+                    url_line = target_lines[i+1] if i+1 < len(target_lines) else ''
+                    if url_line and not url_line.startswith('#'):
+                        target_entries.append((extinf, url_line))
+                        target_urls.add(url_line.strip())
+                    i += 2
+                else:
+                    i += 1
+            
+            source_entries = []
+            source_lines = source_content.split('\n')
+            i = 0
+            while i < len(source_lines):
+                line = source_lines[i]
+                if line.strip().startswith('#EXTINF'):
+                    extinf = line
+                    url_line = source_lines[i+1] if i+1 < len(source_lines) else ''
+                    if url_line and not url_line.startswith('#'):
+                        source_entries.append((extinf, url_line))
+                    i += 2
+                else:
+                    i += 1
+            
+            # Add new entries that aren't already in target
+            new_entries = []
+            for extinf, url in source_entries:
+                if url.strip() not in target_urls:
+                    new_entries.append((extinf, url))
+                    target_urls.add(url.strip())
+                    print(f"Adding new entry: {extinf}")
+            
+            if not new_entries:
+                print("No new entries to add.")
+                return target_content
+            
+            # Rebuild target content with all entries
+            result_lines = ["#EXTM3U"]
+            for extinf, url in target_entries + new_entries:
+                result_lines.append(extinf)
+                result_lines.append(url)
+            return '\n'.join(result_lines)
+        
+        # ===== MAIN SCRIPT =====
+        print("Downloading source playlist...")
+        try:
+            with urllib.request.urlopen(source_url) as response:
+                raw_source = response.read().decode('utf-8')
+                print(f"Downloaded {len(raw_source)} characters")
+        except Exception as e:
+            print(f"Error downloading source: {e}")
+            sys.exit(1)
+        
+        # Clean and fix source content
+        source_content = fix_m3u_content(raw_source)
+        source_content = ensure_extm3u_header(source_content)
+        
+        # Read target file if it exists
+        if os.path.exists(target_file):
+            with open(target_file, 'r', encoding='utf-8') as f:
+                target_content = f.read()
+            print(f"Target file '{target_file}' loaded ({len(target_content)} chars)")
+        else:
+            print(f"Target file '{target_file}' not found, creating new one.")
+            target_content = "#EXTM3U\n"
+        
+        # Clean target content
+        target_content = ensure_extm3u_header(target_content)
+        
+        # Merge: Append source entries to target
+        merged_content = append_unique_entries(target_content, source_content)
+        
+        # Write back
+        with open(target_file, 'w', encoding='utf-8') as f:
+            f.write(merged_content)
+        
+        print(f"Merge completed. Updated '{target_file}'.")
+        EOF
+        
+        # Run the Python script
+        python3 merge_playlists.py
+        
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add fifa26.m3u
+        git diff --cached --quiet || git commit -m "Auto-merge: Updated FIFA26 playlist with Unite8 Sports channels"
+        git push
