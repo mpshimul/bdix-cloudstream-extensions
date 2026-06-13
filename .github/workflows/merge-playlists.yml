@@ -2,7 +2,7 @@ name: Merge Unite8 Sports into FIFA26 Playlist (Top)
 
 on:
   schedule:
-    - cron: '5/5 * * * *'
+    - cron: '*/15 * * * *'
   workflow_dispatch:
 
 jobs:
