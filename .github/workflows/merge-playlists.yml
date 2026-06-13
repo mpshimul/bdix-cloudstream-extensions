@@ -1,10 +1,9 @@
-name: Merge Unite8 Sports into FIFA26 Playlist
+name: Merge Unite8 Sports into FIFA26 Playlist (Top)
 
 on:
   schedule:
-    # Runs every 6 hours
     - cron: '5/5 * * * *'
-  workflow_dispatch:  # Manual trigger from Actions tab
+  workflow_dispatch:
 
 jobs:
   merge-playlist:
@@ -26,12 +25,12 @@ jobs:
           import os
           import re
           import sys
-          
+
           # ===== CONFIGURATION =====
           source_url = "https://raw.githubusercontent.com/srhady/Hady/main/unite8_sports.m3u"
           target_file = "fmftpprovider/src/fifa26.m3u"
           # =========================
-          
+
           def fix_m3u_content(raw_content):
               """Clean up raw M3U content: remove stray 'URL:' lines and fix line breaks."""
               lines = raw_content.split('\n')
@@ -49,62 +48,65 @@ jobs:
               content = '\n'.join(cleaned)
               content = re.sub(r'\n\s*\n', '\n', content)
               return content.strip()
-          
+
           def ensure_extm3u_header(content):
               """Ensure the playlist has an '#EXTM3U' header at the top."""
               if not content.strip().startswith('#EXTM3U'):
                   return "#EXTM3U\n" + content
               return content
-          
-          def append_unique_entries(target_content, source_content):
-              """Append source entries to target only if the URL is not already present."""
-              target_entries = []
-              target_urls = set()
-              lines_t = target_content.split('\n')
+
+          def extract_entries(content):
+              """Return list of (extinf, url) tuples from M3U content (excluding header)."""
+              entries = []
+              lines = content.split('\n')
               i = 0
-              while i < len(lines_t):
-                  line = lines_t[i]
+              while i < len(lines):
+                  line = lines[i]
                   if line.strip().startswith('#EXTINF'):
                       extinf = line
-                      url_line = lines_t[i+1] if i+1 < len(lines_t) else ''
+                      url_line = lines[i+1] if i+1 < len(lines) else ''
                       if url_line and not url_line.startswith('#'):
-                          target_entries.append((extinf, url_line))
-                          target_urls.add(url_line.strip())
+                          entries.append((extinf, url_line))
                       i += 2
                   else:
                       i += 1
-              
-              source_entries = []
-              lines_s = source_content.split('\n')
-              i = 0
-              while i < len(lines_s):
-                  line = lines_s[i]
-                  if line.strip().startswith('#EXTINF'):
-                      extinf = line
-                      url_line = lines_s[i+1] if i+1 < len(lines_s) else ''
-                      if url_line and not url_line.startswith('#'):
-                          source_entries.append((extinf, url_line))
-                      i += 2
-                  else:
-                      i += 1
-              
+              return entries
+
+          def prepend_unique_entries(target_content, source_content):
+              """
+              Prepend source entries to target if they are not already present.
+              Returns new M3U content with source entries (new only) at the top,
+              followed by all target entries. Preserves order within each list.
+              """
+              # Extract existing target entries and their URLs
+              target_entries = extract_entries(target_content)
+              target_urls = {url.strip() for _, url in target_entries}
+
+              # Extract source entries
+              source_entries = extract_entries(source_content)
+
+              # Find which source entries are new (not already in target)
               new_entries = []
               for extinf, url in source_entries:
                   if url.strip() not in target_urls:
                       new_entries.append((extinf, url))
                       target_urls.add(url.strip())
-                      print(f"Adding: {extinf}")
-              
+                      print(f"Adding new (at top): {extinf}")
+
               if not new_entries:
                   print("No new entries to add.")
                   return target_content
-              
-              result = ["#EXTM3U"]
-              for extinf, url in target_entries + new_entries:
-                  result.append(extinf)
-                  result.append(url)
-              return '\n'.join(result)
-          
+
+              # Build final content: #EXTM3U header, then new entries, then existing target entries
+              result_lines = ["#EXTM3U"]
+              for extinf, url in new_entries:
+                  result_lines.append(extinf)
+                  result_lines.append(url)
+              for extinf, url in target_entries:
+                  result_lines.append(extinf)
+                  result_lines.append(url)
+              return '\n'.join(result_lines)
+
           # ===== MAIN =====
           print("Downloading source playlist...")
           try:
@@ -114,10 +116,10 @@ jobs:
           except Exception as e:
               print(f"Download error: {e}")
               sys.exit(1)
-          
+
           source_clean = fix_m3u_content(raw)
           source_clean = ensure_extm3u_header(source_clean)
-          
+
           if os.path.exists(target_file):
               with open(target_file, 'r', encoding='utf-8') as f:
                   target_content = f.read()
@@ -125,17 +127,17 @@ jobs:
           else:
               print(f"Target {target_file} not found, creating new.")
               target_content = "#EXTM3U\n"
-          
+
           target_clean = ensure_extm3u_header(target_content)
-          
-          merged = append_unique_entries(target_clean, source_clean)
-          
+
+          merged = prepend_unique_entries(target_clean, source_clean)
+
           with open(target_file, 'w', encoding='utf-8') as f:
               f.write(merged)
-          
-          print(f"Merge completed. Updated {target_file}.")
+
+          print(f"Merge completed. Updated {target_file} (source entries at top).")
           EOF
-          
+
           python3 merge_playlists.py
 
       - name: Commit and push to different branch
@@ -145,24 +147,19 @@ jobs:
           
           TARGET_BRANCH="working"
           
-          # Fetch the remote branch to get its latest state
           git fetch origin $TARGET_BRANCH
           
-          # Checkout the branch (create it if it doesn't exist)
           if git show-ref --verify --quiet refs/heads/$TARGET_BRANCH; then
             git checkout $TARGET_BRANCH
           else
             git checkout -b $TARGET_BRANCH
           fi
           
-          # Add the updated file
           git add fmftpprovider/src/fifa26.m3u
           
-          # Commit only if there are changes
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Auto-merge: Updated FIFA26 playlist with Unite8 Sports channels"
-            # Force push with lease to safely overwrite the remote branch
+            git commit -m "Auto-merge: Prepended new Unite8 Sports channels to FIFA26 playlist"
             git push --force-with-lease origin HEAD:$TARGET_BRANCH
           fi
