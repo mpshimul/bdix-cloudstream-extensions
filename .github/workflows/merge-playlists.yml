@@ -2,7 +2,7 @@ name: Merge FIFA26 Group Only into Playlist (Top)
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 jobs:
