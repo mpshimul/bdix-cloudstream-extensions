@@ -1,4 +1,4 @@
-name: Merge FIFA26 Group Only into Playlist (Top)
+name: Merge FIFA26 Group Only into Playlist (Top) - Fixed Logo
 
 on:
   schedule:
@@ -27,9 +27,10 @@ jobs:
           import sys
 
           # ===== CONFIGURATION =====
-          source_url = "https://bonobo.live/channels.m3u"
+          source_url = "https://raw.githubusercontent.com/srhady/Hady/main/unite8_sports.m3u"
           target_file = "fmftpprovider/src/fifa26.m3u"
-          FILTER_GROUP_TITLE = "FIFA26"   # Only channels with group-title="FIFA26" will be taken
+          FILTER_GROUP_TITLE = "FIFA26"
+          FIXED_LOGO_URL = "https://raw.githubusercontent.com/mpshimul/hub2stream/main/fifa26.webp"
           # =========================
 
           def fix_m3u_content(raw_content):
@@ -57,11 +58,7 @@ jobs:
               return content
 
           def filter_by_group_title(entries, group_title):
-              """
-              Filter a list of (extinf, url) tuples, keeping only those where
-              extinf contains group-title="group_title".
-              Returns filtered list.
-              """
+              """Filter a list of (extinf, url) tuples by group-title attribute."""
               pattern = f'group-title="{re.escape(group_title)}"'
               filtered = []
               for extinf, url in entries:
@@ -71,6 +68,32 @@ jobs:
                   else:
                       print(f"Skipping channel (group not {group_title}): {extinf}")
               return filtered
+
+          def replace_tvg_logo(extinf, fixed_logo_url):
+              """
+              Replace any existing tvg-logo value with fixed_logo_url.
+              If tvg-logo does not exist, insert it before the channel name.
+              """
+              # Pattern to match tvg-logo="anything" or tvg-logo='anything'
+              pattern = r'(tvg-logo=["\'])([^"\']*)(["\'])'
+              if re.search(pattern, extinf):
+                  # Replace existing logo
+                  new_extinf = re.sub(pattern, rf'\1{fixed_logo_url}\3', extinf)
+                  print(f"  Replaced logo: {extinf} -> {new_extinf}")
+                  return new_extinf
+              else:
+                  # Insert tvg-logo before the channel name (the comma)
+                  # Find the last comma that separates attributes from channel name
+                  # Usually format: #EXTINF:-1 attribute1="value" attribute2="value", Channel Name
+                  # We insert tvg-logo="url" before that comma
+                  comma_pos = extinf.rfind(',')
+                  if comma_pos != -1:
+                      new_extinf = extinf[:comma_pos] + f' tvg-logo="{fixed_logo_url}"' + extinf[comma_pos:]
+                  else:
+                      # Fallback: append at the end (should not happen)
+                      new_extinf = extinf + f' tvg-logo="{fixed_logo_url}"'
+                  print(f"  Added logo: {extinf} -> {new_extinf}")
+                  return new_extinf
 
           def extract_entries(content):
               """Return list of (extinf, url) tuples from M3U content (excluding header)."""
@@ -128,12 +151,18 @@ jobs:
           source_clean = ensure_extm3u_header(source_clean)
           all_source_entries = extract_entries(source_clean)
 
-          # Filter source entries to only those with group-title="FIFA26"
+          # Filter source entries by group-title
           source_entries_filtered = filter_by_group_title(all_source_entries, FILTER_GROUP_TITLE)
 
           if not source_entries_filtered:
               print(f"No entries found with group-title=\"{FILTER_GROUP_TITLE}\". Exiting without changes.")
               sys.exit(0)
+
+          # Replace tvg-logo in each filtered source entry
+          source_entries_with_fixed_logo = []
+          for extinf, url in source_entries_filtered:
+              new_extinf = replace_tvg_logo(extinf, FIXED_LOGO_URL)
+              source_entries_with_fixed_logo.append((new_extinf, url))
 
           # Load target file
           if os.path.exists(target_file):
@@ -147,14 +176,14 @@ jobs:
           target_clean = ensure_extm3u_header(target_content)
           target_entries = extract_entries(target_clean)
 
-          # Merge (prepend filtered source entries)
-          merged_entries = prepend_unique_entries(target_entries, source_entries_filtered)
+          # Merge (prepend filtered and logo-fixed source entries)
+          merged_entries = prepend_unique_entries(target_entries, source_entries_with_fixed_logo)
           merged_content = entries_to_m3u(merged_entries)
 
           with open(target_file, 'w', encoding='utf-8') as f:
               f.write(merged_content)
 
-          print(f"Merge completed. Updated {target_file} (only group {FILTER_GROUP_TITLE} entries prepended).")
+          print(f"Merge completed. Updated {target_file} (only group {FILTER_GROUP_TITLE} entries prepended with fixed logo).")
           EOF
 
           python3 merge_playlists.py
@@ -179,6 +208,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Auto-merge: Prepended FIFA26-group channels from Unite8 Sports"
+            git commit -m "Auto-merge: Prepended FIFA26-group channels with fixed logo"
             git push --force-with-lease origin HEAD:$TARGET_BRANCH
           fi
