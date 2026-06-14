@@ -1,4 +1,4 @@
-name: Merge Unite8 Sports into FIFA26 Playlist (Top)
+name: Merge FIFA26 Group Only into Playlist (Top)
 
 on:
   schedule:
@@ -27,8 +27,9 @@ jobs:
           import sys
 
           # ===== CONFIGURATION =====
-          source_url = "https://raw.githubusercontent.com/srhady/Hady/main/unite8_sports.m3u"
+          source_url = "https://bonobo.live/channels.m3u"
           target_file = "fmftpprovider/src/fifa26.m3u"
+          FILTER_GROUP_TITLE = "FIFA26"   # Only channels with group-title="FIFA26" will be taken
           # =========================
 
           def fix_m3u_content(raw_content):
@@ -55,6 +56,22 @@ jobs:
                   return "#EXTM3U\n" + content
               return content
 
+          def filter_by_group_title(entries, group_title):
+              """
+              Filter a list of (extinf, url) tuples, keeping only those where
+              extinf contains group-title="group_title".
+              Returns filtered list.
+              """
+              pattern = f'group-title="{re.escape(group_title)}"'
+              filtered = []
+              for extinf, url in entries:
+                  if re.search(pattern, extinf):
+                      filtered.append((extinf, url))
+                      print(f"Keeping channel with group {group_title}: {extinf}")
+                  else:
+                      print(f"Skipping channel (group not {group_title}): {extinf}")
+              return filtered
+
           def extract_entries(content):
               """Return list of (extinf, url) tuples from M3U content (excluding header)."""
               entries = []
@@ -72,40 +89,30 @@ jobs:
                       i += 1
               return entries
 
-          def prepend_unique_entries(target_content, source_content):
+          def prepend_unique_entries(target_entries, source_entries):
               """
               Prepend source entries to target if they are not already present.
-              Returns new M3U content with source entries (new only) at the top,
-              followed by all target entries. Preserves order within each list.
+              Returns new list of entries with source (new only) first, then target.
               """
-              # Extract existing target entries and their URLs
-              target_entries = extract_entries(target_content)
               target_urls = {url.strip() for _, url in target_entries}
-
-              # Extract source entries
-              source_entries = extract_entries(source_content)
-
-              # Find which source entries are new (not already in target)
               new_entries = []
               for extinf, url in source_entries:
                   if url.strip() not in target_urls:
                       new_entries.append((extinf, url))
                       target_urls.add(url.strip())
                       print(f"Adding new (at top): {extinf}")
-
               if not new_entries:
                   print("No new entries to add.")
-                  return target_content
+                  return target_entries
+              return new_entries + target_entries
 
-              # Build final content: #EXTM3U header, then new entries, then existing target entries
-              result_lines = ["#EXTM3U"]
-              for extinf, url in new_entries:
-                  result_lines.append(extinf)
-                  result_lines.append(url)
-              for extinf, url in target_entries:
-                  result_lines.append(extinf)
-                  result_lines.append(url)
-              return '\n'.join(result_lines)
+          def entries_to_m3u(entries):
+              """Convert list of (extinf, url) back to M3U string with header."""
+              lines = ["#EXTM3U"]
+              for extinf, url in entries:
+                  lines.append(extinf)
+                  lines.append(url)
+              return '\n'.join(lines)
 
           # ===== MAIN =====
           print("Downloading source playlist...")
@@ -119,7 +126,16 @@ jobs:
 
           source_clean = fix_m3u_content(raw)
           source_clean = ensure_extm3u_header(source_clean)
+          all_source_entries = extract_entries(source_clean)
 
+          # Filter source entries to only those with group-title="FIFA26"
+          source_entries_filtered = filter_by_group_title(all_source_entries, FILTER_GROUP_TITLE)
+
+          if not source_entries_filtered:
+              print(f"No entries found with group-title=\"{FILTER_GROUP_TITLE}\". Exiting without changes.")
+              sys.exit(0)
+
+          # Load target file
           if os.path.exists(target_file):
               with open(target_file, 'r', encoding='utf-8') as f:
                   target_content = f.read()
@@ -129,13 +145,16 @@ jobs:
               target_content = "#EXTM3U\n"
 
           target_clean = ensure_extm3u_header(target_content)
+          target_entries = extract_entries(target_clean)
 
-          merged = prepend_unique_entries(target_clean, source_clean)
+          # Merge (prepend filtered source entries)
+          merged_entries = prepend_unique_entries(target_entries, source_entries_filtered)
+          merged_content = entries_to_m3u(merged_entries)
 
           with open(target_file, 'w', encoding='utf-8') as f:
-              f.write(merged)
+              f.write(merged_content)
 
-          print(f"Merge completed. Updated {target_file} (source entries at top).")
+          print(f"Merge completed. Updated {target_file} (only group {FILTER_GROUP_TITLE} entries prepended).")
           EOF
 
           python3 merge_playlists.py
@@ -160,6 +179,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Auto-merge: Prepended new Unite8 Sports channels to FIFA26 playlist"
+            git commit -m "Auto-merge: Prepended FIFA26-group channels from Unite8 Sports"
             git push --force-with-lease origin HEAD:$TARGET_BRANCH
           fi
