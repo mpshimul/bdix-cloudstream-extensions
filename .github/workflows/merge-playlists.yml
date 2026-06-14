@@ -1,4 +1,4 @@
-name: Merge FIFA26 Group Only into Playlist (Top) - Fixed Logo
+name: Merge FIFA26 Group Only into Playlist (Bottom)
 
 on:
   schedule:
@@ -27,7 +27,7 @@ jobs:
           import sys
 
           # ===== CONFIGURATION =====
-          source_url = "https://bonobo.live/channels.m3u"
+          source_url = "https://raw.githubusercontent.com/srhady/Hady/main/unite8_sports.m3u"
           target_file = "fmftpprovider/src/fifa26.m3u"
           FILTER_GROUP_TITLE = "FIFA26"
           FIXED_LOGO_URL = "https://raw.githubusercontent.com/mpshimul/hub2stream/main/fifa26.webp"
@@ -74,23 +74,16 @@ jobs:
               Replace any existing tvg-logo value with fixed_logo_url.
               If tvg-logo does not exist, insert it before the channel name.
               """
-              # Pattern to match tvg-logo="anything" or tvg-logo='anything'
               pattern = r'(tvg-logo=["\'])([^"\']*)(["\'])'
               if re.search(pattern, extinf):
-                  # Replace existing logo
                   new_extinf = re.sub(pattern, rf'\1{fixed_logo_url}\3', extinf)
                   print(f"  Replaced logo: {extinf} -> {new_extinf}")
                   return new_extinf
               else:
-                  # Insert tvg-logo before the channel name (the comma)
-                  # Find the last comma that separates attributes from channel name
-                  # Usually format: #EXTINF:-1 attribute1="value" attribute2="value", Channel Name
-                  # We insert tvg-logo="url" before that comma
                   comma_pos = extinf.rfind(',')
                   if comma_pos != -1:
                       new_extinf = extinf[:comma_pos] + f' tvg-logo="{fixed_logo_url}"' + extinf[comma_pos:]
                   else:
-                      # Fallback: append at the end (should not happen)
                       new_extinf = extinf + f' tvg-logo="{fixed_logo_url}"'
                   print(f"  Added logo: {extinf} -> {new_extinf}")
                   return new_extinf
@@ -112,10 +105,10 @@ jobs:
                       i += 1
               return entries
 
-          def prepend_unique_entries(target_entries, source_entries):
+          def append_unique_entries(target_entries, source_entries):
               """
-              Prepend source entries to target if they are not already present.
-              Returns new list of entries with source (new only) first, then target.
+              Append source entries to target if they are not already present.
+              Returns new list of entries with target first, then new source entries.
               """
               target_urls = {url.strip() for _, url in target_entries}
               new_entries = []
@@ -123,11 +116,12 @@ jobs:
                   if url.strip() not in target_urls:
                       new_entries.append((extinf, url))
                       target_urls.add(url.strip())
-                      print(f"Adding new (at top): {extinf}")
+                      print(f"Adding new (at bottom): {extinf}")
               if not new_entries:
                   print("No new entries to add.")
                   return target_entries
-              return new_entries + target_entries
+              # Append new entries to the end (target first, then new)
+              return target_entries + new_entries
 
           def entries_to_m3u(entries):
               """Convert list of (extinf, url) back to M3U string with header."""
@@ -176,14 +170,14 @@ jobs:
           target_clean = ensure_extm3u_header(target_content)
           target_entries = extract_entries(target_clean)
 
-          # Merge (prepend filtered and logo-fixed source entries)
-          merged_entries = prepend_unique_entries(target_entries, source_entries_with_fixed_logo)
+          # Merge (append filtered source entries to the bottom)
+          merged_entries = append_unique_entries(target_entries, source_entries_with_fixed_logo)
           merged_content = entries_to_m3u(merged_entries)
 
           with open(target_file, 'w', encoding='utf-8') as f:
               f.write(merged_content)
 
-          print(f"Merge completed. Updated {target_file} (only group {FILTER_GROUP_TITLE} entries prepended with fixed logo).")
+          print(f"Merge completed. Updated {target_file} (only group {FILTER_GROUP_TITLE} entries appended to bottom with fixed logo).")
           EOF
 
           python3 merge_playlists.py
@@ -208,6 +202,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Auto-merge: Prepended FIFA26-group channels with fixed logo"
+            git commit -m "Auto-merge: Appended FIFA26-group channels to bottom with fixed logo"
             git push --force-with-lease origin HEAD:$TARGET_BRANCH
           fi
