@@ -1,4 +1,20 @@
 #EXTM3U
+#EXTINF:-1 tvg-name="FIFA1" tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fifa26.webp" group-title="FIFA26",FIFA1
+https://1nyaler.streamhostingcdn.top/stream/94/index.m3u8
+#EXTINF:-1 tvg-name="FIFA2" tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fifa26.webp" group-title="FIFA26",FIFA2
+https://1nyaler.streamhostingcdn.top/stream/106/index.m3u8
+#EXTINF:-1 tvg-name="FIFA3" tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fifa26.webp" group-title="FIFA26",FIFA3
+https://1nyaler.streamhostingcdn.top/stream/33/index.m3u8
+#EXTINF:-1 tvg-name="FIFA4" tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fifa26.webp" group-title="FIFA26",FIFA4
+https://1nyaler.streamhostingcdn.top/stream/30/index.m3u8
+#EXTINF:-1 tvg-name="FIFA5" tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fifa26.webp" group-title="FIFA26",FIFA5
+https://1nyaler.streamhostingcdn.top/stream/84/index.m3u8
+#EXTINF:-1 tvg-name="FIFA6" tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fifa26.webp" group-title="FIFA26",FIFA6
+https://amg01334-beinsportsllc-beinxtraesp-localnow-aekzc.amagi.tv/playlistR360p.m3u8
+#EXTINF:-1 tvg-name="FIFA7" tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fifa26.webp" group-title="FIFA26",FIFA7
+https://1nyaler.streamhostingcdn.top/stream/3/index.m3u8
+#EXTINF:-1 tvg-name="FIFA8" tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fifa26.webp" group-title="FIFA26",FIFA8
+https://1nyaler.streamhostingcdn.top/stream/80/index.m3u8
 #EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",Football World Cup 2026
 https://zati5.hasanhabibmottakin.workers.dev/0-9-zeecafehd/index.m3u8
 #EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",Football World Cup 2026
