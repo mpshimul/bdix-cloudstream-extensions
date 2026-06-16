@@ -1,4 +1,4 @@
-name: Merge FIFA26 Group Only into Playlist (Bottom)
+name: Merge FIFA26 Group Only into Playlist (Bottom, No YouTube)
 
 on:
   schedule:
@@ -69,6 +69,10 @@ jobs:
                       print(f"Skipping channel (group not {group_title}): {extinf}")
               return filtered
 
+          def is_youtube_url(url):
+              """Return True if the URL is a YouTube link."""
+              return re.search(r'(youtube\.com|youtu\.be)', url, re.IGNORECASE) is not None
+
           def replace_tvg_logo(extinf, fixed_logo_url):
               """
               Replace any existing tvg-logo value with fixed_logo_url.
@@ -120,7 +124,6 @@ jobs:
               if not new_entries:
                   print("No new entries to add.")
                   return target_entries
-              # Append new entries to the end (target first, then new)
               return target_entries + new_entries
 
           def entries_to_m3u(entries):
@@ -145,16 +148,24 @@ jobs:
           source_clean = ensure_extm3u_header(source_clean)
           all_source_entries = extract_entries(source_clean)
 
-          # Filter source entries by group-title
+          # Step 1: Filter by group-title
           source_entries_filtered = filter_by_group_title(all_source_entries, FILTER_GROUP_TITLE)
 
-          if not source_entries_filtered:
-              print(f"No entries found with group-title=\"{FILTER_GROUP_TITLE}\". Exiting without changes.")
+          # Step 2: Remove YouTube links
+          source_entries_no_youtube = []
+          for extinf, url in source_entries_filtered:
+              if is_youtube_url(url):
+                  print(f"Removing YouTube link: {url}")
+              else:
+                  source_entries_no_youtube.append((extinf, url))
+
+          if not source_entries_no_youtube:
+              print(f"No non-YouTube entries found with group-title=\"{FILTER_GROUP_TITLE}\". Exiting without changes.")
               sys.exit(0)
 
-          # Replace tvg-logo in each filtered source entry
+          # Step 3: Replace tvg-logo in each remaining source entry
           source_entries_with_fixed_logo = []
-          for extinf, url in source_entries_filtered:
+          for extinf, url in source_entries_no_youtube:
               new_extinf = replace_tvg_logo(extinf, FIXED_LOGO_URL)
               source_entries_with_fixed_logo.append((new_extinf, url))
 
@@ -170,14 +181,14 @@ jobs:
           target_clean = ensure_extm3u_header(target_content)
           target_entries = extract_entries(target_clean)
 
-          # Merge (append filtered source entries to the bottom)
+          # Step 4: Merge (append to bottom)
           merged_entries = append_unique_entries(target_entries, source_entries_with_fixed_logo)
           merged_content = entries_to_m3u(merged_entries)
 
           with open(target_file, 'w', encoding='utf-8') as f:
               f.write(merged_content)
 
-          print(f"Merge completed. Updated {target_file} (only group {FILTER_GROUP_TITLE} entries appended to bottom with fixed logo).")
+          print(f"Merge completed. Updated {target_file} (no YouTube links, appended at bottom).")
           EOF
 
           python3 merge_playlists.py
@@ -202,6 +213,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Auto-merge: Appended FIFA26-group channels to bottom with fixed logo"
+            git commit -m "Auto-merge: Appended non-YouTube FIFA26 channels with fixed logo"
             git push --force-with-lease origin HEAD:$TARGET_BRANCH
           fi
