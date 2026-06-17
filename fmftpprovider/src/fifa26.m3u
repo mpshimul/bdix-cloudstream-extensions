@@ -3,7 +3,7 @@
 http://172.17.50.112:84/ant1003/video.m3u8
 #EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",UNITE8 Sports 1
 http://starhub.pro/live/farhat-3379/67897-913379/741567.ts
-EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",4k IRIB UHD
+#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",4k IRIB UHD
 https://live-aburayhan1103.telewebion.ir/ek/faratar/live/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",SOMOY TV
 http://172.17.50.112:84/ant1002/video.m3u8
