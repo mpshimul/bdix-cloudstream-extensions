@@ -1,105 +1,89 @@
 #EXTM3U
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",4k IRIB UHD
-https://live-aburayhan1103.telewebion.ir/ek/faratar/live/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",BTV
+#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,BTV
 http://172.17.50.112:84/ant1003/video.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",UNITE8 Sports 1
-http://202.70.146.135:8000/play/a09x/index.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",UNITE8 Sports 2
+#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,UNITE8 Sports 1
+#http://202.70.146.135:8000/play/a09x/index.m3u8
+#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,UNITE8 Sports 2
 http://172.17.50.112:84/ant1005/video.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/53aSeDH.png" group-title="Sports Channels",Toffee 4
 https://sm-monirul.top/tof/live/toffee4/index.m3u8
-#EXTINF:-1 tvg-logo="https://i.postimg.cc/X7qgs8BY/images-d47abaf70fb3ea50af7cdf455ccab5a6-goplay-bioscope-icon-transparent-app.png" ,Bioscope 
-https://bioscope.sm-monirulislam-exp.workers.dev/index.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",Z Bangla Sonar
-#https://d1g8wgjurz8via.cloudfront.net/bpk-tv/ColorsHD/default/Zeebanglahd.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",SOMOY TV
+#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,SOMOY TV
 https://live.thebosstv.com:30443/dwlive/Somoy-TV/chunks.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",SOMOY TV
+#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,SOMOY TV
 http://172.17.50.112:84/ant1002/video.m3u8
-#EXTINF:-1 tvg-logo="https://i.ibb.co/fzbsY6CP/Chat-GPT-Image-Jun-11-2026-11-41-22-PM.png" group-title="FIFA World Cup 2026",BEIN SPORT MAX 4K
+#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,4k IRIB UHD
+https://live-aburayhan1103.telewebion.ir/ek/faratar/live/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://i.ibb.co/fzbsY6CP/Chat-GPT-Image-Jun-11-2026-11-41-22-PM.png" ,BEIN SPORT MAX 4K
 http://rgkkw.live/live/1Aoen7elp5/IgMJ60tmAa/747283.ts
-#EXTINF:-1 tvg-logo="https://i.ibb.co/GfMp5MTJ/Chat-GPT-Image-Jun-5-2026-07-28-11-PM.png" group-title="FIFA World Cup 2026",SS World Cup Central
-http://rgkkw.live/live/1Aoen7elp5/IgMJ60tmAa/745149.ts
-#EXTINF:-1 tvg-logo="https://i.ibb.co/GfMp5MTJ/Chat-GPT-Image-Jun-5-2026-07-28-11-PM.png" group-title="FIFA World Cup 2026",SS World Cup Pass
-http://rgkkw.live/live/1Aoen7elp5/IgMJ60tmAa/745195.ts
-#EXTINF:-1 tvg-logo="https://i.ibb.co/GfMp5MTJ/Chat-GPT-Image-Jun-5-2026-07-28-11-PM.png" group-title="FIFA World Cup 2026",Unite8 Sports 2 HD
-http://rgkkw.live/live/1Aoen7elp5/IgMJ60tmAa/745202.ts
-#EXTINF:-1 tvg-logo="https://i.ibb.co/GfMp5MTJ/Chat-GPT-Image-Jun-5-2026-07-28-11-PM.png" group-title="FIFA World Cup 2026",SS World Cup Extra
-http://rgkkw.live/live/1Aoen7elp5/IgMJ60tmAa/745211.ts
-#EXTINF:-1 tvg-logo="https://i.ibb.co/fzbsY6CP/Chat-GPT-Image-Jun-11-2026-11-41-22-PM.png" group-title="FIFA World Cup 2026",(DE) Fussball.TV1 (UHD/4K)
+#EXTINF:-1 tvg-logo="https://i.ibb.co/fzbsY6CP/Chat-GPT-Image-Jun-11-2026-11-41-22-PM.png" ,(DE) Fussball.TV1 (UHD/4K)
 http://rgkkw.live/live/1Aoen7elp5/IgMJ60tmAa/745269.ts
-#EXTINF:-1 tvg-logo="https://i.ibb.co/fzbsY6CP/Chat-GPT-Image-Jun-11-2026-11-41-22-PM.png" group-title="FIFA World Cup 2026",(HK) Now Sports 616 (UHD/4K)
+#EXTINF:-1 tvg-logo="https://i.ibb.co/fzbsY6CP/Chat-GPT-Image-Jun-11-2026-11-41-22-PM.png" ,(HK) Now Sports 616 (UHD/4K)
 http://rgkkw.live/live/1Aoen7elp5/IgMJ60tmAa/745270.ts
-#EXTINF:-1 tvg-logo="https://i.ibb.co/GfMp5MTJ/Chat-GPT-Image-Jun-5-2026-07-28-11-PM.png" group-title="FIFA World Cup 2026",SUPER SPORTS FIFA
-http://rgkkw.live/live/1Aoen7elp5/IgMJ60tmAa/741566.ts
-#EXTINF:-1 tvg-logo="https://i.ibb.co/GfMp5MTJ/Chat-GPT-Image-Jun-5-2026-07-28-11-PM.png" group-title="FIFA World Cup 2026",Unite8 Sports 1 HD
+#EXTINF:-1 tvg-logo="https://i.ibb.co/GfMp5MTJ/Chat-GPT-Image-Jun-5-2026-07-28-11-PM.png" ,Unite8 Sports 1 HD
 http://rgkkw.live/live/1Aoen7elp5/IgMJ60tmAa/741567.ts
-#EXTINF:-1 tvg-logo="https://i.ibb.co/GfMp5MTJ/Chat-GPT-Image-Jun-5-2026-07-28-11-PM.png" group-title="FIFA World Cup 2026",DE | Fusball TV 1 World Cup 2026 [HD]
+#EXTINF:-1 tvg-logo="https://i.ibb.co/GfMp5MTJ/Chat-GPT-Image-Jun-5-2026-07-28-11-PM.png" ,Unite8 Sports 2 HD
+http://rgkkw.live/live/1Aoen7elp5/IgMJ60tmAa/745202.ts
+#EXTINF:-1 tvg-logo="https://i.ibb.co/GfMp5MTJ/Chat-GPT-Image-Jun-5-2026-07-28-11-PM.png" ,SS World Cup Central
+http://rgkkw.live/live/1Aoen7elp5/IgMJ60tmAa/745149.ts
+#EXTINF:-1 tvg-logo="https://i.ibb.co/GfMp5MTJ/Chat-GPT-Image-Jun-5-2026-07-28-11-PM.png" ,SS World Cup Pass
+http://rgkkw.live/live/1Aoen7elp5/IgMJ60tmAa/745195.ts
+#EXTINF:-1 tvg-logo="https://i.ibb.co/GfMp5MTJ/Chat-GPT-Image-Jun-5-2026-07-28-11-PM.png" ,SS World Cup Extra
+http://rgkkw.live/live/1Aoen7elp5/IgMJ60tmAa/745211.ts
+#EXTINF:-1 tvg-logo="https://i.ibb.co/GfMp5MTJ/Chat-GPT-Image-Jun-5-2026-07-28-11-PM.png" ,SUPER SPORTS FIFA
+http://rgkkw.live/live/1Aoen7elp5/IgMJ60tmAa/741566.ts
+#EXTINF:-1 tvg-logo="https://i.ibb.co/GfMp5MTJ/Chat-GPT-Image-Jun-5-2026-07-28-11-PM.png" ,DE | Fusball TV 1 World Cup 2026 [HD]
 http://rgkkw.live/live/1Aoen7elp5/IgMJ60tmAa/742610.ts
-#EXTINF:-1 tvg-logo="https://i.ibb.co/GfMp5MTJ/Chat-GPT-Image-Jun-5-2026-07-28-11-PM.png" group-title="FIFA World Cup 2026",DE | Fusball TV 2 World Cup 2026 [HD] 
+#EXTINF:-1 tvg-logo="https://i.ibb.co/GfMp5MTJ/Chat-GPT-Image-Jun-5-2026-07-28-11-PM.png" ,DE | Fusball TV 2 World Cup 2026 [HD] 
 http://rgkkw.live/live/1Aoen7elp5/IgMJ60tmAa/742611.ts
-#EXTINF:-1 tvg-logo="https://i.ibb.co/GfMp5MTJ/Chat-GPT-Image-Jun-5-2026-07-28-11-PM.png" group-title="FIFA World Cup 2026",TSN 1
+#EXTINF:-1 tvg-logo="https://i.ibb.co/GfMp5MTJ/Chat-GPT-Image-Jun-5-2026-07-28-11-PM.png" ,TSN 1
 http://rgkkw.live/live/1Aoen7elp5/IgMJ60tmAa/748388.ts
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",FUSSBALL TV1
+#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,FUSSBALL TV1
 http://neoyjpw.top:8080/live/01691613063102/4f503120a59b/73811.ts
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",BTV
+#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,BTV
 http://172.17.50.112:84/ant1003/video.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",UNITE8 Sports 1
+#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,UNITE8 Sports 1
 http://202.70.146.135:8000/play/a09x/index.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",UNITE8 Sports 2
+#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,UNITE8 Sports 2
 http://172.17.50.112:84/ant1005/video.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",Z Bangla Sonar
+#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,Z Bangla Sonar
 #https://d1g8wgjurz8via.cloudfront.net/bpk-tv/ColorsHD/default/Zeebanglahd.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",SOMOY TV
+#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,SOMOY TV
 https://live.thebosstv.com:30443/dwlive/Somoy-TV/chunks.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",SOMOY TV
+#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,SOMOY TV
 http://172.17.50.112:84/ant1002/video.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",TSN1
+#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,TSN1
 https://ayna.bdixlivetv.workers.dev/play/TSN1.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",Telemundo
+#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,Telemundo
 https://nbculocallive.akamaized.net/hls/live/2037499/puertorico/stream1/master.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",Football World Cup 2026
+#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,Football World Cup 2026
 #https://zati5.hasanhabibmottakin.workers.dev/0-9-zeecafehd/index.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",Football World Cup 2026
+#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,Football World Cup 2026
 #https://ott-balancer.tvri.go.id/live/eds/SportHD/hls/SportHD.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",RTB GO
-https://master.ajmainearafat.workers.dev/?url=https://d1211whpimeups.cloudfront.net/smil%3Artbgo/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",Football World Cup 2026
+#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,RTB GO
+#https://master.ajmainearafat.workers.dev/?url=https://d1211whpimeups.cloudfront.net/smil%3Artbgo/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,Football World Cup 2026
 http://go8knm.optikl.ink/X/index.php/Besyria3/video.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",BEINSPORT1FR
+#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,BEINSPORT1FR
 https://ayna.bdixlivetv.workers.dev/play/BEINSPORT1FR.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",M6FR
+#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,M6FR
 https://ayna.bdixlivetv.workers.dev/play/M6FR.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",Football World Cup 2026
-http://27.124.71.27/TSN_1/index.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",Football World Cup 2026
-http://27.124.71.27/TSN_3/index.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",Football World Cup 2026
-https://fhd60fps-by-opensourecflix.exmax.workers.dev/index.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",Football World Cup 2026
-http://27.124.71.27/TSN_4/index.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",Football World Cup 2026
+#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,Football World Cup 2026
 https://nbculocallive.akamaized.net/hls/live/2037499/puertorico/stream1/master.m3u8
-#EXTINF:-1 tvg-id="98000" tvg-name="T Sports" tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",Football World Cup 2026
-http://27.124.71.27/T-Sports/index.m3u8
-#EXTINF:-1 tvg-id="98000" tvg-name="TSN4" tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",TSN4
+#EXTINF:-1 tvg-id="98000" tvg-name="TSN4" tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,TSN4
 https://ayna.bdixlivetv.workers.dev/play/TSN4.m3u8
-#EXTINF:-1 tvg-id="98000" tvg-name="TSN5" tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",TSN5
+#EXTINF:-1 tvg-id="98000" tvg-name="TSN5" tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,TSN5
 https://ayna.bdixlivetv.workers.dev/play/TSN5.m3u8
-#EXTINF:-1 tvg-id="98000" tvg-name="ITV1" tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",ITV1
+#EXTINF:-1 tvg-id="98000" tvg-name="ITV1" tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,ITV1
 https://ayna.bdixlivetv.workers.dev/play/ITV1.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",Football World Cup 2026
-#https://cdn.tv-rds.workers.dev/TYCSPT.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg"group-title="Football World Cup 2026" group-title="",Football World Cup 2026 FS 2
+#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,FS 1
 #http://ytoxw6un.ottclub.xyz/iptv/KCUHA6DGYYVA8ZZFUPQV3KZH/7322/index.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",T-Sports
+#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,T-Sports
 http://10.10.10.7:82/Own-1/index.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",T-Sports
+#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,T-Sports
 http://198.195.239.50:8095/tsports/index.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",PTV
+#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,PTV
 http://10.10.10.7:82/Own-6/index.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",PTV
+#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,PTV
 http://10.10.10.7:82/PTV/index.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" group-title="Football World Cup 2026",SOMOY TV
+#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,SOMOY TV
 http://10.10.10.7:82/tsports-hd/index.m3u8
