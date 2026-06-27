@@ -1,36 +1,60 @@
 #EXTM3U
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="✪ FIFA WORLD CUP 2026",FIFA WC 01
+# ---- FIFA WC 01 Panama vs England (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 01 Panama vs England
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949744.ts
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="✪ FIFA WORLD CUP 2026",FIFA WC 02
+
+# ---- FIFA WC 02 Panama vs England (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 02 Panama vs England
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949745.ts
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="✪ FIFA WORLD CUP 2026",FIFA WC 03
+
+# ---- FIFA WC 03 Panama vs England EN espanol (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 03 Panama vs England EN espanol
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949746.ts
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="✪ FIFA WORLD CUP 2026",FIFA WC 04:  4K
+
+# ---- FIFA WC 04 FEED Panama vs England (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 04 FEED Panama vs England [4K]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949747.ts
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="✪ FIFA WORLD CUP 2026",FIFA WC 05
+
+# ---- FIFA WC 05 Croatia vs Ghana (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 05 Croatia vs Ghana
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949748.ts
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="✪ FIFA WORLD CUP 2026",FIFA WC 06
+
+# ---- FIFA WC 06 Croatia vs Ghana (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 06 Croatia vs Ghana
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949749.ts
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="✪ FIFA WORLD CUP 2026",FIFA WC 07
+
+# ---- FIFA WC 07 Croatia vs Ghana EN espanol (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 07 Croatia vs Ghana EN espanol
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949750.ts
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="✪ FIFA WORLD CUP 2026",FIFA WC 08: 4K
+
+# ---- FIFA WC 08 FEED Croatia vs Ghana (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 08 FEED Croatia vs Ghana [4K]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949751.ts
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="✪ FIFA WORLD CUP 2026",FIFA WC 09
+
+# ---- FIFA WC 09 Colombia vs Portugal (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 09 Colombia vs Portugal
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949752.ts
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="✪ FIFA WORLD CUP 2026",FIFA WC 10
+
+# ---- FIFA WC 10 Colombia vs Portugal (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 10 Colombia vs Portugal
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949753.ts
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="✪ FIFA WORLD CUP 2026",FIFA WC 11
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949754.ts
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="✪ FIFA WORLD CUP 2026",FIFA WC 12 : 4K
+
+# ---- FIFA WC 12 FEED Colombia vs Portugal (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 12 FEED Colombia vs Portugal [4K]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949755.ts
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="✪ FIFA WORLD CUP 2026",FIFA WC 13
+
+# ---- FIFA WC 13 Congo vs Uzbekistan (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 13 Congo vs Uzbekistan
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949756.ts
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="✪ FIFA WORLD CUP 2026",FIFA WC 14
+
+# ---- FIFA WC 14 Congo vs Uzbekistan (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 14 Congo vs Uzbekistan
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949757.ts
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="✪ FIFA WORLD CUP 2026",FIFA WC 15
+
+# ---- FIFA WC 15 Congo vs Uzbekistan EN espanol (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 15 Congo vs Uzbekistan EN espanol
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949758.ts
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="✪ FIFA WORLD CUP 2026",FIFA WC 16 : 4K
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949759.ts
+
 #EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,BTV
 http://172.17.50.112:84/ant1003/video.m3u8
 #EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,UNITE8 Sports 2
