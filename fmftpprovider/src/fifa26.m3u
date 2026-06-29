@@ -55,6 +55,29 @@ http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949756.ts
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 16
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949759.ts
 
+#EXTINF:-1 
+tvg-logo="https://www.freeshot.live/upload/source/Fox-Sports-1.png" ,FS1
+https://ayna.bdixlivetv.workers.dev/play/FOXSPORTS1.m3u8
+#EXTINF:-1 
+tvg-logo="https://www.freeshot.live/upload/source/FOXUSA.png" ,FOX
+https://ayna.bdixlivetv.workers.dev/play/FOXSPORTS2.m3u8
+#EXTINF:-1 
+tvg-logo="https://www.freeshot.live/upload/source/Sport_tv_5_logo.png" ,SPORT-TV 5
+https://ayna.bdixlivetv.workers.dev/play/SPT5.m3u8
+#EXTINF:-1 
+tvg-logo="https://www.freeshot.live/upload/source/TSN1_Logo.png" ,TSN1
+https://ayna.bdixlivetv.workers.dev/play/TSN1.m3u8
+#EXTINF:-1 
+tvg-logo="https://www.freeshot.live/upload/source/TSN3_Logo.png" ,TSN3
+https://ayna.bdixlivetv.workers.dev/play/TSN3.m3u8
+#EXTINF:-1 
+tvg-logo="https://www.freeshot.live/upload/source/TSN4_Logo.png" ,TSN4
+https://ayna.bdixlivetv.workers.dev/play/TSN4.m3u8
+#EXTINF:-1 
+tvg-logo="https://www.freeshot.live/upload/source/ITV1-logo.png" ,ITV1
+https://ayna.bdixlivetv.workers.dev/play/ITV1.m3u8
+
+
 #EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,BTV
 http://172.17.50.112:84/ant1003/video.m3u8
 #EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,UNITE8 Sports 2
@@ -105,10 +128,9 @@ http://172.17.50.112:84/ant1005/video.m3u8
 https://live.thebosstv.com:30443/dwlive/Somoy-TV/chunks.m3u8
 #EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,SOMOY TV
 http://172.17.50.112:84/ant1002/video.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,TSN1
-https://ayna.bdixlivetv.workers.dev/play/TSN1.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,Telemundo
-#https://nbculocallive.akamaized.net/hls/live/2037499/puertorico/stream1/master.m3u8
+
+#EXTINF:-1 tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/Telemundo.png" ,Telemundo
+https://nbculocallive.akamaized.net/hls/live/2037499/puertorico/stream1/master.m3u8
 #EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,Football World Cup 2026
 #https://zati5.hasanhabibmottakin.workers.dev/0-9-zeecafehd/index.m3u8
 #EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,Football World Cup 2026
@@ -123,12 +145,6 @@ https://ayna.bdixlivetv.workers.dev/play/BEINSPORT1FR.m3u8
 https://ayna.bdixlivetv.workers.dev/play/M6FR.m3u8
 #EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,Football World Cup 2026
 https://nbculocallive.akamaized.net/hls/live/2037499/puertorico/stream1/master.m3u8
-#EXTINF:-1 tvg-id="98000" tvg-name="TSN4" tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,TSN4
-https://ayna.bdixlivetv.workers.dev/play/TSN4.m3u8
-#EXTINF:-1 tvg-id="98000" tvg-name="TSN5" tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,TSN5
-https://ayna.bdixlivetv.workers.dev/play/TSN5.m3u8
-#EXTINF:-1 tvg-id="98000" tvg-name="ITV1" tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,ITV1
-https://ayna.bdixlivetv.workers.dev/play/ITV1.m3u8
 #EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,FS 1
 #http://ytoxw6un.ottclub.xyz/iptv/KCUHA6DGYYVA8ZZFUPQV3KZH/7322/index.m3u8
 #EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,T-Sports
