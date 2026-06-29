@@ -55,26 +55,19 @@ http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949756.ts
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 16
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949759.ts
 
-#EXTINF:-1 
-tvg-logo="https://www.freeshot.live/upload/source/Fox-Sports-1.png" ,FS1
+#EXTINF:-1 tvg-logo="https://www.freeshot.live/upload/source/Fox-Sports-1.png" ,FS1
 https://ayna.bdixlivetv.workers.dev/play/FOXSPORTS1.m3u8
-#EXTINF:-1 
-tvg-logo="https://www.freeshot.live/upload/source/FOXUSA.png" ,FOX
+#EXTINF:-1 tvg-logo="https://www.freeshot.live/upload/source/FOXUSA.png" ,FOX
 https://ayna.bdixlivetv.workers.dev/play/FOXSPORTS2.m3u8
-#EXTINF:-1 
-tvg-logo="https://www.freeshot.live/upload/source/Sport_tv_5_logo.png" ,SPORT-TV 5
+#EXTINF:-1 tvg-logo="https://www.freeshot.live/upload/source/Sport_tv_5_logo.png" ,SPORT-TV 5
 https://ayna.bdixlivetv.workers.dev/play/SPT5.m3u8
-#EXTINF:-1 
-tvg-logo="https://www.freeshot.live/upload/source/TSN1_Logo.png" ,TSN1
+#EXTINF:-1 tvg-logo="https://www.freeshot.live/upload/source/TSN1_Logo.png" ,TSN1
 https://ayna.bdixlivetv.workers.dev/play/TSN1.m3u8
-#EXTINF:-1 
-tvg-logo="https://www.freeshot.live/upload/source/TSN3_Logo.png" ,TSN3
+#EXTINF:-1 tvg-logo="https://www.freeshot.live/upload/source/TSN3_Logo.png" ,TSN3
 https://ayna.bdixlivetv.workers.dev/play/TSN3.m3u8
-#EXTINF:-1 
-tvg-logo="https://www.freeshot.live/upload/source/TSN4_Logo.png" ,TSN4
+#EXTINF:-1 tvg-logo="https://www.freeshot.live/upload/source/TSN4_Logo.png" ,TSN4
 https://ayna.bdixlivetv.workers.dev/play/TSN4.m3u8
-#EXTINF:-1 
-tvg-logo="https://www.freeshot.live/upload/source/ITV1-logo.png" ,ITV1
+#EXTINF:-1 tvg-logo="https://www.freeshot.live/upload/source/ITV1-logo.png" ,ITV1
 https://ayna.bdixlivetv.workers.dev/play/ITV1.m3u8
 
 
