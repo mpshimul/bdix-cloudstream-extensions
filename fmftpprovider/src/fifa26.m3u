@@ -1,59 +1,189 @@
 #EXTM3U
-# ---- FIFA WC 01 South Africa vs Canada (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 01 South Africa vs Canada
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949744.ts
+# Validated on 2026-07-01 13:18:21 UTC
+# Working streams: 46 / 87
+# TV app: https://cutt.ly/hub2stream
+# https://github.com/mpshimul/hub2stream
+# FIFA Worldcup 2026 - Hub2Stream
 
-# ---- FIFA WC 02 South Africa vs Canada (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 02 South Africa vs Canada
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949745.ts
+# ---- CA RDS ( ) (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/RDS_logo.svg/960px-RDS_logo.svg.png",CA RDS ( ) [HD]
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/59870.ts
 
-# ---- FIFA WC 03 South Africa vs Canada EN espanol (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 03 South Africa vs Canada EN espanol
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949746.ts
+# ---- CA RDS (FR) (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/RDS_logo.svg/960px-RDS_logo.svg.png",CA RDS (FR)
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/3232.ts
 
-# ---- FIFA WC 04 FEED South Africa vs Canada (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 04 FEED South Africa vs Canada [4K]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949747.ts
+# ---- CA RDS (HQ) (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/RDS_logo.svg/960px-RDS_logo.svg.png",CA RDS (HQ)
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/59887.ts
 
-# ---- FIFA WC 05 (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 05
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949748.ts
+# ---- CA RDS (LQ) (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/RDS_logo.svg/960px-RDS_logo.svg.png",CA RDS (LQ)
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/59888.ts
 
-# ---- FIFA WC 06 (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 06
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949749.ts
+# ---- CA TSN 1 U (1 variants) ----
+#EXTINF:-1 tvg-logo="https://i.imgur.com/eRFE0jZ.png",CA TSN 1 U [HD]
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/3146.ts
 
-# ---- FIFA WC 07 (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 07
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949750.ts
+# ---- CA TSN 3 U (1 variants) ----
+#EXTINF:-1 tvg-logo="https://i.imgur.com/AYza8KO.png",CA TSN 3 U [HD]
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/3144.ts
 
-# ---- FIFA WC 08 (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 08
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949751.ts
+# ---- CA TSN 4 U (1 variants) ----
+#EXTINF:-1 tvg-logo="https://i.imgur.com/qJyAWU8.png",CA TSN 4 U [HD]
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/3143.ts
 
-# ---- FIFA WC 09 (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 09
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949752.ts
+# ---- FR M6 (2 variants) ----
+#EXTINF:-1 tvg-logo="https://i.imgur.com/7GVp3fW.png",FR M6 [HD]
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/599611.ts
+#EXTINF:-1 tvg-logo="https://i.imgur.com/7GVp3fW.png",FR M6 [HD]
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/1268527.ts
 
-# ---- FIFA WC 10 (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 10
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949753.ts
+# ---- MX TUDN (1 variants) ----
+#EXTINF:-1 tvg-logo="https://i.imgur.com/oT5CAvd.png",MX TUDN
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/553262.ts
 
-# ---- FIFA WC 11 (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 11
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949754.ts
+# ---- NO TV2 (2 variants) ----
+#EXTINF:-1 tvg-logo="https://i.imgur.com/8nxd2A1.png",NO TV2 [FHD]
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/1179998.ts
+#EXTINF:-1 tvg-logo="https://i.imgur.com/8nxd2A1.png",NO TV2 [HD]
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/1179999.ts
 
-# ---- FIFA WC 12 (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 12
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949755.ts
+# ---- NO TV2 Direkte (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/TV_2_Direkte_%282022-%29.svg/960px-TV_2_Direkte_%282022-%29.svg.png",NO TV2 Direkte
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/1179997.ts
 
-# ---- FIFA WC 13 (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 13
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949756.ts
+# ---- PT SPORT TV 5 (2 variants) ----
+#EXTINF:-1 tvg-logo="https://i.imgur.com/4w4vuad.png",PT SPORT TV 5 [HD]
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/839.ts
+#EXTINF:-1 tvg-logo="https://i.imgur.com/4w4vuad.png",PT SPORT TV 5
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/840.ts
 
-# ---- FIFA WC 16 (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 16
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949759.ts
+# ---- Soccer01 England vs Congo DR ( TSN1 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://phantom.estaticos-marca.com/5eaa46deb2cdef4794639fb1d92c2d5c/resize/660/f/webp/assets/multimedia/imagenes/2025/12/05/17649446467786.jpg",Soccer01 England vs Congo DR ( TSN1 Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/38039.ts
+
+# ---- Soccer02 England vs Congo DR ( TSN4 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://phantom.estaticos-marca.com/5eaa46deb2cdef4794639fb1d92c2d5c/resize/660/f/webp/assets/multimedia/imagenes/2025/12/05/17649446467786.jpg",Soccer02 England vs Congo DR ( TSN4 Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21812.ts
+
+# ---- Soccer03 England vs Congo DR ( FOX Network Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://phantom.estaticos-marca.com/5eaa46deb2cdef4794639fb1d92c2d5c/resize/660/f/webp/assets/multimedia/imagenes/2025/12/05/17649446467786.jpg",Soccer03 England vs Congo DR ( FOX Network Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21823.ts
+
+# ---- Soccer04 England vs Congo DR ( Telemundo Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://phantom.estaticos-marca.com/5eaa46deb2cdef4794639fb1d92c2d5c/resize/660/f/webp/assets/multimedia/imagenes/2025/12/05/17649446467786.jpg",Soccer04 England vs Congo DR ( Telemundo Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21824.ts
+
+# ---- Soccer05 England vs Congo DR ( Telemundo Deportes En Vivo Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://phantom.estaticos-marca.com/5eaa46deb2cdef4794639fb1d92c2d5c/resize/660/f/webp/assets/multimedia/imagenes/2025/12/05/17649446467786.jpg",Soccer05 England vs Congo DR ( Telemundo Deportes En Vivo Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21825.ts
+
+# ---- Soccer06 England vs Congo DR ( FOX One Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://phantom.estaticos-marca.com/5eaa46deb2cdef4794639fb1d92c2d5c/resize/660/f/webp/assets/multimedia/imagenes/2025/12/05/17649446467786.jpg",Soccer06 England vs Congo DR ( FOX One Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21826.ts
+
+# ---- Soccer07 Belgium vs Senegal ( TSN1 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://phantom.estaticos-marca.com/5eaa46deb2cdef4794639fb1d92c2d5c/resize/660/f/webp/assets/multimedia/imagenes/2025/12/05/17649446467786.jpg",Soccer07 Belgium vs Senegal ( TSN1 Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21827.ts
+
+# ---- Soccer08 Belgium vs Senegal ( TSN3 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://phantom.estaticos-marca.com/5eaa46deb2cdef4794639fb1d92c2d5c/resize/660/f/webp/assets/multimedia/imagenes/2025/12/05/17649446467786.jpg",Soccer08 Belgium vs Senegal ( TSN3 Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21828.ts
+
+# ---- Soccer09 Belgium vs Senegal ( TSN4 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://phantom.estaticos-marca.com/5eaa46deb2cdef4794639fb1d92c2d5c/resize/660/f/webp/assets/multimedia/imagenes/2025/12/05/17649446467786.jpg",Soccer09 Belgium vs Senegal ( TSN4 Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21829.ts
+
+# ---- Soccer10 Belgium vs Senegal ( Fox Sports 1 USA Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://phantom.estaticos-marca.com/5eaa46deb2cdef4794639fb1d92c2d5c/resize/660/f/webp/assets/multimedia/imagenes/2025/12/05/17649446467786.jpg",Soccer10 Belgium vs Senegal ( Fox Sports 1 USA Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21830.ts
+
+# ---- Soccer11 Belgium vs Senegal ( Telemundo Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://phantom.estaticos-marca.com/5eaa46deb2cdef4794639fb1d92c2d5c/resize/660/f/webp/assets/multimedia/imagenes/2025/12/05/17649446467786.jpg",Soccer11 Belgium vs Senegal ( Telemundo Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21831.ts
+
+# ---- Soccer12 Belgium vs Senegal ( Telemundo Deportes En Vivo Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://phantom.estaticos-marca.com/5eaa46deb2cdef4794639fb1d92c2d5c/resize/660/f/webp/assets/multimedia/imagenes/2025/12/05/17649446467786.jpg",Soccer12 Belgium vs Senegal ( Telemundo Deportes En Vivo Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21832.ts
+
+# ---- Soccer13 Belgium vs Senegal ( FOX One Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://phantom.estaticos-marca.com/5eaa46deb2cdef4794639fb1d92c2d5c/resize/660/f/webp/assets/multimedia/imagenes/2025/12/05/17649446467786.jpg",Soccer13 Belgium vs Senegal ( FOX One Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21833.ts
+
+# ---- Soccer14 USA vs Bosnia and Herzegovina ( TSN1 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://phantom.estaticos-marca.com/5eaa46deb2cdef4794639fb1d92c2d5c/resize/660/f/webp/assets/multimedia/imagenes/2025/12/05/17649446467786.jpg",Soccer14 USA vs Bosnia and Herzegovina ( TSN1 Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21834.ts
+
+# ---- Soccer15 USA vs Bosnia and Herzegovina ( TSN3 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://phantom.estaticos-marca.com/5eaa46deb2cdef4794639fb1d92c2d5c/resize/660/f/webp/assets/multimedia/imagenes/2025/12/05/17649446467786.jpg",Soccer15 USA vs Bosnia and Herzegovina ( TSN3 Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21835.ts
+
+# ---- Soccer16 USA vs Bosnia and Herzegovina ( TSN4 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://phantom.estaticos-marca.com/5eaa46deb2cdef4794639fb1d92c2d5c/resize/660/f/webp/assets/multimedia/imagenes/2025/12/05/17649446467786.jpg",Soccer16 USA vs Bosnia and Herzegovina ( TSN4 Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21836.ts
+
+# ---- Soccer17 USA vs Bosnia and Herzegovina ( TSN5 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://phantom.estaticos-marca.com/5eaa46deb2cdef4794639fb1d92c2d5c/resize/660/f/webp/assets/multimedia/imagenes/2025/12/05/17649446467786.jpg",Soccer17 USA vs Bosnia and Herzegovina ( TSN5 Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21837.ts
+
+# ---- Soccer18 USA vs Bosnia and Herzegovina ( FOX Network Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://phantom.estaticos-marca.com/5eaa46deb2cdef4794639fb1d92c2d5c/resize/660/f/webp/assets/multimedia/imagenes/2025/12/05/17649446467786.jpg",Soccer18 USA vs Bosnia and Herzegovina ( FOX Network Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21838.ts
+
+# ---- Soccer19 USA vs Bosnia and Herzegovina ( Telemundo Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://phantom.estaticos-marca.com/5eaa46deb2cdef4794639fb1d92c2d5c/resize/660/f/webp/assets/multimedia/imagenes/2025/12/05/17649446467786.jpg",Soccer19 USA vs Bosnia and Herzegovina ( Telemundo Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21839.ts
+
+# ---- Soccer20 USA vs Bosnia and Herzegovina ( Telemundo Deportes En Vivo Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://phantom.estaticos-marca.com/5eaa46deb2cdef4794639fb1d92c2d5c/resize/660/f/webp/assets/multimedia/imagenes/2025/12/05/17649446467786.jpg",Soccer20 USA vs Bosnia and Herzegovina ( Telemundo Deportes En Vivo Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21840.ts
+
+# ---- Soccer21 USA vs Bosnia and Herzegovina ( UNIVERSO Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://phantom.estaticos-marca.com/5eaa46deb2cdef4794639fb1d92c2d5c/resize/660/f/webp/assets/multimedia/imagenes/2025/12/05/17649446467786.jpg",Soccer21 USA vs Bosnia and Herzegovina ( UNIVERSO Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21841.ts
+
+# ---- Soccer22 USA vs Bosnia and Herzegovina ( FOX One Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://phantom.estaticos-marca.com/5eaa46deb2cdef4794639fb1d92c2d5c/resize/660/f/webp/assets/multimedia/imagenes/2025/12/05/17649446467786.jpg",Soccer22 USA vs Bosnia and Herzegovina ( FOX One Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21842.ts
+
+# ---- Soccer23 USA vs Bosnia and Herzegovina ( TSN3 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://phantom.estaticos-marca.com/5eaa46deb2cdef4794639fb1d92c2d5c/resize/660/f/webp/assets/multimedia/imagenes/2025/12/05/17649446467786.jpg",Soccer23 USA vs Bosnia and Herzegovina ( TSN3 Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21843.ts
+
+# ---- Soccer24 USA vs Bosnia and Herzegovina ( TSN4 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://phantom.estaticos-marca.com/5eaa46deb2cdef4794639fb1d92c2d5c/resize/660/f/webp/assets/multimedia/imagenes/2025/12/05/17649446467786.jpg",Soccer24 USA vs Bosnia and Herzegovina ( TSN4 Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21844.ts
+
+# ---- Soccer25 USA vs Bosnia and Herzegovina ( TSN5 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://phantom.estaticos-marca.com/5eaa46deb2cdef4794639fb1d92c2d5c/resize/660/f/webp/assets/multimedia/imagenes/2025/12/05/17649446467786.jpg",Soccer25 USA vs Bosnia and Herzegovina ( TSN5 Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21845.ts
+
+# ---- Soccer26 HFX Wanderers vs Atl. Ottawa ( OneSoccer Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://phantom.estaticos-marca.com/5eaa46deb2cdef4794639fb1d92c2d5c/resize/660/f/webp/assets/multimedia/imagenes/2025/12/05/17649446467786.jpg",Soccer26 HFX Wanderers vs Atl. Ottawa ( OneSoccer Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21846.ts
+
+# ---- Soccer27 HFX Wanderers vs Atl. Ottawa ( Fox Sports 2 USA Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://phantom.estaticos-marca.com/5eaa46deb2cdef4794639fb1d92c2d5c/resize/660/f/webp/assets/multimedia/imagenes/2025/12/05/17649446467786.jpg",Soccer27 HFX Wanderers vs Atl. Ottawa ( Fox Sports 2 USA Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21847.ts
+
+# ---- Soccer28 HFX Wanderers vs Atl. Ottawa ( OneSoccer Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://phantom.estaticos-marca.com/5eaa46deb2cdef4794639fb1d92c2d5c/resize/660/f/webp/assets/multimedia/imagenes/2025/12/05/17649446467786.jpg",Soccer28 HFX Wanderers vs Atl. Ottawa ( OneSoccer Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21848.ts
+
+# ---- Soccer29 HFX Wanderers vs Atl. Ottawa ( FOX One Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://phantom.estaticos-marca.com/5eaa46deb2cdef4794639fb1d92c2d5c/resize/660/f/webp/assets/multimedia/imagenes/2025/12/05/17649446467786.jpg",Soccer29 HFX Wanderers vs Atl. Ottawa ( FOX One Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21849.ts
+
+# ---- UK ITV1 (1 variants) ----
+#EXTINF:-1 tvg-logo="https://i.imgur.com/xwPekCF.png",UK ITV1
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/527497.ts
+
+# ---- beIN SPORTS 1 French (1 variants) ----
+#EXTINF:-1 tvg-logo="https://i.imgur.com/tXqMkzA.png",beIN SPORTS 1 French [FHD]
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/659439.ts
+
+
 
 #EXTINF:-1 tvg-logo="https://www.freeshot.live/upload/source/Fox-Sports-1.png" ,FS1
 https://ayna.bdixlivetv.workers.dev/play/FOXSPORTS1.m3u8
