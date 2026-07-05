@@ -1,6 +1,6 @@
 #EXTM3U
-# Validated on 2026-07-03 13:43:48 UTC
-# Working streams: 37 / 87
+# Validated on 2026-07-05 19:12:53 UTC
+# Working streams: 35 / 87
 # Quality tags based on name (fallback)
 # https://github.com/mpshimul/hub2stream
 # FIFA Worldcup 2026 - Hub2Stream
@@ -35,9 +35,9 @@ http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/3143.ts
 
 # ---- FR M6 (2 variants) ----
 #EXTINF:-1 tvg-logo="https://i.imgur.com/7GVp3fW.png",FR M6 [HD]
-http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/599611.ts
-#EXTINF:-1 tvg-logo="https://i.imgur.com/7GVp3fW.png",FR M6 [HD]
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/1268527.ts
+#EXTINF:-1 tvg-logo="https://i.imgur.com/7GVp3fW.png",FR M6 [HD]
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/599611.ts
 
 # ---- MX TUDN (1 variants) ----
 #EXTINF:-1 tvg-logo="https://i.imgur.com/oT5CAvd.png",MX TUDN
@@ -59,85 +59,77 @@ http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/839.ts
 #EXTINF:-1 tvg-logo="https://i.imgur.com/4w4vuad.png",PT SPORT TV 5
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/840.ts
 
-# ---- Soccer01 Australia vs Egypt ( TSN1 Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer01 Australia vs Egypt ( TSN1 Feed ) @
+# ---- Soccer01 Brazil vs Norway ( TSN1 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer01 Brazil vs Norway ( TSN1 Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/38039.ts
 
-# ---- Soccer02 Australia vs Egypt ( TSN4 Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer02 Australia vs Egypt ( TSN4 Feed ) @
+# ---- Soccer02 Brazil vs Norway ( TSN3 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer02 Brazil vs Norway ( TSN3 Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21812.ts
 
-# ---- Soccer03 Australia vs Egypt ( FOX Network Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer03 Australia vs Egypt ( FOX Network Feed ) @
+# ---- Soccer03 Brazil vs Norway ( TSN4 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer03 Brazil vs Norway ( TSN4 Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21823.ts
 
-# ---- Soccer04 Australia vs Egypt ( Telemundo Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer04 Australia vs Egypt ( Telemundo Feed ) @
-http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21824.ts
-
-# ---- Soccer05 Australia vs Egypt ( Telemundo Deportes En Vivo Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer05 Australia vs Egypt ( Telemundo Deportes En Vivo Feed ) @
-http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21825.ts
-
-# ---- Soccer06 Australia vs Egypt ( FOX One Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer06 Australia vs Egypt ( FOX One Feed ) @
+# ---- Soccer06 Brazil vs Norway ( FOX Network Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer06 Brazil vs Norway ( FOX Network Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21826.ts
 
-# ---- Soccer07 Argentina vs Cape Verde Islands ( TSN1 Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer07 Argentina vs Cape Verde Islands ( TSN1 Feed ) @
+# ---- Soccer07 Brazil vs Norway ( Telemundo Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer07 Brazil vs Norway ( Telemundo Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21827.ts
 
-# ---- Soccer08 Argentina vs Cape Verde Islands ( TSN4 Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer08 Argentina vs Cape Verde Islands ( TSN4 Feed ) @
+# ---- Soccer08 Brazil vs Norway ( Telemundo Deportes En Vivo Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer08 Brazil vs Norway ( Telemundo Deportes En Vivo Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21828.ts
 
-# ---- Soccer09 Argentina vs Cape Verde Islands ( TSN5 Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer09 Argentina vs Cape Verde Islands ( TSN5 Feed ) @
+# ---- Soccer09 Brazil vs Norway ( FOX One Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer09 Brazil vs Norway ( FOX One Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21829.ts
 
-# ---- Soccer11 Argentina vs Cape Verde Islands ( FOX Network Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer11 Argentina vs Cape Verde Islands ( FOX Network Feed ) @
+# ---- Soccer10 Mexico vs England ( TSN1 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer10 Mexico vs England ( TSN1 Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21830.ts
+
+# ---- Soccer11 Mexico vs England ( TSN4 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer11 Mexico vs England ( TSN4 Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21831.ts
 
-# ---- Soccer12 Argentina vs Cape Verde Islands ( Telemundo Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer12 Argentina vs Cape Verde Islands ( Telemundo Feed ) @
+# ---- Soccer12 Mexico vs England ( FOX Network Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer12 Mexico vs England ( FOX Network Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21832.ts
 
-# ---- Soccer13 Argentina vs Cape Verde Islands ( Telemundo Deportes En Vivo Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer13 Argentina vs Cape Verde Islands ( Telemundo Deportes En Vivo Feed ) @
+# ---- Soccer13 Mexico vs England ( Telemundo Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer13 Mexico vs England ( Telemundo Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21833.ts
 
-# ---- Soccer14 Argentina vs Cape Verde Islands ( FOX One Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer14 Argentina vs Cape Verde Islands ( FOX One Feed ) @
+# ---- Soccer14 Mexico vs England ( Telemundo Deportes En Vivo Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer14 Mexico vs England ( Telemundo Deportes En Vivo Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21834.ts
 
-# ---- Soccer15 Colombia vs Ghana ( TSN1 Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer15 Colombia vs Ghana ( TSN1 Feed ) @
+# ---- Soccer15 Mexico vs England ( UNIVERSO Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer15 Mexico vs England ( UNIVERSO Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21835.ts
 
-# ---- Soccer16 Colombia vs Ghana ( TSN4 Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer16 Colombia vs Ghana ( TSN4 Feed ) @
+# ---- Soccer16 Mexico vs England ( FOX One Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer16 Mexico vs England ( FOX One Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21836.ts
 
-# ---- Soccer17 Colombia vs Ghana ( TSN5 Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer17 Colombia vs Ghana ( TSN5 Feed ) @
+# ---- Soccer17 Pacific FC vs HFX Wanderers ( OneSoccer Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer17 Pacific FC vs HFX Wanderers ( OneSoccer Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21837.ts
 
-# ---- Soccer19 Colombia vs Ghana ( FOX Network Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer19 Colombia vs Ghana ( FOX Network Feed ) @
+# ---- Soccer18 Pacific FC vs HFX Wanderers ( Fox Sports 2 USA Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer18 Pacific FC vs HFX Wanderers ( Fox Sports 2 USA Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21838.ts
+
+# ---- Soccer19 Pacific FC vs HFX Wanderers ( OneSoccer Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer19 Pacific FC vs HFX Wanderers ( OneSoccer Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21839.ts
 
-# ---- Soccer20 Colombia vs Ghana ( Telemundo Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer20 Colombia vs Ghana ( Telemundo Feed ) @
+# ---- Soccer20 Pacific FC vs HFX Wanderers ( FOX One Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer20 Pacific FC vs HFX Wanderers ( FOX One Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21840.ts
-
-# ---- Soccer21 Colombia vs Ghana ( Telemundo Deportes En Vivo Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer21 Colombia vs Ghana ( Telemundo Deportes En Vivo Feed ) @
-http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21841.ts
-
-# ---- Soccer22 Colombia vs Ghana ( FOX One Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer22 Colombia vs Ghana ( FOX One Feed ) @
-http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21842.ts
 
 # ---- UK ITV1 (1 variants) ----
 #EXTINF:-1 tvg-logo="https://i.imgur.com/xwPekCF.png",UK ITV1
@@ -146,6 +138,8 @@ http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/527497.ts
 # ---- beIN SPORTS 1 French (1 variants) ----
 #EXTINF:-1 tvg-logo="https://i.imgur.com/tXqMkzA.png",beIN SPORTS 1 French [FHD]
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/659439.ts
+
+
 
 
 #--OLD--#
