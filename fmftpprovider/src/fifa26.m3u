@@ -1,6 +1,6 @@
 #EXTM3U
-# Validated on 2026-07-05 19:12:53 UTC
-# Working streams: 35 / 87
+# Validated on 2026-07-06 16:04:13 UTC
+# Working streams: 34 / 87
 # Quality tags based on name (fallback)
 # https://github.com/mpshimul/hub2stream
 # FIFA Worldcup 2026 - Hub2Stream
@@ -43,93 +43,91 @@ http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/599611.ts
 #EXTINF:-1 tvg-logo="https://i.imgur.com/oT5CAvd.png",MX TUDN
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/553262.ts
 
-# ---- NO TV2 (2 variants) ----
-#EXTINF:-1 tvg-logo="https://i.imgur.com/8nxd2A1.png",NO TV2 [FHD]
-http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/1179998.ts
-#EXTINF:-1 tvg-logo="https://i.imgur.com/8nxd2A1.png",NO TV2 [HD]
-http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/1179999.ts
-
-# ---- NO TV2 Direkte (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/TV_2_Direkte_%282022-%29.svg/960px-TV_2_Direkte_%282022-%29.svg.png",NO TV2 Direkte
-http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/1179997.ts
-
 # ---- PT SPORT TV 5 (2 variants) ----
 #EXTINF:-1 tvg-logo="https://i.imgur.com/4w4vuad.png",PT SPORT TV 5 [HD]
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/839.ts
 #EXTINF:-1 tvg-logo="https://i.imgur.com/4w4vuad.png",PT SPORT TV 5
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/840.ts
 
-# ---- Soccer01 Brazil vs Norway ( TSN1 Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer01 Brazil vs Norway ( TSN1 Feed ) @
+# ---- Soccer01 Portugal vs Spain ( TSN1 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer01 Portugal vs Spain ( TSN1 Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/38039.ts
 
-# ---- Soccer02 Brazil vs Norway ( TSN3 Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer02 Brazil vs Norway ( TSN3 Feed ) @
+# ---- Soccer02 Portugal vs Spain ( TSN3 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer02 Portugal vs Spain ( TSN3 Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21812.ts
 
-# ---- Soccer03 Brazil vs Norway ( TSN4 Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer03 Brazil vs Norway ( TSN4 Feed ) @
+# ---- Soccer03 Portugal vs Spain ( TSN4 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer03 Portugal vs Spain ( TSN4 Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21823.ts
 
-# ---- Soccer06 Brazil vs Norway ( FOX Network Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer06 Brazil vs Norway ( FOX Network Feed ) @
+# ---- Soccer04 Portugal vs Spain ( TSN5 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer04 Portugal vs Spain ( TSN5 Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21824.ts
+
+# ---- Soccer06 Portugal vs Spain ( FOX Network Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer06 Portugal vs Spain ( FOX Network Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21826.ts
 
-# ---- Soccer07 Brazil vs Norway ( Telemundo Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer07 Brazil vs Norway ( Telemundo Feed ) @
+# ---- Soccer07 Portugal vs Spain ( Telemundo Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer07 Portugal vs Spain ( Telemundo Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21827.ts
 
-# ---- Soccer08 Brazil vs Norway ( Telemundo Deportes En Vivo Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer08 Brazil vs Norway ( Telemundo Deportes En Vivo Feed ) @
+# ---- Soccer08 Portugal vs Spain ( Telemundo Deportes En Vivo Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer08 Portugal vs Spain ( Telemundo Deportes En Vivo Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21828.ts
 
-# ---- Soccer09 Brazil vs Norway ( FOX One Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer09 Brazil vs Norway ( FOX One Feed ) @
+# ---- Soccer09 Portugal vs Spain ( FOX One Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer09 Portugal vs Spain ( FOX One Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21829.ts
 
-# ---- Soccer10 Mexico vs England ( TSN1 Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer10 Mexico vs England ( TSN1 Feed ) @
+# ---- Soccer10 USA vs Belgium ( TSN1 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer10 USA vs Belgium ( TSN1 Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21830.ts
 
-# ---- Soccer11 Mexico vs England ( TSN4 Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer11 Mexico vs England ( TSN4 Feed ) @
+# ---- Soccer11 USA vs Belgium ( TSN3 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer11 USA vs Belgium ( TSN3 Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21831.ts
 
-# ---- Soccer12 Mexico vs England ( FOX Network Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer12 Mexico vs England ( FOX Network Feed ) @
+# ---- Soccer12 USA vs Belgium ( TSN4 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer12 USA vs Belgium ( TSN4 Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21832.ts
 
-# ---- Soccer13 Mexico vs England ( Telemundo Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer13 Mexico vs England ( Telemundo Feed ) @
+# ---- Soccer13 USA vs Belgium ( TSN5 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer13 USA vs Belgium ( TSN5 Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21833.ts
 
-# ---- Soccer14 Mexico vs England ( Telemundo Deportes En Vivo Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer14 Mexico vs England ( Telemundo Deportes En Vivo Feed ) @
+# ---- Soccer14 USA vs Belgium ( FOX Network Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer14 USA vs Belgium ( FOX Network Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21834.ts
 
-# ---- Soccer15 Mexico vs England ( UNIVERSO Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer15 Mexico vs England ( UNIVERSO Feed ) @
+# ---- Soccer15 USA vs Belgium ( Telemundo Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer15 USA vs Belgium ( Telemundo Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21835.ts
 
-# ---- Soccer16 Mexico vs England ( FOX One Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer16 Mexico vs England ( FOX One Feed ) @
+# ---- Soccer16 USA vs Belgium ( Telemundo Deportes En Vivo Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer16 USA vs Belgium ( Telemundo Deportes En Vivo Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21836.ts
 
-# ---- Soccer17 Pacific FC vs HFX Wanderers ( OneSoccer Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer17 Pacific FC vs HFX Wanderers ( OneSoccer Feed ) @
+# ---- Soccer17 USA vs Belgium ( UNIVERSO Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer17 USA vs Belgium ( UNIVERSO Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21837.ts
 
-# ---- Soccer18 Pacific FC vs HFX Wanderers ( Fox Sports 2 USA Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer18 Pacific FC vs HFX Wanderers ( Fox Sports 2 USA Feed ) @
+# ---- Soccer18 USA vs Belgium ( FOX One Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer18 USA vs Belgium ( FOX One Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21838.ts
 
-# ---- Soccer19 Pacific FC vs HFX Wanderers ( OneSoccer Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer19 Pacific FC vs HFX Wanderers ( OneSoccer Feed ) @
+# ---- Soccer19 USA vs Belgium ( TSN3 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer19 USA vs Belgium ( TSN3 Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21839.ts
 
-# ---- Soccer20 Pacific FC vs HFX Wanderers ( FOX One Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer20 Pacific FC vs HFX Wanderers ( FOX One Feed ) @
+# ---- Soccer20 USA vs Belgium ( TSN4 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer20 USA vs Belgium ( TSN4 Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21840.ts
+
+# ---- Soccer21 USA vs Belgium ( TSN5 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer21 USA vs Belgium ( TSN5 Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21841.ts
 
 # ---- UK ITV1 (1 variants) ----
 #EXTINF:-1 tvg-logo="https://i.imgur.com/xwPekCF.png",UK ITV1
@@ -138,7 +136,6 @@ http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/527497.ts
 # ---- beIN SPORTS 1 French (1 variants) ----
 #EXTINF:-1 tvg-logo="https://i.imgur.com/tXqMkzA.png",beIN SPORTS 1 French [FHD]
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/659439.ts
-
 
 
 
