@@ -1,6 +1,6 @@
 #EXTM3U
-# Validated on 2026-07-09 13:33:57 UTC
-# Working streams: 25 / 87
+# Validated on 2026-07-10 19:04:42 UTC
+# Working streams: 22 / 87
 # Quality tags based on name (fallback)
 # https://github.com/mpshimul/hub2stream
 # FIFA Worldcup 2026 - Hub2Stream
@@ -33,12 +33,6 @@ http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/3144.ts
 #EXTINF:-1 tvg-logo="https://i.imgur.com/qJyAWU8.png",CA TSN 4 U [HD]
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/3143.ts
 
-# ---- FR M6 (2 variants) ----
-#EXTINF:-1 tvg-logo="https://i.imgur.com/7GVp3fW.png",FR M6 [HD]
-http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/599611.ts
-#EXTINF:-1 tvg-logo="https://i.imgur.com/7GVp3fW.png",FR M6 [HD]
-http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/1268527.ts
-
 # ---- MX TUDN (1 variants) ----
 #EXTINF:-1 tvg-logo="https://i.imgur.com/oT5CAvd.png",MX TUDN
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/553262.ts
@@ -53,42 +47,40 @@ http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/1179999.ts
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/TV_2_Direkte_%282022-%29.svg/960px-TV_2_Direkte_%282022-%29.svg.png",NO TV2 Direkte
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/1179997.ts
 
-# ---- PT SPORT TV 5 (2 variants) ----
+# ---- PT SPORT TV 5 (1 variants) ----
 #EXTINF:-1 tvg-logo="https://i.imgur.com/4w4vuad.png",PT SPORT TV 5 [HD]
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/839.ts
-#EXTINF:-1 tvg-logo="https://i.imgur.com/4w4vuad.png",PT SPORT TV 5
-http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/840.ts
 
-# ---- Soccer01 France vs Morocco ( TSN1 Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer01 France vs Morocco ( TSN1 Feed ) @
+# ---- Soccer01 Spain vs Belgium ( TSN1 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer01 Spain vs Belgium ( TSN1 Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/38039.ts
 
-# ---- Soccer02 France vs Morocco ( TSN3 Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer02 France vs Morocco ( TSN3 Feed ) @
+# ---- Soccer02 Spain vs Belgium ( TSN3 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer02 Spain vs Belgium ( TSN3 Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21812.ts
 
-# ---- Soccer03 France vs Morocco ( TSN4 Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer03 France vs Morocco ( TSN4 Feed ) @
+# ---- Soccer03 Spain vs Belgium ( TSN4 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer03 Spain vs Belgium ( TSN4 Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21823.ts
 
-# ---- Soccer04 France vs Morocco ( TSN5 Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer04 France vs Morocco ( TSN5 Feed ) @
+# ---- Soccer04 Spain vs Belgium ( TSN5 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer04 Spain vs Belgium ( TSN5 Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21824.ts
 
-# ---- Soccer05 France vs Morocco ( FOX Network Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer05 France vs Morocco ( FOX Network Feed ) @
+# ---- Soccer05 Spain vs Belgium ( FOX Network Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer05 Spain vs Belgium ( FOX Network Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21825.ts
 
-# ---- Soccer06 France vs Morocco ( Telemundo Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer06 France vs Morocco ( Telemundo Feed ) @
+# ---- Soccer06 Spain vs Belgium ( Telemundo Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer06 Spain vs Belgium ( Telemundo Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21826.ts
 
-# ---- Soccer07 France vs Morocco ( Telemundo Deportes En Vivo Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer07 France vs Morocco ( Telemundo Deportes En Vivo Feed ) @
+# ---- Soccer07 Spain vs Belgium ( Telemundo Deportes En Vivo Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer07 Spain vs Belgium ( Telemundo Deportes En Vivo Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21827.ts
 
-# ---- Soccer08 France vs Morocco ( FOX One Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer08 France vs Morocco ( FOX One Feed ) @
+# ---- Soccer08 Spain vs Belgium ( FOX One Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer08 Spain vs Belgium ( FOX One Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21828.ts
 
 # ---- UK ITV1 (1 variants) ----
@@ -98,6 +90,7 @@ http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/527497.ts
 # ---- beIN SPORTS 1 French (1 variants) ----
 #EXTINF:-1 tvg-logo="https://i.imgur.com/tXqMkzA.png",beIN SPORTS 1 French [FHD]
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/659439.ts
+
 
 
 #--OLD--#
