@@ -27,7 +27,7 @@ jobs:
           import sys
 
           # ===== CONFIGURATION =====
-          source_url = "https://bonobo.live/channels.m3u"
+          source_url = "https://teal-octopus-383153.hostingersite.com/channels.m3u"
           target_file = "fmftpprovider/src/fifa26.m3u"
           FILTER_GROUP_TITLE = "FIFA26"
           FIXED_LOGO_URL = "https://raw.githubusercontent.com/mpshimul/hub2stream/main/fifa26.webp"
