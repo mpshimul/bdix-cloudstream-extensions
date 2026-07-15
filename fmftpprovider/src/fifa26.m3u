@@ -1,9 +1,25 @@
 #EXTM3U
-# Validated on 2026-07-14 16:12:17 UTC
+# Validated on 2026-07-15 17:56:02 UTC
 # Working streams: 19 / 87
 # Quality tags based on name (fallback)
 # https://github.com/mpshimul/hub2stream
 # FIFA Worldcup 2026 - Hub2Stream
+
+# ---- Soccer01 World Cup England vs Argentina @ EDT (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer01 World Cup England vs Argentina @ EDT
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/38039.ts
+
+# ---- Soccer02 World Cup England vs Argentina @ EDT (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer02 World Cup England vs Argentina @ EDT
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21812.ts
+
+# ---- Soccer03 World Cup England vs Argentina @ EDT (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer03 World Cup England vs Argentina @ EDT
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21823.ts
+
+# ---- Soccer04 World Cup England vs Argentina @ EDT (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer04 World Cup England vs Argentina @ EDT
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21824.ts
 
 # ---- CA RDS ( ) (1 variants) ----
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/RDS_logo.svg/960px-RDS_logo.svg.png",CA RDS ( ) [HD]
@@ -52,22 +68,6 @@ http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/1179997.ts
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/839.ts
 #EXTINF:-1 tvg-logo="https://i.imgur.com/4w4vuad.png",PT SPORT TV 5
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/840.ts
-
-# ---- Soccer01 France vs Spain ( TSN1 Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer01 France vs Spain ( TSN1 Feed ) @
-http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/38039.ts
-
-# ---- Soccer02 France vs Spain ( TSN3 Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer02 France vs Spain ( TSN3 Feed ) @
-http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21812.ts
-
-# ---- Soccer03 France vs Spain ( TSN4 Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer03 France vs Spain ( TSN4 Feed ) @
-http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21823.ts
-
-# ---- Soccer04 France vs Spain ( TSN5 Feed ) @ (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer04 France vs Spain ( TSN5 Feed ) @
-http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21824.ts
 
 # ---- UK ITV1 (1 variants) ----
 #EXTINF:-1 tvg-logo="https://i.imgur.com/xwPekCF.png",UK ITV1
