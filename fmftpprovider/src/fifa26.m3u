@@ -1,25 +1,16 @@
 #EXTM3U
-# Validated on 2026-07-15 17:56:02 UTC
-# Working streams: 19 / 87
+# Validated on 2026-07-18 18:32:09 UTC
+# Working streams: 23 / 87
 # Quality tags based on name (fallback)
 # https://github.com/mpshimul/hub2stream
 # FIFA Worldcup 2026 - Hub2Stream
 
-# ---- Soccer01 World Cup England vs Argentina @ EDT (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer01 World Cup England vs Argentina @ EDT
-http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/38039.ts
 
-# ---- Soccer02 World Cup England vs Argentina @ EDT (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer02 World Cup England vs Argentina @ EDT
-http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21812.ts
+#EXTINF:-1 tvg-logo="http://172.16.60.2/assets/images/Tsports.png",T-SPORTS HD
+http://172.16.60.2:8088/102/index.m3u8
 
-# ---- Soccer03 World Cup England vs Argentina @ EDT (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer03 World Cup England vs Argentina @ EDT
-http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21823.ts
-
-# ---- Soccer04 World Cup England vs Argentina @ EDT (1 variants) ----
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer04 World Cup England vs Argentina @ EDT
-http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21824.ts
+#EXTINF:-1 tvg-logo="http://172.16.60.2/assets/images/live.png",UNITE8 SPORTS 2 HD
+http://172.16.60.2:8088/101/index.m3u8
 
 # ---- CA RDS ( ) (1 variants) ----
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/RDS_logo.svg/960px-RDS_logo.svg.png",CA RDS ( ) [HD]
@@ -68,6 +59,38 @@ http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/1179997.ts
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/839.ts
 #EXTINF:-1 tvg-logo="https://i.imgur.com/4w4vuad.png",PT SPORT TV 5
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/840.ts
+
+# ---- Soccer01 France vs England ( TSN1 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer01 France vs England ( TSN1 Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/38039.ts
+
+# ---- Soccer02 France vs England ( TSN3 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer02 France vs England ( TSN3 Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21812.ts
+
+# ---- Soccer03 France vs England ( TSN4 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer03 France vs England ( TSN4 Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21823.ts
+
+# ---- Soccer05 France vs England ( Telemundo Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer05 France vs England ( Telemundo Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21825.ts
+
+# ---- Soccer06 France vs England ( Telemundo Deportes En Vivo Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer06 France vs England ( Telemundo Deportes En Vivo Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21826.ts
+
+# ---- Soccer07 France vs England ( UNIVERSO Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer07 France vs England ( UNIVERSO Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21827.ts
+
+# ---- Soccer08 France vs England ( FOX One Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer08 France vs England ( FOX One Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21828.ts
+
+# ---- Soccer09 Mexico Liga MX Monterrey vs Santos Laguna @ EDT (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer09 Mexico Liga MX Monterrey vs Santos Laguna @ EDT
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21829.ts
 
 # ---- UK ITV1 (1 variants) ----
 #EXTINF:-1 tvg-logo="https://i.imgur.com/xwPekCF.png",UK ITV1
