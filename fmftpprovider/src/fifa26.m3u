@@ -1,112 +1,54 @@
 #EXTM3U
-# Validated on 2026-07-18 18:32:09 UTC
-# Working streams: 23 / 87
-# Quality tags based on name (fallback)
-# https://github.com/mpshimul/hub2stream
-# FIFA Worldcup 2026 - Hub2Stream
-
-
 #EXTINF:-1 tvg-logo="http://172.16.60.2/assets/images/Tsports.png",T-SPORTS HD
 http://172.16.60.2:8088/102/index.m3u8
-
 #EXTINF:-1 tvg-logo="http://172.16.60.2/assets/images/live.png",UNITE8 SPORTS 2 HD
 http://172.16.60.2:8088/101/index.m3u8
-
-# ---- CA RDS ( ) (1 variants) ----
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/RDS_logo.svg/960px-RDS_logo.svg.png",CA RDS ( ) [HD]
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/59870.ts
-
-# ---- CA RDS (FR) (1 variants) ----
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/RDS_logo.svg/960px-RDS_logo.svg.png",CA RDS (FR)
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/3232.ts
-
-# ---- CA RDS (HQ) (1 variants) ----
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/RDS_logo.svg/960px-RDS_logo.svg.png",CA RDS (HQ)
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/59887.ts
-
-# ---- CA RDS (LQ) (1 variants) ----
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/RDS_logo.svg/960px-RDS_logo.svg.png",CA RDS (LQ)
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/59888.ts
-
-# ---- CA TSN 1 U (1 variants) ----
 #EXTINF:-1 tvg-logo="https://i.imgur.com/eRFE0jZ.png",CA TSN 1 U [HD]
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/3146.ts
-
-# ---- CA TSN 3 U (1 variants) ----
 #EXTINF:-1 tvg-logo="https://i.imgur.com/AYza8KO.png",CA TSN 3 U [HD]
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/3144.ts
-
-# ---- CA TSN 4 U (1 variants) ----
 #EXTINF:-1 tvg-logo="https://i.imgur.com/qJyAWU8.png",CA TSN 4 U [HD]
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/3143.ts
-
-# ---- MX TUDN (1 variants) ----
 #EXTINF:-1 tvg-logo="https://i.imgur.com/oT5CAvd.png",MX TUDN
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/553262.ts
-
-# ---- NO TV2 (2 variants) ----
 #EXTINF:-1 tvg-logo="https://i.imgur.com/8nxd2A1.png",NO TV2 [FHD]
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/1179998.ts
 #EXTINF:-1 tvg-logo="https://i.imgur.com/8nxd2A1.png",NO TV2 [HD]
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/1179999.ts
-
-# ---- NO TV2 Direkte (1 variants) ----
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/TV_2_Direkte_%282022-%29.svg/960px-TV_2_Direkte_%282022-%29.svg.png",NO TV2 Direkte
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/1179997.ts
-
-# ---- PT SPORT TV 5 (2 variants) ----
 #EXTINF:-1 tvg-logo="https://i.imgur.com/4w4vuad.png",PT SPORT TV 5 [HD]
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/839.ts
 #EXTINF:-1 tvg-logo="https://i.imgur.com/4w4vuad.png",PT SPORT TV 5
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/840.ts
-
-# ---- Soccer01 France vs England ( TSN1 Feed ) @ (1 variants) ----
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer01 France vs England ( TSN1 Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/38039.ts
-
-# ---- Soccer02 France vs England ( TSN3 Feed ) @ (1 variants) ----
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer02 France vs England ( TSN3 Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21812.ts
-
-# ---- Soccer03 France vs England ( TSN4 Feed ) @ (1 variants) ----
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer03 France vs England ( TSN4 Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21823.ts
-
-# ---- Soccer05 France vs England ( Telemundo Feed ) @ (1 variants) ----
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer05 France vs England ( Telemundo Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21825.ts
-
-# ---- Soccer06 France vs England ( Telemundo Deportes En Vivo Feed ) @ (1 variants) ----
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer06 France vs England ( Telemundo Deportes En Vivo Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21826.ts
-
-# ---- Soccer07 France vs England ( UNIVERSO Feed ) @ (1 variants) ----
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer07 France vs England ( UNIVERSO Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21827.ts
-
-# ---- Soccer08 France vs England ( FOX One Feed ) @ (1 variants) ----
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer08 France vs England ( FOX One Feed ) @
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21828.ts
-
-# ---- Soccer09 Mexico Liga MX Monterrey vs Santos Laguna @ EDT (1 variants) ----
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer09 Mexico Liga MX Monterrey vs Santos Laguna @ EDT
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21829.ts
-
-# ---- UK ITV1 (1 variants) ----
 #EXTINF:-1 tvg-logo="https://i.imgur.com/xwPekCF.png",UK ITV1
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/527497.ts
-
-# ---- beIN SPORTS 1 French (1 variants) ----
 #EXTINF:-1 tvg-logo="https://i.imgur.com/tXqMkzA.png",beIN SPORTS 1 French [FHD]
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/659439.ts
-
-
-
-#--OLD--#
-#EXTINF:-1 tvg-logo="https://www.freeshot.live/upload/source/Fox-Sports-1.png" ,FS1
-#https://ayna.bdixlivetv.workers.dev/play/FOXSPORTS1.m3u8
-#EXTINF:-1 tvg-logo="https://www.freeshot.live/upload/source/FOXUSA.png" ,FOX
-#https://ayna.bdixlivetv.workers.dev/play/FOXSPORTS2.m3u8
 #EXTINF:-1 tvg-logo="https://www.freeshot.live/upload/source/Sport_tv_5_logo.png" ,SPORT-TV 5
 https://ayna.bdixlivetv.workers.dev/play/SPT5.m3u8
 #EXTINF:-1 tvg-logo="https://www.freeshot.live/upload/source/TSN1_Logo.png" ,TSN1
@@ -117,8 +59,6 @@ https://ayna.bdixlivetv.workers.dev/play/TSN3.m3u8
 https://ayna.bdixlivetv.workers.dev/play/TSN4.m3u8
 #EXTINF:-1 tvg-logo="https://www.freeshot.live/upload/source/ITV1-logo.png" ,ITV1
 https://ayna.bdixlivetv.workers.dev/play/ITV1.m3u8
-
-
 #EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,BTV
 http://172.17.50.112:84/ant1003/video.m3u8
 #EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,UNITE8 Sports 2
@@ -167,21 +107,12 @@ http://172.17.50.112:84/ant1003/video.m3u8
 http://202.70.146.135:8000/play/a09x/index.m3u8
 #EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,UNITE8 Sports 2
 http://172.17.50.112:84/ant1005/video.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,Z Bangla Sonar
-#https://d1g8wgjurz8via.cloudfront.net/bpk-tv/ColorsHD/default/Zeebanglahd.m3u8
 #EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,SOMOY TV
 https://live.thebosstv.com:30443/dwlive/Somoy-TV/chunks.m3u8
 #EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,SOMOY TV
 http://172.17.50.112:84/ant1002/video.m3u8
-
 #EXTINF:-1 tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/Telemundo.png" ,Telemundo
 https://nbculocallive.akamaized.net/hls/live/2037499/puertorico/stream1/master.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,Football World Cup 2026
-#https://zati5.hasanhabibmottakin.workers.dev/0-9-zeecafehd/index.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,Football World Cup 2026
-#https://ott-balancer.tvri.go.id/live/eds/SportHD/hls/SportHD.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,RTB GO
-#https://master.ajmainearafat.workers.dev/?url=https://d1211whpimeups.cloudfront.net/smil%3Artbgo/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,Football World Cup 2026
 http://go8knm.optikl.ink/X/index.php/Besyria3/video.m3u8
 #EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,BEINSPORT1FR
@@ -190,15 +121,29 @@ https://ayna.bdixlivetv.workers.dev/play/BEINSPORT1FR.m3u8
 https://ayna.bdixlivetv.workers.dev/play/M6FR.m3u8
 #EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,Football World Cup 2026
 https://nbculocallive.akamaized.net/hls/live/2037499/puertorico/stream1/master.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,FS 1
-#http://ytoxw6un.ottclub.xyz/iptv/KCUHA6DGYYVA8ZZFUPQV3KZH/7322/index.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,T-Sports
-#http://10.10.10.7:82/Own-1/index.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,T-Sports
-#http://198.195.239.50:8095/tsports/index.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,PTV
-#http://10.10.10.7:82/Own-6/index.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,PTV
-#http://10.10.10.7:82/PTV/index.m3u8
-#EXTINF:-1 tvg-logo="https://carboncredits.com/wp-content/uploads/2025/09/shutterstock_2306088965-e1757112807302.jpg" ,SOMOY TV
-#http://10.10.10.7:82/tsports-hd/index.m3u8
+#EXTINF:-1 tvg-name="Khoora Live" tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fifa26.webp" group-title="FIFA26",Khoora Live
+https://ez.exovate.online/asdon1_720/index.m3u8
+#EXTINF:-1 tvg-name="T Sports" tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fifa26.webp" group-title="FIFA26",T Sports
+https://ez.exovate.online/asdon1_360/index.m3u8
+#EXTINF:-1 tvg-name="Somoy TV" tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fifa26.webp" group-title="FIFA26",Somoy TV
+https://2.simokora.com/my-hls/h9asfma10d5/master.m3u8
+#EXTINF:-1 tvg-name="Toffee" tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fifa26.webp" group-title="FIFA26",Toffee
+https://top.mswott.top/toffee/media.m3u8?id=e6119df7944c
+#EXTINF:-1 tvg-name="FIFA1" tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fifa26.webp" group-title="FIFA26",FIFA1
+https://1nyaler.streamhostingcdn.top/stream/94/index.m3u8
+#EXTINF:-1 tvg-name="United Sports 2" tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fifa26.webp" group-title="FIFA26",United Sports 2
+https://s1.itcnbd.live/united-sports-2/tracks-v1a1/mono.m3u8?nocache=1782578588285
+#EXTINF:-1 tvg-name="FIFA4" tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fifa26.webp" group-title="FIFA26",FIFA4
+https://1nyaler.streamhostingcdn.top/stream/106/index.m3u8
+#EXTINF:-1 tvg-name="FIFA5" tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fifa26.webp" group-title="FIFA26",FIFA5
+https://1nyaler.streamhostingcdn.top/stream/33/index.m3u8
+#EXTINF:-1 tvg-name="FIFA6" tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fifa26.webp" group-title="FIFA26",FIFA6
+https://1nyaler.streamhostingcdn.top/stream/30/index.m3u8
+#EXTINF:-1 tvg-name="FIFA7" tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fifa26.webp" group-title="FIFA26",FIFA7
+https://1nyaler.streamhostingcdn.top/stream/84/index.m3u8
+#EXTINF:-1 tvg-name="FIFA8" tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fifa26.webp" group-title="FIFA26",FIFA8
+https://amg01334-beinsportsllc-beinxtraesp-localnow-aekzc.amagi.tv/playlistR360p.m3u8
+#EXTINF:-1 tvg-name="FIFA9" tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fifa26.webp" group-title="FIFA26",FIFA9
+https://1nyaler.streamhostingcdn.top/stream/3/index.m3u8
+#EXTINF:-1 tvg-name="FIFA10" tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fifa26.webp" group-title="FIFA26",FIFA10
+https://1nyaler.streamhostingcdn.top/stream/80/index.m3u8
